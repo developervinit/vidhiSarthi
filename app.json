@@ -18,10 +18,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.vinit91dev.vidhi_sarthi"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "bf6ab42a-c123-4a92-a2c8-e33e1d6e6f00"
+      }
+    },
+    "owner": "vinit91dev"
   }
 }
