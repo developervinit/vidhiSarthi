@@ -1,0 +1,46 @@
+/app-root
+│
+├── /app
+│   ├── /components
+│   │   ├── /common
+│   │   │   └── ButtonComponent.js
+│   │   └── /Route1
+│   │       ├── ComponentA.js
+│   │       ├── ComponentB.js
+│   │       └── ComponentC.js
+│   │   └── /Route2
+│   │       ├── ComponentD.js
+│   │       ├── ComponentE.js
+│   │       └── ComponentF.js
+│   │   └── /Route3
+│   │       ├── ComponentG.js
+│   │       ├── ComponentH.js
+│   │       └── ComponentI.js
+│   │
+│   ├── /screens
+│   │   ├── HomeScreen.js
+│   │   ├── Route1Screen.js
+│   │   ├── Route2Screen.js
+│   │   └── Route3Screen.js
+│   │
+│   ├── /data
+│   │   ├── route1Data.js
+│   │   
+│   │   
+│   │
+│   |-- /assets
+│       ├── /images
+│       └── /icons
+│     
+│   
+│   
+│    
+│    
+│
+└── package.json
+└── app.json
+└── babel.config.js
+└── eas.json
+└── .expo
+└── structure.txt
+
