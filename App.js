@@ -27,15 +27,6 @@ export default function App() {
     }
   }
 
-  // const renderHeader = () => (
-  //   <>
-  //     <ImageViewer imageSource={headImage} />
-  //     <View>
-  //       <Text style={styles.appTitle}>न्याय सारथी</Text>
-  //     </View>
-  //   </>
-  // );
-
   return (
     <KeyboardAvoidingView
       style={styles.container}

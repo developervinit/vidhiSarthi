@@ -2,6 +2,7 @@
   "expo": {
     "name": "vidhi_sarthi",
     "slug": "vidhi_sarthi",
+    "scheme": "vidhisarthi",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -29,6 +30,9 @@
         "projectId": "bf6ab42a-c123-4a92-a2c8-e33e1d6e6f00"
       }
     },
-    "owner": "vinit91dev"
+    "owner": "vinit91dev",
+    "plugins": [
+      "expo-router"
+    ]
   }
 }

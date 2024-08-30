@@ -4,7 +4,7 @@ export default function List({ prevCode, prevCodeInfo, newCode, newCodeInfo }) {
   return (
     <View>
       <View style={styles.codeContainer}>
-        <View >
+        <View>
           <Text style={styles.containerHeading}>भारतीय दण्ड संहिता, 1860</Text>
         </View>
         <View style={styles.separator}></View>
@@ -36,12 +36,12 @@ export default function List({ prevCode, prevCodeInfo, newCode, newCodeInfo }) {
   );
 }
 
-const styles = StyleSheet.create({  
+const styles = StyleSheet.create({
   separator: {
     backgroundColor: "black",
     height: 1,
     marginTop: 5,
-    marginBottom: 5
+    marginBottom: 5,
   },
   containerHeading: {
     fontSize: 22,
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginBottom: 14,
     padding: 20,
-    paddingTop: 10
+    paddingTop: 10,
   },
   label: {
     fontSize: 22,
