@@ -1,3 +1,5 @@
+import { Text, View } from "react-native";
+import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import {
@@ -9,14 +11,14 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from "react-native";
-import List from "./components/List.js";
-import ImageViewer from "./components/ImageViewer.js";
-import data from "./data/data.js";
+import List from "../../../components/List.js";
+// import ImageViewer from "./components/ImageViewer.js";
+import data from "../../../data/NyayaSanhita.js";
 
-export default function App() {
+export default function BhartiyaNyayaSanhita() {
   const [value, setValue] = useState(data); // Initialize with full data
 
-  const headImage = require("./assets/icon.png");
+  // const headImage = require("./assets/icon.png");
 
   function getValue(text) {
     if (text === "") {
@@ -32,13 +34,26 @@ export default function App() {
       style={styles.container}
       behavior={Platform.OS === "ios" ? "padding" : "height"}
     >
-      <View style={styles.header}>
+      {/* <View style={styles.header}>
         <ImageViewer imageSource={headImage} />
         <View>
           <Text style={styles.appTitle}>विधि सारथी</Text>
         </View>
-      </View>
+      </View> */}
+
       <View style={styles.innerContainer}>
+      <Stack.Screen
+        options={{
+          title: 'भारतीय न्याय संहिता, 2023',
+          headerStyle: { backgroundColor: '#f4511e' },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+
+          
+        }}
+      />
         <FlatList
           // ListHeaderComponent={renderHeader}
           data={value}
@@ -131,3 +146,4 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
 });
+

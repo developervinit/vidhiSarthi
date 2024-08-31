@@ -1,10 +1,10 @@
 import { Stack } from "expo-router";
-import { Text, View } from "react-native";
+// import { Text, View } from "react-native";
 
 const _layout = () => {
   return (
     <Stack>
-      <Stack.Screen name="Home" />
+      <Stack.Screen name="Home" options={{ title: "My Custom Title" }} />
     </Stack>
   );
 };
