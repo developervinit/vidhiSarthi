@@ -1,4 +1,3 @@
-import { Text, View } from "react-native";
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
@@ -12,13 +11,11 @@ import {
   Platform,
 } from "react-native";
 import List from "../../../components/List.js";
-// import ImageViewer from "./components/ImageViewer.js";
 import data from "../../../data/NyayaSanhita.js";
 
 export default function BhartiyaNyayaSanhita() {
   const [value, setValue] = useState(data); // Initialize with full data
 
-  // const headImage = require("./assets/icon.png");
 
   function getValue(text) {
     if (text === "") {
@@ -30,60 +27,51 @@ export default function BhartiyaNyayaSanhita() {
   }
 
   return (
-    <KeyboardAvoidingView
-      style={styles.container}
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
-    >
-      {/* <View style={styles.header}>
-        <ImageViewer imageSource={headImage} />
-        <View>
-          <Text style={styles.appTitle}>विधि सारथी</Text>
-        </View>
-      </View> */}
-
-      <View style={styles.innerContainer}>
+    <View style={styles.container}>
       <Stack.Screen
         options={{
-          title: 'भारतीय न्याय संहिता, 2023',
-          headerStyle: { backgroundColor: '#f4511e' },
-          headerTintColor: '#fff',
+          title: "भारतीय न्याय संहिता, 2023",
+          headerStyle: { backgroundColor: "#f4511e" },
+          headerTintColor: "#fff",
           headerTitleStyle: {
-            fontWeight: 'bold',
+            fontWeight: "bold",
           },
-
-          
         }}
       />
-        <FlatList
-          // ListHeaderComponent={renderHeader}
-          data={value}
-          renderItem={({ item }) => (
-            <List
-              prevCode={item.prevCode}
-              prevCodeInfo={item.prevCodeInfo}
-              newCode={item.newCode}
-              newCodeInfo={item.newCodeInfo}
-            />
-          )}
-          keyExtractor={(item) => item.id.toString()} // Ensure the keyExtractor returns a string
-          ListEmptyComponent={
-            <Text style={styles.listPlaceholderText}>
-              परिणाम यहाँ प्रदर्शित किया जाएगा
-            </Text>
-          }
-          contentContainerStyle={styles.listContentContainer}
-        />
-      </View>
-      <View style={styles.searchBarContainer}>
+      <FlatList
+        // ListHeaderComponent={renderHeader}
+        data={value}
+        renderItem={({ item }) => (
+          <List
+            prevCode={item.prevCode}
+            prevCodeInfo={item.prevCodeInfo}
+            newCode={item.newCode}
+            newCodeInfo={item.newCodeInfo}
+          />
+        )}
+        keyExtractor={(item) => item.id.toString()} // Ensure the keyExtractor returns a string
+        ListEmptyComponent={
+          <Text style={styles.listPlaceholderText}>
+            परिणाम यहाँ प्रदर्शित किया जाएगा
+          </Text>
+        }
+        contentContainerStyle={styles.listContentContainer}
+      />
+
+      <KeyboardAvoidingView
+        style={styles.searchBarContainer}
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        keyboardVerticalOffset={100} // Adjust the offset as needed
+      >
         <TextInput
           style={styles.input}
           placeholder="यहाँ पूर्व कानून दर्ज करें"
           onChangeText={(text) => getValue(text)}
           clearButtonMode="always" // Ensures the clear button is available on iOS
         />
-      </View>
+      </KeyboardAvoidingView>
       <StatusBar style="auto" />
-    </KeyboardAvoidingView>
+    </View>
   );
 }
 
@@ -140,10 +128,9 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    padding: 10,
+    padding: 5,
     borderTopWidth: 1,
-    borderTopColor: "#ddd",
+    borderTopColor: "#fff",
     backgroundColor: "#fff",
   },
 });
-
