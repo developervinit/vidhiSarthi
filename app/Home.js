@@ -1,7 +1,7 @@
 import { Text, View, Image, StyleSheet } from "react-native";
 import { Stack, useRouter } from "expo-router";
 import Button from "../components/Button";
-import { LinearGradient } from 'expo-linear-gradient';
+import GradientHeader from "../components/GradientHeader";
 
 const Home = () => {
   const router = useRouter();
@@ -15,15 +15,8 @@ const Home = () => {
       <Stack.Screen
         options={{
           headerTitle: "विधि सारथी",
-          headerBackground: () => (
-            <LinearGradient
-              colors={['#f4d691', '#f3d17d']}
-              style={{ flex: 1 }}
-              start={[0, 0]}
-              end={[1, 1]}
-            />
-          ),
-          
+          headerBackground: () => <GradientHeader />,
+
           headerTitleStyle: {
             fontWeight: "bold",
             color: "black",
