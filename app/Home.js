@@ -1,6 +1,7 @@
 import { Text, View, Image, StyleSheet } from "react-native";
 import { Stack, useRouter } from "expo-router";
 import Button from "../components/Button";
+import { LinearGradient } from 'expo-linear-gradient';
 
 const Home = () => {
   const router = useRouter();
@@ -14,10 +15,18 @@ const Home = () => {
       <Stack.Screen
         options={{
           headerTitle: "विधि सारथी",
-          headerStyle: { backgroundColor: "#f4511e" },
+          headerBackground: () => (
+            <LinearGradient
+              colors={['#f4d691', '#f3d17d']}
+              style={{ flex: 1 }}
+              start={[0, 0]}
+              end={[1, 1]}
+            />
+          ),
+          
           headerTitleStyle: {
             fontWeight: "bold",
-            color: "white",
+            color: "black",
           },
           headerLeft: () => (
             <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -55,7 +64,6 @@ const Home = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "yellow",
     alignItems: "center", // Centers children horizontally
   },
 
