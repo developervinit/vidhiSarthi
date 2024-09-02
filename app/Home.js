@@ -1,15 +1,10 @@
 import { Text, View, Image, StyleSheet } from "react-native";
-import { Stack, useRouter } from "expo-router";
+import { Stack } from "expo-router";
 import Button from "../components/Button";
+import ActionableCard from "../components/ActionableCard";
 import GradientHeader from "../components/GradientHeader";
 
 const Home = () => {
-  const router = useRouter();
-
-  function redirectTo(path) {
-    router.push(`/screens/${path}`);
-  }
-
   return (
     <>
       <Stack.Screen
@@ -38,15 +33,20 @@ const Home = () => {
       />
       <View style={styles.container}>
         <View style={styles.containerHome}>
-          <Text>This is from Home</Text>
-          <Button
-            onPress={() => redirectTo("BhartiyaNyayaSanhita")}
+          <ActionableCard
             title="भारतीय न्याय संहिता, 2023"
-            buttonPadding={[5, 10]}
-            buttonMargin={[10]}
-            buttonColor="blue"
-            textColor="white"
-            buttonRadius={5}
+            image="This is first card image"
+            url="BhartiyaNyayaSanhita"
+          />
+          <ActionableCard
+            title="भारतीय न्याय संहिता, 2023"
+            image="This is second card image"
+            url="BhartiyaNyayaSanhita"
+          />
+          <ActionableCard
+            title="भारतीय न्याय संहिता, 2023"
+            image="This is third card image"
+            url="BhartiyaNyayaSanhita"
           />
         </View>
       </View>
@@ -62,7 +62,6 @@ const styles = StyleSheet.create({
 
   containerHome: {
     marginTop: 50,
-    backgroundColor: "green",
   },
 });
 
