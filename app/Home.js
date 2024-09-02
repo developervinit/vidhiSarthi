@@ -1,35 +1,68 @@
-import { Text, View, Image } from "react-native";
-import { Link, Stack } from "expo-router";
-// import ImageViewer from "../components/ImageViewer";
-
+import { Text, View, Image, StyleSheet } from "react-native";
+import { Stack, useRouter } from "expo-router";
+import Button from "../components/Button";
 
 const Home = () => {
+  const router = useRouter();
+
+  function redirectTo(path) {
+    router.push(`/screens/${path}`);
+  }
+
   return (
-    <View>
-    <Stack.Screen
-      options={{
-        headerTitle: "विधि सारथी",
-        headerStyle: { backgroundColor: "#f4511e" },
-        headerTitleStyle: {
-          fontWeight: "bold",
-          color: "white"
-        },
-        headerLeft: () => (
-          <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <Image
-              source={require("../assets/images/icon.png")}
-              style={{ width: 40, height: 40, marginRight: 10, borderRadius: 5 }}
-            />
-          </View>
-        ),
-      }}
-    />
-    <View>
-      <Text>This is from Home</Text>
-      <Link href="/screens/BhartiyaNyayaSanhita">भारतीय न्याय संहिता, 2023</Link> 
-    </View>
-    </View>
+    <>
+      <Stack.Screen
+        options={{
+          headerTitle: "विधि सारथी",
+          headerStyle: { backgroundColor: "#f4511e" },
+          headerTitleStyle: {
+            fontWeight: "bold",
+            color: "white",
+          },
+          headerLeft: () => (
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Image
+                source={require("../assets/images/icon.png")}
+                style={{
+                  width: 40,
+                  height: 40,
+                  marginRight: 10,
+                  borderRadius: 5,
+                }}
+              />
+            </View>
+          ),
+        }}
+      />
+      <View style={styles.container}>
+        <View style={styles.containerHome}>
+          <Text>This is from Home</Text>
+          <Button
+            onPress={() => redirectTo("BhartiyaNyayaSanhita")}
+            title="भारतीय न्याय संहिता, 2023"
+            buttonPadding={[5, 10]}
+            buttonMargin={[10]}
+            buttonColor="blue"
+            textColor="white"
+            buttonRadius={5}
+          />
+        </View>
+      </View>
+    </>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "yellow",
+    alignItems: "center", // Centers children horizontally
+  },
+
+  containerHome: {
+    marginTop: 50,
+    backgroundColor: "green",
+  },
+});
 
 export default Home;
