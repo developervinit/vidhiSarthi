@@ -1,23 +1,47 @@
 import { Pressable, Text, StyleSheet } from "react-native";
+import { FontAwesome } from "@expo/vector-icons";
 
-export default function Button({ title, onPress, buttonPadding, buttonMargin, buttonColor, textColor, buttonRadius }) {
+export default function Button({
+  title,
+  onPress,
+  buttonPadding,
+  buttonColor,
+  buttonRadius,
+  textColor,
+  textSize,
+  textWeight,
+}) {
+  const [topBottom] = buttonPadding;
   return (
-    <Pressable style={[styles.buttonStyle, {backgroundColor: buttonColor, padding: buttonPadding, margin: buttonMargin, borderRadius: buttonRadius, color: textColor }]} onPress={onPress}>
-      <Text style={styles.textStyle}>{title}</Text>
+    <Pressable
+      style={[
+        styles.buttonStyle,
+        {
+          backgroundColor: buttonColor,
+          paddingTop: topBottom,
+          paddingBottom: topBottom,
+          borderRadius: buttonRadius,
+        },
+      ]}
+      onPress={onPress}
+    >
+      <Text
+        style={[
+          styles.textStyle,
+          { color: textColor, fontSize: textSize, fontWeight: textWeight },
+        ]}
+      >
+        {title}  <FontAwesome name="arrow-right" size={20} color="white" />
+      </Text>
     </Pressable>
   );
 }
 
 const styles = StyleSheet.create({
-    buttonStyle: {
-        padding: 10,
-        margin: 10,
-        borderRadius: 5,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    textStyle: {
-        fontSize: 18,
-        color: "white"
-    }
+  buttonStyle: {
+    flex: 1,
+    borderRadius: 5,
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });
