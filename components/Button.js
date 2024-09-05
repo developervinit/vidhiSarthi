@@ -31,7 +31,7 @@ export default function Button({
           { color: textColor, fontSize: textSize, fontWeight: textWeight },
         ]}
       >
-        {title}  <FontAwesome name="arrow-right" size={20} color="white" />
+        {title}  <FontAwesome name="arrow-right" size={20} color="#e6e6e6" />
       </Text>
     </Pressable>
   );
@@ -43,5 +43,6 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     justifyContent: "center",
     alignItems: "center",
+    elevation: 4,
   },
 });

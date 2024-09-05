@@ -1,4 +1,4 @@
-import { Text, View, Image, StyleSheet, ScrollView } from "react-native";
+import { View, Image, StyleSheet, ScrollView } from "react-native";
 import { Stack } from "expo-router";
 import ActionableCard from "../components/ActionableCard";
 import GradientHeader from "../components/GradientHeader";
@@ -10,10 +10,9 @@ const Home = () => {
         options={{
           headerTitle: "विधि सारथी",
           headerBackground: () => <GradientHeader />,
-
           headerTitleStyle: {
             fontWeight: "bold",
-            color: "black",
+            color: "#404040",
           },
           headerLeft: () => (
             <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -31,29 +30,31 @@ const Home = () => {
         }}
       />
       <ScrollView>
-      <View style={styles.container}>
-        
-        <View style={styles.containerHome}>
-          <ActionableCard
-            title="भारतीय न्याय संहिता, 2023"
-            description="भारतीय दण्ड संहिता, 1860 की धाराओ और भारतीय न्याय संहिता, 2023 के संबंधित प्रावधानों को दर्शाने वाली तालिका"
-            imageUrl={require("../assets/images/surakcha_sanhita.jpg")}
-            url="BhartiyaNyayaSanhita"
-          />
-          <ActionableCard
-            title="भारतीय नागरिक सुरक्षा संहिता, 2023"
-            description="भारतीय नागरिक संहिता, 2023 की धाराओ और संबंधित प्रावधानों को दर्शाने वाली तालिका"
-            imageUrl={require("../assets/images/surakcha_sanhita.jpg")}
-            url="BhartiyaNyayaSanhita"
-          />
-          <ActionableCard
-            title="भारतीय साक्ष्य अधिनियम, 2023"
-            description="भारतीय साक्ष्य अधिनियम की धाराओ और संबंधित प्रावधानों को दर्शाने वाली तालिका"
-            imageUrl={require("../assets/images/surakcha_sanhita.jpg")}
-            url="BhartiyaNyayaSanhita"
-          />
+        <View style={styles.container}>
+          <View style={styles.containerHome}>
+            <ActionableCard
+              title="भारतीय न्याय संहिता, 2023"
+              description="भारतीय दण्ड संहिता, 1860 की धाराओ और भारतीय न्याय संहिता, 2023 के संबंधित प्रावधानों को दर्शाने वाली तालिका"
+              imageUrl={require("../assets/images/surakcha_sanhita.jpg")}
+              url="bhartiyaNyayaSanhita"
+              backgroundColor= "#bde1fd"
+            />
+            <ActionableCard
+              title="भारतीय नागरिक सुरक्षा संहिता, 2023"
+              description="भारतीय नागरिक संहिता, 2023 की धाराओ और संबंधित प्रावधानों को दर्शाने वाली तालिका"
+              imageUrl={require("../assets/images/surakcha_sanhita.jpg")}
+              url="nagrikSuraksha"
+              backgroundColor= "#e3d9ee"
+            />
+            <ActionableCard
+              title="भारतीय साक्ष्य अधिनियम, 2023"
+              description="भारतीय साक्ष्य अधिनियम की धाराओ और संबंधित प्रावधानों को दर्शाने वाली तालिका"
+              imageUrl={require("../assets/images/surakcha_sanhita.jpg")}
+              url="sakshyaAdhiniyam"
+              backgroundColor= "#ebeed9"
+            />
+          </View>
         </View>
-      </View>
       </ScrollView>
     </>
   );
@@ -64,6 +65,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center", // Centers children horizontally
     overflow: "hidden",
+    paddingBottom: 20
   },
 
   containerHome: {

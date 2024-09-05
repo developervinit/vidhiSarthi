@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, ScrollView } from "react-native";
 import Button from "./Button";
 import ImageViewer from "./ImageViewer";
 
-export default function ActionableCard({ title, url, imageUrl, description }) {
+export default function ActionableCard({ title, backgroundColor, url, imageUrl, description }) {
   const router = useRouter();
 
   function redirectTo(path) {
@@ -11,7 +11,7 @@ export default function ActionableCard({ title, url, imageUrl, description }) {
   }
 
   return (
-    <View style={styles.cardContainer}>
+    <View style={[styles.cardContainer, { backgroundColor: backgroundColor }]}>
       <ScrollView contentContainerStyle={styles.scrollContent}>
         <View style={styles.imageTextWrapper}>
           <View style={styles.imageWrapper}>
@@ -26,12 +26,12 @@ export default function ActionableCard({ title, url, imageUrl, description }) {
         <Button
           onPress={() => redirectTo(url)}
           title="तालिका पर जाये"
-          textSize={18}
+          textSize={20}
           textWeight={800}
           buttonPadding={[10, 10]}
           buttonMargin={[10]}
-          buttonColor="#597874"
-          textColor="white"
+          buttonColor="#3b3f3d"
+          textColor="#e6e6e6"
           buttonRadius={5}
         />
       </ScrollView>
@@ -41,9 +41,8 @@ export default function ActionableCard({ title, url, imageUrl, description }) {
 
 const styles = StyleSheet.create({
   cardContainer: {
-    backgroundColor: "#cce5e2",
     width: "95%",
-    maxWidth: 345,
+    maxWidth: 350,
     borderRadius: 10,
     elevation: 4,
     marginBottom: 15,
@@ -70,7 +69,7 @@ const styles = StyleSheet.create({
   titleText: {
     color: "#314542",
     fontSize: 20,
-    fontWeight: "600",
+    fontWeight: "700",
   },
   descripText: {
     paddingTop: 8,
