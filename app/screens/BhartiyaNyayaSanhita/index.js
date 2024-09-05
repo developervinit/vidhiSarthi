@@ -12,7 +12,7 @@ import {
 } from "react-native";
 import List from "../../../components/List.js";
 import data from "../../../data/NyayaSanhita.js";
-import GradientHeader from "../../../components/GradientHeader.js";
+import Header from "../../../components/Header.js";
 
 export default function BhartiyaNyayaSanhita() {
   const [value, setValue] = useState(data); // Initialize with full data
@@ -29,16 +29,7 @@ export default function BhartiyaNyayaSanhita() {
 
   return (
     <View style={styles.container}>
-      <Stack.Screen
-        options={{
-          title: "भारतीय न्याय संहिता, 2023",
-          headerBackground: () => <GradientHeader />,
-          headerTintColor: "black",
-          headerTitleStyle: {
-            fontWeight: "bold",
-          },
-        }}
-      />
+      <Header screenTitle="भारतीय न्याय संहिता, 2023" />
       <FlatList
         // ListHeaderComponent={renderHeader}
         data={value}
