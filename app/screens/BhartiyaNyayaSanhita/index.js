@@ -1,24 +1,16 @@
-import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  FlatList,
-  KeyboardAvoidingView,
-  Platform,
-} from "react-native";
+import { StyleSheet, Text, View, FlatList } from "react-native";
 import List from "../../../components/List.js";
 import data from "../../../data/NyayaSanhita.js";
 import Header from "../../../components/Header.js";
+import SearchBar from "../../../components/SearchBar.js";
 
 export default function BhartiyaNyayaSanhita() {
   const [value, setValue] = useState(data); // Initialize with full data
 
-
-  function getValue(text) {
+  //filtering data on input value.
+  function getInputValue(text) {
     if (text === "") {
       setValue(data); // Show all data when input is cleared
     } else {
@@ -31,7 +23,6 @@ export default function BhartiyaNyayaSanhita() {
     <View style={styles.container}>
       <Header screenTitle="भारतीय न्याय संहिता, 2023" />
       <FlatList
-        // ListHeaderComponent={renderHeader}
         data={value}
         renderItem={({ item }) => (
           <List
@@ -49,19 +40,7 @@ export default function BhartiyaNyayaSanhita() {
         }
         contentContainerStyle={styles.listContentContainer}
       />
-
-      <KeyboardAvoidingView
-        style={styles.searchBarContainer}
-        behavior={Platform.OS === "ios" ? "padding" : "height"}
-        keyboardVerticalOffset={100} // Adjust the offset as needed
-      >
-        <TextInput
-          style={styles.input}
-          placeholder="यहाँ पूर्व कानून दर्ज करें"
-          onChangeText={(text) => getValue(text)}
-          clearButtonMode="always" // Ensures the clear button is available on iOS
-        />
-      </KeyboardAvoidingView>
+      <SearchBar getInputValueFn={getInputValue} />
       <StatusBar style="auto" />
     </View>
   );
@@ -93,15 +72,6 @@ const styles = StyleSheet.create({
   listContentContainer: {
     paddingBottom: 100, // Space for the search bar
   },
-  input: {
-    height: 50,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-    width: 350,
-    borderRadius: 4,
-    fontSize: 22,
-  },
   listPlaceholderText: {
     fontSize: 24,
     color: "rgb(195 195 195)",
@@ -114,15 +84,5 @@ const styles = StyleSheet.create({
     padding: 5,
     textAlign: "center",
     marginBottom: 15,
-  },
-  searchBarContainer: {
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    right: 0,
-    padding: 5,
-    borderTopWidth: 1,
-    borderTopColor: "#fff",
-    backgroundColor: "#fff",
   },
 });
