@@ -1,7 +1,13 @@
 import { View, StyleSheet } from "react-native";
 import DataCard from "./DataCard";
+import AntDesign from "@expo/vector-icons/AntDesign";
 
-export default function List({ prevCode, prevCodeInfo, newCode, newCodeInfo }) {
+export default function InfoCardGroup({
+  prevCode,
+  prevCodeInfo,
+  newCode,
+  newCodeInfo,
+}) {
   return (
     <View style={styles.container}>
       <DataCard
@@ -9,6 +15,9 @@ export default function List({ prevCode, prevCodeInfo, newCode, newCodeInfo }) {
         code={prevCode}
         info={prevCodeInfo}
       />
+      <View>
+        <AntDesign name="arrowdown" size={28} color="#227abe" />
+      </View>
       <DataCard
         heading="भारतीय न्याय संहिता, 2023"
         code={newCode}
@@ -20,8 +29,13 @@ export default function List({ prevCode, prevCodeInfo, newCode, newCodeInfo }) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#e3d9ee",
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#bde1fd",
     padding: 15,
-    marginBottom: 8,
+    marginBottom: 20,
+    borderRadius: 5,
+    elevation: 4,
   },
 });

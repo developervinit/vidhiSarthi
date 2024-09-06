@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import { StyleSheet, Text, View, FlatList } from "react-native";
-import List from "../../../components/List.js";
+import InfoCardGroup from "../../../components/InfoCardGroup.js";
 import data from "../../../data/NyayaSanhita.js";
 import Header from "../../../components/Header.js";
 import SearchBar from "../../../components/SearchBar.js";
@@ -25,7 +25,7 @@ export default function BhartiyaNyayaSanhita() {
       <FlatList
         data={value}
         renderItem={({ item }) => (
-          <List
+          <InfoCardGroup
             prevCode={item.prevCode}
             prevCodeInfo={item.prevCodeInfo}
             newCode={item.newCode}
