@@ -35,7 +35,7 @@ const Home = () => {
             <ActionableCard
               title="भारतीय न्याय संहिता, 2023"
               description="भारतीय दण्ड संहिता, 1860 की धाराओ और भारतीय न्याय संहिता, 2023 के संबंधित प्रावधानों को दर्शाने वाली तालिका"
-              imageUrl={require("../assets/images/surakcha_sanhita.jpg")}
+              imageUrl={require("../assets/images/nyaye_sanhita.png")}
               url="bhartiyaNyayaSanhita"
               backgroundColor= "#bde1fd"
             />
@@ -49,7 +49,7 @@ const Home = () => {
             <ActionableCard
               title="भारतीय साक्ष्य अधिनियम, 2023"
               description="भारतीय साक्ष्य अधिनियम की धाराओ और संबंधित प्रावधानों को दर्शाने वाली तालिका"
-              imageUrl={require("../assets/images/surakcha_sanhita.jpg")}
+              imageUrl={require("../assets/images/sakshya_adhiniyam.png")}
               url="sakshyaAdhiniyam"
               backgroundColor= "#ebeed9"
             />
