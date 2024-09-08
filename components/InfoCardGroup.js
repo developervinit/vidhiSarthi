@@ -1,6 +1,7 @@
 import { View, StyleSheet } from "react-native";
 import DataCard from "./DataCard";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import { darkColorArr, lightColorArr } from "../constants/colors.js";
 
 export default function InfoCardGroup({
   prevCode,
@@ -8,24 +9,20 @@ export default function InfoCardGroup({
   newCode,
   newCodeInfo,
   colorIndex,
-  colorArr,
 }) {
-  let dataCardColorArr = ["#227abe", "#6521af", "#7e9014"];
-
   return (
-    <View style={[styles.container, { backgroundColor: colorArr[colorIndex] }]}>
+    <View style={[styles.container, { backgroundColor: lightColorArr[colorIndex] }]}>
       <DataCard
         heading="भारतीय दण्ड संहिता, 1860"
         code={prevCode}
         info={prevCodeInfo}
         colorIndex={colorIndex}
-        colorArr={dataCardColorArr}
       />
       <View>
         <AntDesign
           name="arrowdown"
           size={28}
-          color={dataCardColorArr[colorIndex]}
+          color={darkColorArr[colorIndex]}
         />
       </View>
       <DataCard
@@ -33,7 +30,6 @@ export default function InfoCardGroup({
         code={newCode}
         info={newCodeInfo}
         colorIndex={colorIndex}
-        colorArr={dataCardColorArr}
       />
     </View>
   );
@@ -44,7 +40,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    // backgroundColor: "#bde1fd",
     padding: 15,
     marginBottom: 20,
     borderRadius: 5,

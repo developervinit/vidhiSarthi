@@ -1,5 +1,6 @@
 import { Stack } from "expo-router";
 import GradientHeader from "./GradientHeader";
+import { headerHeadingColor } from "../constants/colors.js";
 
 export default function Header({ screenTitle }) {
 
@@ -9,7 +10,7 @@ export default function Header({ screenTitle }) {
       options={{
         title: screenTitle,
         headerBackground: () => <GradientHeader />,
-        headerTintColor: "black",
+        headerTintColor: headerHeadingColor,
         headerTitleStyle: {
           fontWeight: "bold",
         },

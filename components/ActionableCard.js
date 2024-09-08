@@ -2,8 +2,20 @@ import { useRouter } from "expo-router";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import Button from "./Button";
 import ImageViewer from "./ImageViewer";
+import {
+  cardDescriptionFontColor,
+  cardTitleFontColor,
+  cardButtonColor,
+  cardButtonTextColor,
+} from "../constants/colors";
 
-export default function ActionableCard({ title, backgroundColor, url, imageUrl, description }) {
+export default function ActionableCard({
+  title,
+  backgroundColor,
+  url,
+  imageUrl,
+  description,
+}) {
   const router = useRouter();
 
   function redirectTo(path) {
@@ -30,8 +42,8 @@ export default function ActionableCard({ title, backgroundColor, url, imageUrl, 
           textWeight={800}
           buttonPadding={[10, 10]}
           buttonMargin={[10]}
-          buttonColor="#3b3f3d"
-          textColor="#e6e6e6"
+          buttonColor={cardButtonColor}
+          textColor={cardButtonTextColor}
           buttonRadius={5}
         />
       </ScrollView>
@@ -67,23 +79,13 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
   },
   titleText: {
-    color: "#314542",
+    color: cardTitleFontColor,
     fontSize: 20,
     fontWeight: "700",
   },
   descripText: {
     paddingTop: 8,
     fontSize: 18,
-    color: "#4a6561",
+    color: cardDescriptionFontColor,
   },
 });
-
-// backgroundColor: "#cce5e2",
-//     width: "60%",
-//     flexGrow: 1,
-//     flexShrink: 1,
-//     maxWidth: 200,
-//     overflow: "auto",
-//     borderRadius: 10,
-//     marginBottom: 20,
-//     elevation: 5,

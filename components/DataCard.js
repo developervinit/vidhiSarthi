@@ -1,18 +1,16 @@
 import { View, Text, StyleSheet } from "react-native";
+import { darkColorArr } from "../constants/colors";
+import { cardLabelColor, cardDescriptionFontColor } from "../constants/colors.js"; 
 
-export default function DataCard({
-  heading,
-  code,
-  info,
-  colorIndex,
-  colorArr,
-}) {
+export default function DataCard({ heading, code, info, colorIndex }) {
   return (
-    <View style={[styles.codeContainer, { borderColor: colorArr[colorIndex] }]}>
+    <View
+      style={[styles.codeContainer, { borderColor: darkColorArr[colorIndex] }]}
+    >
       <View
         style={[
           styles.dataCardHeadingContainer,
-          { backgroundColor: colorArr[colorIndex] },
+          { backgroundColor: darkColorArr[colorIndex] },
         ]}
       >
         <Text style={styles.dataCardHeading}>{heading}</Text>
@@ -20,11 +18,11 @@ export default function DataCard({
       <View style={styles.dataCardContentContainer}>
         <Text style={styles.lawWrapper}>
           <Text style={styles.label}>धारा: </Text>
-          <Text style={styles.result}>{code}</Text>
+          <Text style={styles.description}>{code}</Text>
         </Text>
         <Text>
           <Text style={styles.label}>शीर्षक: </Text>
-          <Text style={styles.result}>{info}</Text>
+          <Text style={styles.description}>{info}</Text>
         </Text>
       </View>
     </View>
@@ -55,11 +53,11 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 22,
     fontWeight: "bold",
-    color: "#0e314c",
+    color: cardLabelColor,
   },
-  result: {
+  description: {
     fontSize: 22,
-    color: "#144367",
+    color: cardDescriptionFontColor,
   },
   lawWrapper: {
     marginBottom: 5,

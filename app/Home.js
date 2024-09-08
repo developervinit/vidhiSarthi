@@ -2,6 +2,7 @@ import { View, Image, StyleSheet, ScrollView } from "react-native";
 import { Stack } from "expo-router";
 import ActionableCard from "../components/ActionableCard";
 import GradientHeader from "../components/GradientHeader";
+import { lightColorArr } from "../constants/colors";
 
 const Home = () => {
   return (
@@ -37,21 +38,21 @@ const Home = () => {
               description="भारतीय दण्ड संहिता, 1860 की धाराओ और भारतीय न्याय संहिता, 2023 के संबंधित प्रावधानों को दर्शाने वाली तालिका"
               imageUrl={require("../assets/images/nyaye_sanhita.png")}
               url="bhartiyaNyayaSanhita"
-              backgroundColor= "#bde1fd"
+              backgroundColor={lightColorArr[0]}
             />
             <ActionableCard
               title="भारतीय नागरिक सुरक्षा संहिता, 2023"
               description="भारतीय नागरिक संहिता, 2023 की धाराओ और संबंधित प्रावधानों को दर्शाने वाली तालिका"
               imageUrl={require("../assets/images/surakcha_sanhita.jpg")}
               url="nagrikSuraksha"
-              backgroundColor= "#e3d9ee"
+              backgroundColor={lightColorArr[1]}
             />
             <ActionableCard
               title="भारतीय साक्ष्य अधिनियम, 2023"
               description="भारतीय साक्ष्य अधिनियम की धाराओ और संबंधित प्रावधानों को दर्शाने वाली तालिका"
               imageUrl={require("../assets/images/sakshya_adhiniyam.png")}
               url="sakshyaAdhiniyam"
-              backgroundColor= "#ebeed9"
+              backgroundColor={lightColorArr[2]}
             />
           </View>
         </View>
