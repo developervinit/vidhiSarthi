@@ -8,6 +8,7 @@ import SearchBar from "../../../components/SearchBar.js";
 
 export default function BhartiyaNyayaSanhita() {
   const [value, setValue] = useState(data); // Initialize with full data
+  const colorArr = ["#bde1fd", "#e3d9ee", "#ebeed9"];
 
   //filtering data on input value.
   function getInputValue(text) {
@@ -24,12 +25,14 @@ export default function BhartiyaNyayaSanhita() {
       <Header screenTitle="भारतीय न्याय संहिता, 2023" />
       <FlatList
         data={value}
-        renderItem={({ item }) => (
+        renderItem={({ item, index }) => (
           <InfoCardGroup
             prevCode={item.prevCode}
             prevCodeInfo={item.prevCodeInfo}
             newCode={item.newCode}
             newCodeInfo={item.newCodeInfo}
+            colorIndex={index % colorArr.length} // Cycle through the colors
+            colorArr={colorArr} // Pass the color array
           />
         )}
         keyExtractor={(item) => item.id.toString()} // Ensure the keyExtractor returns a string

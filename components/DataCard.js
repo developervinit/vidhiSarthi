@@ -1,9 +1,20 @@
 import { View, Text, StyleSheet } from "react-native";
 
-export default function DataCard({ heading, code, info }) {
+export default function DataCard({
+  heading,
+  code,
+  info,
+  colorIndex,
+  colorArr,
+}) {
   return (
-    <View style={styles.codeContainer}>
-      <View style={styles.dataCardHeadingContainer}>
+    <View style={[styles.codeContainer, { borderColor: colorArr[colorIndex] }]}>
+      <View
+        style={[
+          styles.dataCardHeadingContainer,
+          { backgroundColor: colorArr[colorIndex] },
+        ]}
+      >
         <Text style={styles.dataCardHeading}>{heading}</Text>
       </View>
       <View style={styles.dataCardContentContainer}>
@@ -25,14 +36,12 @@ const styles = StyleSheet.create({
     width: "100%",
     fontSize: 22,
     fontWeight: "bold",
-    color: "rgb(60 60 60)",
     borderWidth: 3,
-    borderColor: "#227abe",
+
     borderRadius: 5,
   },
   dataCardHeadingContainer: {
     padding: 10,
-    backgroundColor: "#227abe",
   },
   dataCardHeading: {
     fontSize: 22,
@@ -53,6 +62,6 @@ const styles = StyleSheet.create({
     color: "#144367",
   },
   lawWrapper: {
-    marginBottom: 5
-  }
+    marginBottom: 5,
+  },
 });
