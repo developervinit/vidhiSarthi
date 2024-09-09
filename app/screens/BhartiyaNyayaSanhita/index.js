@@ -1,31 +1,15 @@
 import { StatusBar } from "expo-status-bar";
-import React, { useState } from "react";
+import React from "react";
 import { StyleSheet, Text, View, FlatList } from "react-native";
 import InfoCardGroup from "../../../components/InfoCardGroup.js";
-import data from "../../../data/NyayaSanhita.js";
 import Header from "../../../components/Header.js";
 import SearchBar from "../../../components/SearchBar.js";
 import { lightColorArr } from "../../../constants/colors.js";
 import ErrorDisplay from "../../../components/ErrorDisplay.js";
+import { useFilteredData } from "../../../hooks/useFilteredData.js";
 
 export default function BhartiyaNyayaSanhita() {
-  const [value, setValue] = useState(data); // Initialize with full data
-  const [invalidSection, setInvalidSection] = useState(null);
-
-  //filtering data on input value.
-  function getInputValue(text) {
-    if (text === "") {
-      setValue(data); // Show all data when input is cleared
-      setInvalidSection(null);
-    } else if (text < 1 || text > 511) {
-      setValue([]);
-      setInvalidSection(text);
-    } else {
-      const result = data.filter((item) => item.prevCode === text);
-      setValue(result);
-      setInvalidSection(null);
-    }
-  }
+  const { nyayaSanhitaData, invalidSection, getInputValue } = useFilteredData();
 
   return (
     <View style={styles.container}>
@@ -38,7 +22,7 @@ export default function BhartiyaNyayaSanhita() {
         </View>
       ) : (
         <FlatList
-          data={value}
+          data={nyayaSanhitaData}
           renderItem={({ item, index }) => (
             <InfoCardGroup
               prevCode={item.prevCode}
