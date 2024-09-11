@@ -1,9 +1,15 @@
 import { View, Text, StyleSheet } from "react-native";
 
-export default function ErrorDisplay({ errorMassage }) {
+export default function ErrorDisplay({ inputValue }) {
   return (
     <View style={styles.errorCard}>
-      <Text style={styles.errorTexT}>{errorMassage}</Text>
+      <Text style={styles.errorMassage}>
+        आपके द्वारा दर्ज की गयी धारा{" "}
+        <Text style={styles.errorTexT}>{inputValue}</Text> भारतीय दंड संहिता,{" "}
+        <Text style={styles.errorTexT}>1860</Text> का हिस्सा नहीं है। भारतीय दंड
+        संहिता में धारा <Text style={styles.errorTexT}>1 से 511</Text> तक ही
+        शामिल हैं। कृपया मान्य धारा दर्ज करें।
+      </Text>
     </View>
   );
 }
@@ -18,8 +24,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#ff5b5b",
     padding: 15,
   },
-  errorTexT: {
+  errorMassage: {
     color: "white",
     fontSize: 22,
+  },
+  errorTexT: {
+    color: "#591212",
+    fontSize: 22,
+    fontWeight: "600",
   },
 });

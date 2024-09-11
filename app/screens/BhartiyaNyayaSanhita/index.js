@@ -17,7 +17,7 @@ export default function BhartiyaNyayaSanhita() {
       {invalidSection ? (
         <View style={styles.errorContainer}>
           <ErrorDisplay
-            errorMassage={`आपके द्वारा दर्ज की गयी धारा ${invalidSection} भारतीय दंड संहिता, 1860 का हिस्सा नहीं है। भारतीय दंड संहिता में धारा 1 से 511 तक ही शामिल हैं। कृपया मान्य धारा दर्ज करें।`}
+            inputValue={invalidSection}
           />
         </View>
       ) : (
