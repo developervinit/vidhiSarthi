@@ -10,11 +10,7 @@ export const useFilteredData = () => {
 
   //this function is converting english-number into hindi-number.
   function convertHindiToEnglishNumber(text) {
-    // Check if the input contains any Hindi numerals (०-९)
-    const hindiNumeralsRegex = /[०१२३४५६७८९]/;
 
-    //if input is hindi-number only then convert hindi number into english-number.
-    if (hindiNumeralsRegex.test(text)) {
       // Replace Hindi numerals with corresponding English numerals
       const hindiToEnglishMapping = {
         "०": "0",
@@ -29,14 +25,11 @@ export const useFilteredData = () => {
         "९": "9",
       };
 
+      //regexp "[०१२३४५६७८९]/g" checks for hindi_number only then converts them into english_number other wise  original input will be returned.  
       return text.replace(
         /[०१२३४५६७८९]/g,
         (match) => hindiToEnglishMapping[match]
       );
-    }
-
-    // If no Hindi numerals found, return the original text
-    return text;
   }
 
   function getInputValue(text) {
