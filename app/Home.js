@@ -1,8 +1,9 @@
-import { View, Image, StyleSheet, ScrollView } from "react-native";
+import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
 import { Stack } from "expo-router";
 import ActionableCard from "../components/ActionableCard";
 import GradientHeader from "../components/GradientHeader";
 import { lightColorArr } from "../constants/colors";
+import PageInfoModal from "../components/PageInfoModal.js";
 
 const Home = () => {
   return (
@@ -28,8 +29,10 @@ const Home = () => {
               />
             </View>
           ),
+          headerRight: () => <PageInfoModal />,
         }}
       />
+
       <ScrollView>
         <View style={styles.container}>
           <View style={styles.containerHome}>
@@ -66,7 +69,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center", // Centers children horizontally
     overflow: "hidden",
-    paddingBottom: 20
+    paddingBottom: 20,
   },
 
   containerHome: {
