@@ -3,7 +3,7 @@ import { Stack } from "expo-router";
 import ActionableCard from "../components/ActionableCard";
 import GradientHeader from "../components/GradientHeader";
 import { lightColorArr } from "../constants/colors";
-import PageInfoModal from "../components/PageInfoModal.js";
+import HomeScreenModal from "../components/HomeScreenModal.js";
 
 const Home = () => {
   return (
@@ -29,7 +29,7 @@ const Home = () => {
               />
             </View>
           ),
-          headerRight: () => <PageInfoModal />,
+          headerRight: () => <HomeScreenModal />,
         }}
       />
 

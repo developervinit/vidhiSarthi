@@ -6,6 +6,7 @@ import {
   Modal,
   StyleSheet,
   TouchableWithoutFeedback,
+  ScrollView,
 } from "react-native";
 
 const CustomModal = ({ content, children }) => {
@@ -23,18 +24,22 @@ const CustomModal = ({ content, children }) => {
         onRequestClose={() => setVisible(false)}
         animationType="fade"
       >
+
         <TouchableWithoutFeedback onPress={() => setVisible(false)}>
           <View style={styles.modalBackground}>
-            <TouchableWithoutFeedback>
+          <TouchableWithoutFeedback>
               <View style={styles.tooltip}>
-                <Text>{content}</Text>
-                <TouchableOpacity onPress={() => setVisible(false)}>
-                  <Text style={styles.closeText}>Close</Text>
+                <ScrollView contentContainerStyle={styles.scrollViewContent} >
+                  {content}
+                </ScrollView>
+                <TouchableOpacity onPress={() => setVisible(false)} style={styles.buttonStyle}>
+                  <Text style={styles.closeText}>हटाएं</Text>
                 </TouchableOpacity>
               </View>
-            </TouchableWithoutFeedback>
+              </TouchableWithoutFeedback>
           </View>
         </TouchableWithoutFeedback>
+        
       </Modal>
     </View>
   );
@@ -43,20 +48,35 @@ const CustomModal = ({ content, children }) => {
 const styles = StyleSheet.create({
   modalBackground: {
     flex: 1,
+    width: "100%",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
   tooltip: {
     backgroundColor: "white",
+    width: "95%",
     padding: 10,
     borderRadius: 5,
-    maxWidth: 200,
+    maxWidth: 350,
+    height: 400,
     alignItems: "center",
   },
+  scrollViewContent: {
+    flexGrow: 1,
+  },
   closeText: {
-    color: "blue",
-    marginTop: 10,
+    color: "white",
+    
+    fontSize: 20
+  },
+  buttonStyle: {
+    backgroundColor: "#03448b", // Example: blue button
+    padding: 10,
+    paddingRight: 20,
+    paddingLeft: 20,
+    borderRadius: 5,
+    alignItems: "center",
   },
 });
 

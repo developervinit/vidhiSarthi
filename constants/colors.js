@@ -21,7 +21,7 @@ export const cardDescriptionFontColor = "#144367";
 export const headerBackgroundColorArr = ["#eedaac", "#eed497"];
 
 // /components/Header.js
-export const headerHeadingColor = "#282828";
+export const headerHeadingColor = "#5b4502";
 
 // /Home
 // /components/ActionableCard
