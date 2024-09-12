@@ -21,7 +21,7 @@ export default function HomeScreenModal() {
   return (
     <CustomModal content={homeScreen}>
       <View>
-          <AntDesign name="infocirlceo" size={28} color={headerHeadingColor} />
+          <AntDesign name="questioncircleo" size={28} color={headerHeadingColor} />
       </View>
     </CustomModal>
   );
