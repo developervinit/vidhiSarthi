@@ -1,9 +1,10 @@
 import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
-import { Stack } from "expo-router";
+import { Stack, Link } from "expo-router";
 import ActionableCard from "../components/ActionableCard";
 import GradientHeader from "../components/GradientHeader";
-import { lightColorArr } from "../constants/colors";
+import { lightColorArr, headerHeadingColor } from "../constants/colors";
 import HomeScreenModal from "../components/HomeScreenModal.js";
+import AntDesign from "@expo/vector-icons/AntDesign";
 
 const Home = () => {
   return (
@@ -29,7 +30,28 @@ const Home = () => {
               />
             </View>
           ),
-          headerRight: () => <HomeScreenModal />,
+          headerRight: () => {
+            return (
+              <View
+                style={{
+                  flex: 1,
+                  flexDirection: "row",
+                  justifyContent: "flex-end",
+                }}
+              >
+                <Link href="/screens/about">
+                  <AntDesign
+                    name="infocirlceo"
+                    size={28}
+                    color={headerHeadingColor}
+                  />
+                </Link>
+                <View style={{ marginLeft: 15 }}>
+                  <HomeScreenModal />
+                </View>
+              </View>
+            );
+          },
         }}
       />
 
