@@ -1,10 +1,8 @@
 import { Stack } from "expo-router";
-import GradientHeader from "./GradientHeader";
+import GradientHeader from "./GradientHeader.js";
 import { headerHeadingColor } from "../constants/colors.js";
 
-export default function Header({ screenTitle }) {
-
-    
+export default function CustomHeader({ screenTitle, headerLeft, headerRight }) {
   return (
     <Stack.Screen
       options={{
@@ -14,6 +12,8 @@ export default function Header({ screenTitle }) {
         headerTitleStyle: {
           fontWeight: "bold",
         },
+        headerLeft: headerLeft ? headerLeft : null,
+        headerRight: headerRight ? headerRight : null,
       }}
     />
   );

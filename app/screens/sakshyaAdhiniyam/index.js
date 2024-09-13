@@ -1,19 +1,21 @@
 import { View, Text, StyleSheet } from "react-native";
-import { Stack } from "expo-router";
-import GradientHeader from "../../../components/GradientHeader";
+import CustomHeader from "../../../components/CustomHeader";
+import HomeScreenModal from "../../../components/HomeScreenModal.js";
 
 export default function SakshyaAdhiniyam() {
+  const headerRight = () => {
+    return (
+      <View>
+        <HomeScreenModal />
+      </View>
+    );
+  };
+
   return (
     <>
-      <Stack.Screen
-        options={{
-          headerTitle: "भारतीय साक्ष्य अधिनियम, 2023",
-          headerBackground: () => <GradientHeader />,
-          headerTintColor: "black",
-          headerTitleStyle: {
-            fontWeight: "bold",
-          },
-        }}
+      <CustomHeader
+        screenTitle="भारतीय साक्ष्य अधिनियम, 2023"
+        headerRight={headerRight}
       />
       <View style={styles.container}>
         <Text>

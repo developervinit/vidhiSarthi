@@ -1,58 +1,53 @@
-import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
-import { Stack, Link } from "expo-router";
+import { View, Image, StyleSheet, ScrollView } from "react-native";
+import { Link } from "expo-router";
 import ActionableCard from "../components/ActionableCard";
-import GradientHeader from "../components/GradientHeader";
 import { lightColorArr, headerHeadingColor } from "../constants/colors";
 import HomeScreenModal from "../components/HomeScreenModal.js";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import CustomHeader from "../components/CustomHeader.js";
 
 const Home = () => {
+  const headerLeft = () => {
+    return (
+      <View style={{ flexDirection: "row", alignItems: "center" }}>
+        <Image
+          source={require("../assets/images/icon.png")}
+          style={{
+            width: 40,
+            height: 40,
+            marginRight: 10,
+            borderRadius: 5,
+          }}
+        />
+      </View>
+    );
+  };
+
+  const headerRight = () => {
+    return (
+      <View
+        style={{
+          flex: 1,
+          flexDirection: "row",
+          justifyContent: "flex-end",
+        }}
+      >
+        <Link href="/screens/about">
+          <AntDesign name="infocirlceo" size={28} color={headerHeadingColor} />
+        </Link>
+        <View style={{ marginLeft: 15 }}>
+          <HomeScreenModal />
+        </View>
+      </View>
+    );
+  };
+
   return (
     <>
-      <Stack.Screen
-        options={{
-          headerTitle: "विधि सारथी",
-          headerBackground: () => <GradientHeader />,
-          headerTitleStyle: {
-            fontWeight: "bold",
-            color: "#404040",
-          },
-          headerLeft: () => (
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <Image
-                source={require("../assets/images/icon.png")}
-                style={{
-                  width: 40,
-                  height: 40,
-                  marginRight: 10,
-                  borderRadius: 5,
-                }}
-              />
-            </View>
-          ),
-          headerRight: () => {
-            return (
-              <View
-                style={{
-                  flex: 1,
-                  flexDirection: "row",
-                  justifyContent: "flex-end",
-                }}
-              >
-                <Link href="/screens/about">
-                  <AntDesign
-                    name="infocirlceo"
-                    size={28}
-                    color={headerHeadingColor}
-                  />
-                </Link>
-                <View style={{ marginLeft: 15 }}>
-                  <HomeScreenModal />
-                </View>
-              </View>
-            );
-          },
-        }}
+      <CustomHeader
+        screenTitle="विधि सारथी"
+        headerLeft={headerLeft}
+        headerRight={headerRight}
       />
 
       <ScrollView>

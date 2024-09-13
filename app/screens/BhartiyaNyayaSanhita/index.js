@@ -2,23 +2,36 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View, FlatList } from "react-native";
 import InfoCardGroup from "../../../components/InfoCardGroup.js";
-import Header from "../../../components/Header.js";
+import CustomHeader from "../../../components/CustomHeader.js";
 import SearchBar from "../../../components/SearchBar.js";
-import { lightColorArr } from "../../../constants/colors.js";
+import {
+  lightColorArr,
+  headerHeadingColor,
+} from "../../../constants/colors.js";
 import ErrorDisplay from "../../../components/ErrorDisplay.js";
 import { useFilteredData } from "../../../hooks/useFilteredData.js";
+import HomeScreenModal from "../../../components/HomeScreenModal.js";
 
 export default function BhartiyaNyayaSanhita() {
   const { nyayaSanhitaData, invalidSection, getInputValue } = useFilteredData();
 
+  const headerRight = () => {
+    return (
+      <View>
+        <HomeScreenModal />
+      </View>
+    );
+  };
+
   return (
     <View style={styles.container}>
-      <Header screenTitle="भारतीय न्याय संहिता, 2023" />
+      <CustomHeader
+        screenTitle="भारतीय न्याय संहिता, 2023"
+        headerRight={headerRight}
+      />
       {invalidSection ? (
         <View style={styles.errorContainer}>
-          <ErrorDisplay
-            inputValue={invalidSection}
-          />
+          <ErrorDisplay inputValue={invalidSection} />
         </View>
       ) : (
         <FlatList
