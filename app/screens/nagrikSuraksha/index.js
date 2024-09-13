@@ -1,12 +1,16 @@
 import { View, Text, StyleSheet } from "react-native";
-import CustomHeader from "../../../components/CustomHeader";
-import HomeScreenModal from "../../../components/HomeScreenModal.js";
+import CustomHeader from "../../../components/CustomHeader.js";
+import CustomScreenModal from "../../../components/modals/CustomScreenModal.js";
+import { homeScreenContent } from "../../../data/screenContent.js";
 
 export default function NagrikSuraksha() {
   const headerRight = () => {
     return (
       <View>
-        <HomeScreenModal />
+        <CustomScreenModal
+          modalTitle="भारतीय नागरिक सुरक्षा संहिता, 2023 में नई धारा कैसे खोजें?"
+          modalContent={homeScreenContent}
+        />
       </View>
     );
   };

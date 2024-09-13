@@ -2,9 +2,10 @@ import { View, Image, StyleSheet, ScrollView } from "react-native";
 import { Link } from "expo-router";
 import ActionableCard from "../components/ActionableCard";
 import { lightColorArr, headerHeadingColor } from "../constants/colors";
-import HomeScreenModal from "../components/HomeScreenModal.js";
+import CustomScreenModal from "../components/modals/CustomScreenModal.js";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import CustomHeader from "../components/CustomHeader.js";
+import { homeScreenContent } from "../data/screenContent.js";
 
 const Home = () => {
   const headerLeft = () => {
@@ -36,7 +37,10 @@ const Home = () => {
           <AntDesign name="infocirlceo" size={28} color={headerHeadingColor} />
         </Link>
         <View style={{ marginLeft: 15 }}>
-          <HomeScreenModal />
+          <CustomScreenModal
+            modalTitle="होम स्क्रीन का उपयोग कैसे करें"
+            modalContent={homeScreenContent}
+          />
         </View>
       </View>
     );

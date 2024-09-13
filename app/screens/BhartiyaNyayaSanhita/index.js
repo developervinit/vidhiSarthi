@@ -10,7 +10,8 @@ import {
 } from "../../../constants/colors.js";
 import ErrorDisplay from "../../../components/ErrorDisplay.js";
 import { useFilteredData } from "../../../hooks/useFilteredData.js";
-import HomeScreenModal from "../../../components/HomeScreenModal.js";
+import CustomScreenModal from "../../../components/modals/CustomScreenModal.js";
+import { homeScreenContent } from "../../../data/screenContent.js";
 
 export default function BhartiyaNyayaSanhita() {
   const { nyayaSanhitaData, invalidSection, getInputValue } = useFilteredData();
@@ -18,7 +19,10 @@ export default function BhartiyaNyayaSanhita() {
   const headerRight = () => {
     return (
       <View>
-        <HomeScreenModal />
+        <CustomScreenModal
+          modalTitle="भारतीय न्याय संहिता 2023 में नई धारा कैसे खोजें?"
+          modalContent={homeScreenContent}
+        />
       </View>
     );
   };

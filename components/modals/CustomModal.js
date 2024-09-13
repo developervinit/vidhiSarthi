@@ -24,22 +24,23 @@ const CustomModal = ({ content, children }) => {
         onRequestClose={() => setVisible(false)}
         animationType="fade"
       >
-
         <TouchableWithoutFeedback onPress={() => setVisible(false)}>
           <View style={styles.modalBackground}>
-          <TouchableWithoutFeedback>
+            <TouchableWithoutFeedback>
               <View style={styles.tooltip}>
-                <ScrollView contentContainerStyle={styles.scrollViewContent} >
+                <ScrollView contentContainerStyle={styles.scrollViewContent}>
                   {content}
                 </ScrollView>
-                <TouchableOpacity onPress={() => setVisible(false)} style={styles.buttonStyle}>
+                <TouchableOpacity
+                  onPress={() => setVisible(false)}
+                  style={styles.buttonStyle}
+                >
                   <Text style={styles.closeText}>हटाएं</Text>
                 </TouchableOpacity>
               </View>
-              </TouchableWithoutFeedback>
+            </TouchableWithoutFeedback>
           </View>
         </TouchableWithoutFeedback>
-        
       </Modal>
     </View>
   );
@@ -67,8 +68,8 @@ const styles = StyleSheet.create({
   },
   closeText: {
     color: "white",
-    
-    fontSize: 20
+
+    fontSize: 20,
   },
   buttonStyle: {
     backgroundColor: "#03448b", // Example: blue button
