@@ -3,7 +3,7 @@ import React from "react";
 import { StyleSheet, Text, View, FlatList } from "react-native";
 import InfoCardGroup from "../../../components/InfoCardGroup.js";
 import CustomHeader from "../../../components/CustomHeader.js";
-import SearchBar from "../../../components/SearchBar.js";
+import SearchBar from "../../../components/searchBar/SearchBar.js";
 import {
   lightColorArr,
   headerHeadingColor,
