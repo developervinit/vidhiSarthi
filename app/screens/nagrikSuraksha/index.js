@@ -50,10 +50,8 @@ export default function NagrikSuraksha() {
           )}
           keyExtractor={(item) => item.id.toString()} // Ensure the keyExtractor returns a string
           ListEmptyComponent={
-            <Text style={styles.listPlaceholderText}>
-              <ErrorDisplay
-                errorMassage={"धाराओं का संग्रह अभी उपलब्ध नहीं है "}
-              />
+            <Text style={styles.ListEmptyComponentStyle}>
+              धाराओं का संग्रह अभी उपलब्ध नहीं है!
             </Text>
           }
           contentContainerStyle={styles.listContentContainer}
@@ -73,11 +71,14 @@ const styles = StyleSheet.create({
   listContentContainer: {
     paddingBottom: 100, // Space for the search bar
   },
-  listPlaceholderText: {
-    fontSize: 24,
-    color: "black",
+  ListEmptyComponentStyle: {
+    fontSize: 20,
+    backgroundColor: "#ff5b5b",
+    color: "#fff",
     textAlign: "center",
     marginTop: 100,
+    paddingVertical: 10,
+    borderRadius: 5
   },
   errorContainer: {
     flex: 1,
