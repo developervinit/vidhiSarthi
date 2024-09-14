@@ -5,16 +5,16 @@ import InfoCardGroup from "../../../components/InfoCardGroup.js";
 import CustomHeader from "../../../components/CustomHeader.js";
 import SearchBar from "../../../components/searchBar/SearchBar.js";
 import {
-  lightColorArr,
-  headerHeadingColor,
+  lightColorArr
 } from "../../../constants/colors.js";
 import ErrorDisplay from "../../../components/ErrorDisplay.js";
 import { useFilteredData } from "../../../hooks/useFilteredData.js";
 import CustomScreenModal from "../../../components/modals/CustomScreenModal.js";
 import { homeScreenContent } from "../../../data/screenContent.js";
+import data from "../../../data/NyayaSanhita.js";
 
 export default function BhartiyaNyayaSanhita() {
-  const { nyayaSanhitaData, invalidSection, getInputValue } = useFilteredData();
+  const { nyayaSanhitaData, invalidSection, getInputValue } = useFilteredData(data || []);
 
   const headerRight = () => {
     return (
