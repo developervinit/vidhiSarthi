@@ -8,7 +8,7 @@ import { lightColorArr } from "../../../constants/colors.js";
 import ErrorDisplay from "../../../components/ErrorDisplay.js";
 import { useFilteredData } from "../../../hooks/useFilteredData.js";
 import CustomScreenModal from "../../../components/modals/CustomScreenModal.js";
-import { homeScreenContent } from "../../../data/screenContent.js";
+import SaHowToComponent from "./SaHowToComponent.js";
 
 export default function SakshyaAdhiniyam() {
   const headerRight = () => {
@@ -16,7 +16,7 @@ export default function SakshyaAdhiniyam() {
       <View>
         <CustomScreenModal
           modalTitle="भारतीय साक्ष्य अधिनियम, 2023 में नई धारा कैसे खोजें?"
-          modalContent={homeScreenContent}
+          modalContent={<SaHowToComponent />}
         />
       </View>
     );

@@ -10,8 +10,8 @@ import {
 import ErrorDisplay from "../../../components/ErrorDisplay.js";
 import { useFilteredData } from "../../../hooks/useFilteredData.js";
 import CustomScreenModal from "../../../components/modals/CustomScreenModal.js";
-import { homeScreenContent } from "../../../data/screenContent.js";
 import data from "../../../data/NyayaSanhita.js";
+import BnsHowToComponent from "./BnsHowToComponent.js";
 
 export default function BhartiyaNyayaSanhita() {
   const { nyayaSanhitaData, invalidSection, getInputValue } = useFilteredData(data || []);
@@ -21,7 +21,7 @@ export default function BhartiyaNyayaSanhita() {
       <View>
         <CustomScreenModal
           modalTitle="भारतीय न्याय संहिता 2023 में नई धारा कैसे खोजें?"
-          modalContent={homeScreenContent}
+          modalContent={<BnsHowToComponent />}
         />
       </View>
     );

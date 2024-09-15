@@ -12,7 +12,7 @@ export default function CustomScreenModal({ modalTitle, modalContent }) {
       onStartShouldSetResponder={() => true}
     >
       <Text style={styles.homeScreenModalTitle}>{modalTitle}</Text>
-      <Text style={styles.homeScreenContent}>{modalContent}</Text>
+      <View style={styles.homeScreenContent}>{modalContent}</View>
     </View>
   );
 
