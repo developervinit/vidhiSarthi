@@ -1,12 +1,9 @@
 import { View, Text, StyleSheet } from "react-native";
-import { howToUseBnsContent } from "../../../data/screenContent/";
 
 export default function NsHowToComponent() {
   return (
     <View style={styles.BnsHowToContainer}>
-      <Text>{howToUseBnsContent.partOne}</Text>
-      <Text>{howToUseBnsContent.partTwo}</Text>
-      <Text>{howToUseBnsContent.partThree}</Text>
+      <Text>संग्रह अभी उपलब्ध नहीं है!</Text>
     </View>
   );
 }

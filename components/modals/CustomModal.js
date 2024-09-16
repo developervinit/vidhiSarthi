@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 5,
     maxWidth: 350,
-    height: 400,
+    height: 450,
     alignItems: "center",
   },
   scrollViewContent: {

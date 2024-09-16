@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet, Image } from "react-native";
-import { howToUseNyayaSanhitaData } from "../../../data/screenContent/";
+import { howToUseHomeScreenData } from "../data/screenContent.js";
 
-export default function BnsHowToComponent() {
+export default function HomeHowToComponent() {
   return (
     <>
-      {howToUseNyayaSanhitaData.map((item) => {
+      {howToUseHomeScreenData.map((item) => {
         return (
           <View style={styles.BnsHowToContainer} key={item.id}>
             <Text style={styles.BnsHowToTitle}>

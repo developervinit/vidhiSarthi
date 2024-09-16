@@ -5,7 +5,7 @@ import { lightColorArr, headerHeadingColor } from "../constants/colors";
 import CustomScreenModal from "../components/modals/CustomScreenModal.js";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import CustomHeader from "../components/CustomHeader.js";
-import { howToUseHomeScreenContent } from "../data/screenContent.js";
+import HomeHowToComponent from "../components/HomeHowToComponent.js";
 
 const Home = () => {
   const headerLeft = () => {
@@ -38,8 +38,8 @@ const Home = () => {
         </Link>
         <View style={{ marginLeft: 15 }}>
           <CustomScreenModal
-            modalTitle="होम स्क्रीन का उपयोग कैसे करें"
-            modalContent={howToUseHomeScreenContent}
+            modalTitle="होम स्क्रीन का उपयोग कैसे करें?"
+            modalContent={<HomeHowToComponent />}
           />
         </View>
       </View>
