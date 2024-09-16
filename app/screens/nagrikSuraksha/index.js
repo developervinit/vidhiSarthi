@@ -8,7 +8,7 @@ import { lightColorArr } from "../../../constants/colors.js";
 import ErrorDisplay from "../../../components/ErrorDisplay.js";
 import { useFilteredData } from "../../../hooks/useFilteredData.js";
 import CustomScreenModal from "../../../components/modals/CustomScreenModal.js";
-import NsHowToComponent from "./NsHowToComponent.js";
+import HowToUse from "../../../components/HowToUse.js";
 
 
 export default function NagrikSuraksha() {
@@ -17,7 +17,7 @@ export default function NagrikSuraksha() {
       <View>
         <CustomScreenModal
           modalTitle="भारतीय नागरिक सुरक्षा संहिता, 2023 में नई धारा कैसे खोजें?"
-          modalContent={<NsHowToComponent />}
+          modalContent={<HowToUse content={null} />}
         />
       </View>
     );

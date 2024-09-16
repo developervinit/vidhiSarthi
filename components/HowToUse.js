@@ -1,10 +1,9 @@
 import { View, Text, StyleSheet, Image } from "react-native";
-import { howToUseHomeScreenData } from "../data/screenContent.js";
 
-export default function HomeHowToComponent() {
+export default function HowToUse({ content }) {
   return (
     <>
-      {howToUseHomeScreenData.map((item) => {
+    {content === null ? <Text>संग्रह अभी उपलब्ध नहीं है!</Text> : content.map((item) => {
         return (
           <View style={styles.BnsHowToContainer} key={item.id}>
             <Text style={styles.BnsHowToTitle}>
@@ -17,6 +16,7 @@ export default function HomeHowToComponent() {
           </View>
         );
       })}
+      
     </>
   );
 }
