@@ -13,12 +13,10 @@ const Home = () => {
     return (
       <View style={{ flexDirection: "row", alignItems: "center" }}>
         <Image
-          source={require("../assets/images/icon.png")}
+          source={require("../assets/images/header_logo.png")}
           style={{
-            width: 40,
-            height: 40,
-            marginRight: 10,
-            borderRadius: 5,
+            width: 120,
+            height: 50,
           }}
         />
       </View>
@@ -50,7 +48,7 @@ const Home = () => {
   return (
     <>
       <CustomHeader
-        screenTitle="विधि सारथी"
+        screenTitle=""
         headerLeft={headerLeft}
         headerRight={headerRight}
       />
