@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet, Image } from "react-native";
+import { titleColor, contentColor } from "../constants/colors.js";
 
 export default function HowToUse({ content }) {
   return (
@@ -29,11 +30,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     marginBottom: 5,
-    color: "#3d3d3d",
+    color: titleColor,
   },
   BnsHowToContent: {
     fontSize: 18,
-    color: "#636262",
+    color: contentColor,
   },
   sanhitaModalCardImageContainer: {
     width: "100%",

@@ -27,3 +27,7 @@ export const headerHeadingColor = "#5b4502";
 // /components/ActionableCard
 export const cardButtonColor = "#03448b";
 export const cardButtonTextColor = "#e6e6e6";
+
+
+export const titleColor = "#3d3d3d";
+export const contentColor = "#636262"

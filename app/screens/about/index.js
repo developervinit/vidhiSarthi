@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { aboutScreenContent } from "../../../data/screenContent.js";
 import CustomHeader from "../../../components/CustomHeader.js";
+import { titleColor, contentColor } from "../../../constants/colors.js";
 
 export default function About() {
   return (
@@ -28,9 +29,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "justify",
     marginBottom: 15,
+    color: titleColor
   },
   aboutContent: {
     fontSize: 18,
     textAlign: "justify",
+    color: contentColor
   },
 });
