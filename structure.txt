@@ -2,7 +2,16 @@
 │
 ├── /app
 │   ├── /screens    
-│   |   └── /BhartiyaNyayaSanhita
+│   |   ├── /about
+|   |   |   └── index.js
+|   |   |
+|   |   ├── /BhartiyaNyayaSanhita   
+|   |   |   └── index.js
+|   |   |
+|   |   ├── /nagrikSuraksha
+|   |   |   └── index.js
+|   |   |
+|   |   └── /sakshyaAdhiniyam
 |   |       └── index.js
 |   |
 │   ├──_layout.js 
@@ -10,35 +19,47 @@
 │   ├── Home.js   
 │   |        
 │   └── index.js           
-│     
-│     
-|
+│
 ├── /assets    
 │   └── /images
-|        ├── index.js
-|        └──
-|        └──
-|        └──
-|        └──
-|        └──
-│
+|        └──multiple image in this folder
+|        
 ├── /components    
-│   ├── ImageViewer.js
-|   └── List.js 
-│       
+│   ├── /modals
+│   │   ├── CustomModal.js
+│   │   └── CustomScreenModal.js
+│   │
+|   ├── /searchBar 
+│   │   ├── HindiKeyBoard.js
+│   │   └── SearchBar.js
+|   │ 
+|   ├── ActionableCard.js 
+|   ├── Button.js
+|   ├── CustomHeader.js
+|   ├── DataCard.js
+|   ├── ErrorDisplay.js
+|   ├── GradientHeader.js
+|   ├── HowToUse.js
+|   ├── ImageViewer.js
+|   └── InfoCardGroup.js
+|           
+├── /constants
+│   └── color.js
+|   
 ├── /data
-│   ├── NyayaSanhita.js
+|   ├── NyayaSanhita.js
+|   └── screenContent.js
 |
+├── /helper
+|   └── sanitizedAndValidInput.js
+|
+├── /hooks
+|   └── useFilteredData.js
 |
 ├── package.json
-│
 ├── app.json
-│
 ├── babel.config.js
-│
 ├── eas.json
-│
 ├── .expo
-│
 └── structure.txt
 
