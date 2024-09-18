@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     maxWidth: 350,
     borderRadius: 10,
     elevation: 4,
-    marginBottom: 15,
+    marginBottom: 20,
     overflow: "hidden",
   },
   scrollContent: {
