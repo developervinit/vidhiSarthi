@@ -66,7 +66,7 @@ const Home = () => {
             <ActionableCard
               title="भारतीय नागरिक सुरक्षा संहिता, 2023"
               description="भारतीय नागरिक संहिता, 2023 की धाराओ और संबंधित प्रावधानों को दर्शाने वाली तालिका"
-              imageUrl={require("../assets/images/surakcha_sanhita.jpg")}
+              imageUrl={require("../assets/images/surakcha_sanhita.png")}
               url="nagrikSuraksha"
               backgroundColor={lightColorArr[1]}
             />
