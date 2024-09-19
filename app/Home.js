@@ -11,11 +11,11 @@ import { howToUseHomeScreenData } from "../data/screenContent.js";
 const Home = () => {
   const headerLeft = () => {
     return (
-      <View style={{ flexDirection: "row", alignItems: "center" }}>
+      <View style={{ flexDirection: "row", alignItems: "center"  }}>
         <Image
           source={require("../assets/images/header_logo.png")}
           style={{
-            width: 120,
+            width: 125,
             height: 50,
           }}
         />
