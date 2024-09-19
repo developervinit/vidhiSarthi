@@ -1,5 +1,6 @@
 import { Pressable, Text, StyleSheet } from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
+import AntDesign from "@expo/vector-icons/AntDesign";
+
 
 export default function Button({
   title,
@@ -31,7 +32,7 @@ export default function Button({
           { color: textColor, fontSize: textSize, fontWeight: textWeight },
         ]}
       >
-        {title}  <FontAwesome name="arrow-right" size={20} color="#e6e6e6" />
+        {title}  <AntDesign name="arrowright" size={20} color="#e6e6e6" />
       </Text>
     </Pressable>
   );
