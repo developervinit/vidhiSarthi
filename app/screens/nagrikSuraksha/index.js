@@ -42,6 +42,8 @@ export default function NagrikSuraksha() {
           data={nyayaSanhitaData}
           renderItem={({ item, index }) => (
             <InfoCardGroup
+              upperSectionHeading="दण्ड प्रक्रिया संहिता 1873"
+              downSectionHeading="भारतीय नागरिक सुरक्षा संहिता -2023"
               prevCode={item.prevCode}
               prevCodeInfo={item.prevCodeInfo}
               newCode={item.newCode}

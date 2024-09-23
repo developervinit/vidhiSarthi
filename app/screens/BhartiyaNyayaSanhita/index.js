@@ -44,6 +44,8 @@ export default function BhartiyaNyayaSanhita() {
           data={nyayaSanhitaData}
           renderItem={({ item, index }) => (
             <InfoCardGroup
+              upperSectionHeading="भारतीय दण्ड संहिता, 1860"
+              downSectionHeading="भारतीय न्याय संहिता, 2023"
               prevCode={item.prevCode}
               prevCodeInfo={item.prevCodeInfo}
               newCode={item.newCode}

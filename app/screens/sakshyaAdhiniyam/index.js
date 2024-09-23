@@ -42,6 +42,8 @@ export default function SakshyaAdhiniyam() {
           data={nyayaSanhitaData}
           renderItem={({ item, index }) => (
             <InfoCardGroup
+              upperSectionHeading="इंडियन एवीडेंस एक्ट 1872"
+              downSectionHeading="भारतीय साक्ष्य अधिनियम 2023"
               prevCode={item.prevCode}
               prevCodeInfo={item.prevCodeInfo}
               newCode={item.newCode}

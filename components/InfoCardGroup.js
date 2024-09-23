@@ -9,11 +9,13 @@ export default function InfoCardGroup({
   newCode,
   newCodeInfo,
   colorIndex,
+  upperSectionHeading,
+  downSectionHeading
 }) {
   return (
     <View style={[styles.container, { backgroundColor: lightColorArr[colorIndex] }]}>
       <DataCard
-        heading="भारतीय दण्ड संहिता, 1860"
+        heading={upperSectionHeading}
         code={prevCode}
         info={prevCodeInfo}
         colorIndex={colorIndex}
@@ -26,7 +28,7 @@ export default function InfoCardGroup({
         />
       </View>
       <DataCard
-        heading="भारतीय न्याय संहिता, 2023"
+        heading={downSectionHeading}
         code={newCode}
         info={newCodeInfo}
         colorIndex={colorIndex}
