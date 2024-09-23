@@ -35,7 +35,7 @@ export default function SakshyaAdhiniyam() {
       />
       {invalidSection ? (
         <View style={styles.errorContainer}>
-          <ErrorDisplay inputValue={invalidSection} />
+          <ErrorDisplay inputValue={invalidSection} law="sakshyaAdhiniyam" />
         </View>
       ) : (
         <FlatList

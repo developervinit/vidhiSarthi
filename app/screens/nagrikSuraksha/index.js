@@ -35,7 +35,7 @@ export default function NagrikSuraksha() {
       />
       {invalidSection ? (
         <View style={styles.errorContainer}>
-          <ErrorDisplay inputValue={invalidSection} />
+          <ErrorDisplay inputValue={invalidSection} law="nagrikSuraksha" />
         </View>
       ) : (
         <FlatList

@@ -37,7 +37,7 @@ export default function BhartiyaNyayaSanhita() {
       />
       {invalidSection ? (
         <View style={styles.errorContainer}>
-          <ErrorDisplay inputValue={invalidSection} />
+          <ErrorDisplay inputValue={invalidSection} law="nyayaSanhita" />
         </View>
       ) : (
         <FlatList
