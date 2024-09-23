@@ -1,5 +1,5 @@
 import { useRouter } from "expo-router";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ScrollView, Pressable } from "react-native";
 import Button from "./Button";
 import ImageViewer from "./ImageViewer";
 import {
@@ -23,8 +23,10 @@ export default function ActionableCard({
   }
 
   return (
+   
     <View style={[styles.cardContainer, { backgroundColor: backgroundColor }]}>
       <ScrollView contentContainerStyle={styles.scrollContent}>
+      <Pressable onPress={() => redirectTo(url)}>
         <View style={styles.imageTextWrapper}>
           <View style={styles.imageWrapper}>
             <ImageViewer imageSource={imageUrl} />
@@ -46,8 +48,10 @@ export default function ActionableCard({
           textColor={cardButtonTextColor}
           buttonRadius={5}
         />
+        </Pressable>
       </ScrollView>
     </View>
+    
   );
 }
 
