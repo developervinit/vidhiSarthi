@@ -33,3 +33,6 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+# file for listing future improovemnt in the app
+appImproovements.js
