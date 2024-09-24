@@ -6,7 +6,7 @@ import CustomScreenModal from "../components/modals/CustomScreenModal.js";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import CustomHeader from "../components/CustomHeader.js";
 import HowToUse from "../components/HowToUse.js";
-import { howToUseHomeScreenData } from "../data/screenContent.js";
+import { howToUseHomeScreenData } from "../data/homeScreen/howToUse.js";
 
 const Home = () => {
   const headerLeft = () => {

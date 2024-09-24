@@ -9,7 +9,7 @@ import ErrorDisplay from "../../../components/ErrorDisplay.js";
 import { useFilteredData } from "../../../hooks/useFilteredData.js";
 import CustomScreenModal from "../../../components/modals/CustomScreenModal.js";
 import HowToUse from "../../../components/HowToUse.js";
-import data from "../../../data/sakshyaAdiniyam.js"
+import data from "../../../data/sakshyaAdiniyam/sakshyaAdiniyam.js"
 
 export default function SakshyaAdhiniyam() {
   const headerRight = () => {

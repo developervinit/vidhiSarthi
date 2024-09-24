@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, ScrollView } from "react-native";
-import { aboutScreenContent } from "../../../data/screenContent.js";
+import { aboutScreenContent } from "../../../data/aboutScreen/aboutScreenContent.js";
 import CustomHeader from "../../../components/CustomHeader.js";
 import { titleColor, contentColor } from "../../../constants/colors.js";
 

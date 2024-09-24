@@ -10,8 +10,8 @@ import {
 import ErrorDisplay from "../../../components/ErrorDisplay.js";
 import { useFilteredData } from "../../../hooks/useFilteredData.js";
 import CustomScreenModal from "../../../components/modals/CustomScreenModal.js";
-import data from "../../../data/NyayaSanhita.js";
-import { howToUseNyayaSanhitaData } from "../../../data/screenContent.js";
+import data from "../../../data/nyayaSanhita/NyayaSanhita.js";
+import { howToUseNyayaSanhitaData } from "../../../data/nyayaSanhita/howToUse.js";
 import HowToUse from "../../../components/HowToUse.js";
 
 
