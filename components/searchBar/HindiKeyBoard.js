@@ -1,25 +1,28 @@
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 
 export default function HindiKeyBoard({ hindiKeyboard, addHindiCharacter }) {
-  const hindiChar = ["क", "ख", "ग", "घ", "ङ", "च", "छ"];
+  const hindiChar = ["क", "ख", "ग", "घ", "ङ", "च", "छ", "ज", "झ", "ञ", "ठ", "ड", "ढ", "ण", "त", "द", "ध", "प", "फ", "ब", "भ", "म", "य"];
 
   return (
     <View>
       {hindiKeyboard ? (
-        <View style={styles.hindiKeyboard}>
-          {hindiChar.map((char) => {
-            return (
-              <TouchableOpacity
-                onPress={() => addHindiCharacter(char)}
-                key={char}
-                style={styles.hindiCharacterWrapper}
-              >
-                <Text style={styles.hindiCharacter}>{char}</Text>
-              </TouchableOpacity>
-            );
-          })}
-
-          {/* Add more characters as needed */}
+        // Set a fixed height for the scrollable area
+        <View style={styles.keyboardContainer}>
+          <ScrollView contentContainerStyle={styles.scrollContainer} keyboardShouldPersistTaps="handled">
+            <View style={styles.hindiKeyboard}>
+              {hindiChar.map((char) => {
+                return (
+                  <TouchableOpacity
+                    onPress={() => addHindiCharacter(char)}
+                    key={char}
+                    style={styles.hindiCharacterWrapper}
+                  >
+                    <Text style={styles.hindiCharacter}>{char}</Text>
+                  </TouchableOpacity>
+                );
+              })}
+            </View>
+          </ScrollView>
         </View>
       ) : null}
     </View>
@@ -27,11 +30,21 @@ export default function HindiKeyBoard({ hindiKeyboard, addHindiCharacter }) {
 }
 
 const styles = StyleSheet.create({
+  keyboardContainer: {
+    height: 100, // Set fixed height for the keyboard container
+    backgroundColor: "white",
+  },
+  scrollContainer: {
+    flexGrow: 1,
+    justifyContent: "center",
+  },
   hindiCharacterWrapper: {
     backgroundColor: "#e7e7e7",
     padding: 10,
     paddingVertical: 5,
     borderRadius: 8,
+    marginHorizontal: 4,
+    marginVertical: 4,
   },
   hindiCharacter: {
     fontSize: 20,
@@ -39,10 +52,10 @@ const styles = StyleSheet.create({
   },
   hindiKeyboard: {
     width: "100%",
-    height: 50,
-    backgroundColor: "white",
     flexDirection: "row",
-    justifyContent: "space-evenly", // Arrange buttons
+    justifyContent: "space-evenly",
     alignItems: "center",
+    flexWrap: "wrap",
+    alignContent: "space-evenly",
   },
 });
