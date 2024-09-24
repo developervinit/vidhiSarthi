@@ -62,7 +62,7 @@ export default function SearchBar({ getInputValueFn }) {
 const styles = StyleSheet.create({
   searchBarContainer: {
     position: "absolute",
-    bottom: 10,
+    bottom: 5,
     right: 0,
     left: 0,
     borderRadius: 15,

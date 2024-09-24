@@ -69,10 +69,12 @@ export default function NagrikSuraksha() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 15,
+    paddingBottom: 5,
   },
   listContentContainer: {
     paddingBottom: 100, // Space for the search bar
+    paddingHorizontal: 15,
+    paddingTop: 15
   },
   ListEmptyComponentStyle: {
     fontSize: 20,
