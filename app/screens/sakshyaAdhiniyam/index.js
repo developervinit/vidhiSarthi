@@ -9,15 +9,17 @@ import ErrorDisplay from "../../../components/ErrorDisplay.js";
 import { useFilteredData } from "../../../hooks/useFilteredData.js";
 import CustomScreenModal from "../../../components/modals/CustomScreenModal.js";
 import HowToUse from "../../../components/HowToUse.js";
-import data from "../../../data/sakshyaAdiniyam/sakshyaAdiniyam.js"
+import data from "../../../data/sakshyaAdiniyam/sakshyaAdiniyam.js";
+import { howToUseSakshyaAdhiniyam } from "../../../data/sakshyaAdiniyam/howToUseData.js";
+
 
 export default function SakshyaAdhiniyam() {
   const headerRight = () => {
     return (
       <View>
         <CustomScreenModal
-          modalTitle="भारतीय साक्ष्य अधिनियम, 2023 में नई धारा कैसे खोजें?"
-          modalContent={<HowToUse content={null} />}
+          modalTitle="इस पृष्ठ में इंडियन एविडेंस एक्ट 1872 की धाराओं से भारतीय साक्ष्य अधिनियम 2023 की नई धाराओं को खोजने की प्रक्रिया को सरल रूप में समझाया गया है।"
+          modalContent={<HowToUse content={howToUseSakshyaAdhiniyam} />}
         />
       </View>
     );
