@@ -12,6 +12,7 @@ export default function CustomScreenModal({ modalTitle, modalContent }) {
       onStartShouldSetResponder={() => true}
     >
       <Text style={styles.homeScreenModalTitle}>{modalTitle}</Text>
+      <View style={styles.separator}></View>
       <View style={styles.homeScreenContent}>{modalContent}</View>
     </View>
   );
@@ -35,13 +36,18 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   homeScreenModalTitle: {
-    fontSize: 22,
+    fontSize: 20,
     fontWeight: "bold",
-    marginBottom: 10,
   },
   homeScreenContent: {
     fontSize: 18,
     flexWrap: "wrap",
     textAlign: "justify",
   },
+  separator: {
+    width: 200,
+    height: 1,
+    backgroundColor: "black",
+    marginVertical: 10
+  }
 });
