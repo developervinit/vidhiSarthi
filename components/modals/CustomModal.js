@@ -56,11 +56,11 @@ const styles = StyleSheet.create({
   },
   tooltip: {
     backgroundColor: "white",
-    width: "95%",
-    padding: 10,
+    width: "100%",
+    padding: 5,
     borderRadius: 5,
-    maxWidth: 350,
-    height: 450,
+    maxWidth: 375,
+    maxHeight: 500,
     alignItems: "center",
   },
   scrollViewContent: {
@@ -68,7 +68,6 @@ const styles = StyleSheet.create({
   },
   closeText: {
     color: "white",
-
     fontSize: 20,
   },
   buttonStyle: {

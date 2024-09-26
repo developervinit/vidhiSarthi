@@ -36,11 +36,10 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   homeScreenModalTitle: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: "bold",
   },
   homeScreenContent: {
-    fontSize: 18,
     flexWrap: "wrap",
     textAlign: "justify",
   },
