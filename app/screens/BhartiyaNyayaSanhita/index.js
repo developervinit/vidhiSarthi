@@ -22,7 +22,7 @@ export default function BhartiyaNyayaSanhita() {
     return (
       <View>
         <CustomScreenModal
-          modalTitle="भारतीय न्याय संहिता 2023 में नई धारा कैसे खोजें?"
+          modalTitle="इस पृष्ठ में भारतीय दण्ड संहिता, 1860 की धाराओं से भारतीय न्याय संहिता 2023 की नई धाराओं को खोजने की प्रक्रिया को सरल रूप में समझाया गया है।"
           modalContent={<HowToUse content={howToUseNyayaSanhitaData} />}
         />
       </View>
