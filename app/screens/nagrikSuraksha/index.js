@@ -9,7 +9,7 @@ import ErrorDisplay from "../../../components/ErrorDisplay.js";
 import { useFilteredData } from "../../../hooks/useFilteredData.js";
 import CustomScreenModal from "../../../components/modals/CustomScreenModal.js";
 import HowToUse from "../../../components/HowToUse.js";
-
+import data from "../../../data/nagrikSuraksha/nagrikSurkshaData.js";
 
 export default function NagrikSuraksha() {
   const headerRight = () => {
@@ -24,7 +24,7 @@ export default function NagrikSuraksha() {
   };
 
   const { nyayaSanhitaData, invalidSection, getInputValue } = useFilteredData(
-    []
+    data || []
   );
 
   return (
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   listContentContainer: {
     paddingBottom: 100, // Space for the search bar
     paddingHorizontal: 15,
-    paddingTop: 15
+    paddingTop: 15,
   },
   ListEmptyComponentStyle: {
     fontSize: 20,
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: 100,
     paddingVertical: 10,
-    borderRadius: 5
+    borderRadius: 5,
   },
   errorContainer: {
     flex: 1,
