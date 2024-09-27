@@ -1,6 +1,9 @@
 import { View, Text, StyleSheet } from "react-native";
 import { darkColorArr } from "../constants/colors";
-import { cardLabelColor, cardDescriptionFontColor } from "../constants/colors.js";
+import {
+  cardLabelColor,
+  cardDescriptionFontColor,
+} from "../constants/colors.js";
 import renderHighlightedText from "../helper/highlightText.js";
 
 export default function DataCard({ heading, code, info, colorIndex }) {
@@ -17,11 +20,11 @@ export default function DataCard({ heading, code, info, colorIndex }) {
         <Text style={styles.dataCardHeading}>{heading}</Text>
       </View>
       <View style={styles.dataCardContentContainer}>
-        <Text style={styles.lawWrapper}>
+        <Text style={styles.sectionWrapper}>
           <Text style={styles.label}>धारा: </Text>
           <Text style={styles.description}>{code}</Text>
         </Text>
-        <Text>
+        <Text style={styles.descWrapper}>
           <Text style={styles.label}>शीर्षक: </Text>
           <Text style={styles.description}>{renderHighlightedText(info)}</Text>
         </Text>
@@ -36,7 +39,6 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: "bold",
     borderWidth: 3,
-
     borderRadius: 5,
   },
   dataCardHeadingContainer: {
@@ -49,18 +51,23 @@ const styles = StyleSheet.create({
     color: "white",
   },
   dataCardContentContainer: {
-    padding: 15,
+    padding: 10,
+    textAlign: "justify",
   },
   label: {
     fontSize: 22,
     fontWeight: "bold",
     color: cardLabelColor,
   },
+  descWrapper: {
+    textAlign: "justify",
+  },
   description: {
     fontSize: 22,
+    textAlign: "right",
     color: cardDescriptionFontColor,
   },
-  lawWrapper: {
+  sectionWrapper: {
     marginBottom: 5,
   },
 });

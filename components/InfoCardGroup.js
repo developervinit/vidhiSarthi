@@ -10,10 +10,12 @@ export default function InfoCardGroup({
   newCodeInfo,
   colorIndex,
   upperSectionHeading,
-  downSectionHeading
+  downSectionHeading,
 }) {
   return (
-    <View style={[styles.container, { backgroundColor: lightColorArr[colorIndex] }]}>
+    <View
+      style={[styles.container, { backgroundColor: lightColorArr[colorIndex] }]}
+    >
       <DataCard
         heading={upperSectionHeading}
         code={prevCode}
@@ -42,7 +44,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    padding: 15,
+    padding: 10,
     marginBottom: 20,
     borderRadius: 5,
     elevation: 4,

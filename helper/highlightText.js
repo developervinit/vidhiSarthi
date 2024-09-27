@@ -10,7 +10,7 @@ export default renderHighlightedText = (text) => {
     // If the index is odd, this part should be highlighted
     if (index % 2 !== 0) {
       return (
-        <Text key={index} style={{ color: "green", fontWeight: "bold" }}>
+        <Text key={index} style={{ color: "#10bd10", fontWeight: "bold" }}>
           {part}
         </Text>
       );
