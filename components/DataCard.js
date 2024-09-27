@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet } from "react-native";
 import { darkColorArr } from "../constants/colors";
-import { cardLabelColor, cardDescriptionFontColor } from "../constants/colors.js"; 
+import { cardLabelColor, cardDescriptionFontColor } from "../constants/colors.js";
+import renderHighlightedText from "../helper/highlightText.js";
 
 export default function DataCard({ heading, code, info, colorIndex }) {
   return (
@@ -22,7 +23,7 @@ export default function DataCard({ heading, code, info, colorIndex }) {
         </Text>
         <Text>
           <Text style={styles.label}>शीर्षक: </Text>
-          <Text style={styles.description}>{info}</Text>
+          <Text style={styles.description}>{renderHighlightedText(info)}</Text>
         </Text>
       </View>
     </View>
