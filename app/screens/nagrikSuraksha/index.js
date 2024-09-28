@@ -48,6 +48,7 @@ export default function NagrikSuraksha() {
               prevCodeInfo={item.prevCodeInfo}
               newCode={item.newCode}
               newCodeInfo={item.newCodeInfo}
+              sectionChapter={item.chapter}
               colorIndex={index % lightColorArr.length} // Cycle through the colors
             />
           )}

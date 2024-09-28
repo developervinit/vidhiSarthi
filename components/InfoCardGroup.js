@@ -1,4 +1,4 @@
-import { View, StyleSheet } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import DataCard from "./DataCard";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { darkColorArr, lightColorArr } from "../constants/colors.js";
@@ -11,11 +11,19 @@ export default function InfoCardGroup({
   colorIndex,
   upperSectionHeading,
   downSectionHeading,
+  sectionChapter,
 }) {
   return (
     <View
       style={[styles.container, { backgroundColor: lightColorArr[colorIndex] }]}
     >
+      {sectionChapter ? (
+        <Text
+          style={[styles.chapterStyle, { color: darkColorArr[colorIndex] }]}
+        >
+          {sectionChapter}
+        </Text>
+      ) : null}
       <DataCard
         heading={upperSectionHeading}
         code={prevCode}
@@ -48,5 +56,11 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     borderRadius: 5,
     elevation: 4,
+  },
+  chapterStyle: {
+    fontSize: 22,
+    fontWeight: "bold",
+    marginBottom: 8,
+    textAlign: "center",
   },
 });
