@@ -32,7 +32,11 @@ export default function DataCard({ heading, code, info, colorIndex }) {
             renderArrayDataIntoTable(info)
           ) : (
             <Text style={styles.description}>
-              {renderHighlightedText(info)}
+              {info === "निरसित" ? (
+                <Text style={{ color: "red", fontWeight: "bold" }}>{info}</Text>
+              ) : (
+                renderHighlightedText(info)
+              )}
             </Text>
           )}
         </Text>
