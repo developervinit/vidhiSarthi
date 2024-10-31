@@ -6,6 +6,7 @@ import { sanitizedAndValidInput } from "../helper/sanitizedAndValidInput.js";
 export const useFilteredData = (data) => {
   const [nyayaSanhitaData, setNyayaSanhitaData] = useState(data);
   const [invalidSection, setInvalidSection] = useState(null);
+  const [codeOfSectionType, setCodeOfSectionType] = useState("prevCode");
 
   //this function is converting english-number into hindi-number.
   function convertHindiToEnglishNumber(text) {
@@ -55,7 +56,9 @@ export const useFilteredData = (data) => {
     }
 
     //otherwise set filtered data.
-    const result = data.filter((item) => item.prevCode === processedText);
+    const result = data.filter(
+      (item) => item[codeOfSectionType] === processedText
+    );
     if (result.length === 0) {
       setNyayaSanhitaData(result);
       setInvalidSection(processedText);
@@ -65,5 +68,11 @@ export const useFilteredData = (data) => {
     }
   }
 
-  return { nyayaSanhitaData, invalidSection, getInputValue };
+  return {
+    nyayaSanhitaData,
+    invalidSection,
+    getInputValue,
+    codeOfSectionType,
+    setCodeOfSectionType,
+  };
 };

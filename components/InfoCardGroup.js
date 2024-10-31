@@ -12,6 +12,7 @@ export default function InfoCardGroup({
   upperSectionHeading,
   downSectionHeading,
   sectionChapter,
+  codeOfSectionType,
 }) {
   return (
     <View
@@ -24,19 +25,26 @@ export default function InfoCardGroup({
           {sectionChapter}
         </Text>
       ) : null}
-      <DataCard
-        heading={upperSectionHeading}
-        code={prevCode}
-        info={prevCodeInfo}
-        colorIndex={colorIndex}
-      />
-      <View>
-        <AntDesign
-          name="arrowdown"
-          size={28}
-          color={darkColorArr[colorIndex]}
-        />
-      </View>
+      
+      {/* hide first dataCard according the code of section type */}
+      {codeOfSectionType !== "newCode" ? (
+        <>
+          <DataCard
+            heading={upperSectionHeading}
+            code={prevCode}
+            info={prevCodeInfo}
+            colorIndex={colorIndex}
+          />
+          <View>
+            <AntDesign
+              name="arrowdown"
+              size={28}
+              color={darkColorArr[colorIndex]}
+            />
+          </View>
+        </>
+      ) : null}
+
       <DataCard
         heading={downSectionHeading}
         code={newCode}

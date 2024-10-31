@@ -4,9 +4,7 @@ import { StyleSheet, Text, View, FlatList } from "react-native";
 import InfoCardGroup from "../../../components/InfoCardGroup.js";
 import CustomHeader from "../../../components/CustomHeader.js";
 import SearchBar from "../../../components/searchBar/SearchBar.js";
-import {
-  lightColorArr
-} from "../../../constants/colors.js";
+import { lightColorArr } from "../../../constants/colors.js";
 import ErrorDisplay from "../../../components/ErrorDisplay.js";
 import { useFilteredData } from "../../../hooks/useFilteredData.js";
 import CustomScreenModal from "../../../components/modals/CustomScreenModal.js";
@@ -14,9 +12,15 @@ import data from "../../../data/nyayaSanhita/NyayaSanhita.js";
 import { howToUseNyayaSanhitaData } from "../../../data/nyayaSanhita/howToUse.js";
 import HowToUse from "../../../components/HowToUse.js";
 
-
 export default function BhartiyaNyayaSanhita() {
-  const { nyayaSanhitaData, invalidSection, getInputValue } = useFilteredData(data || []);
+  //using hook to get filtered data and to setCodeOfSectionType
+  const {
+    nyayaSanhitaData,
+    invalidSection,
+    getInputValue,
+    codeOfSectionType,
+    setCodeOfSectionType,
+  } = useFilteredData(data || []);
 
   const headerRight = () => {
     return (
@@ -51,6 +55,7 @@ export default function BhartiyaNyayaSanhita() {
               newCode={item.newCode}
               newCodeInfo={item.newCodeInfo}
               colorIndex={index % lightColorArr.length} // Cycle through the colors
+              codeOfSectionType={codeOfSectionType}
             />
           )}
           keyExtractor={(item) => item.id.toString()} // Ensure the keyExtractor returns a string
@@ -62,7 +67,11 @@ export default function BhartiyaNyayaSanhita() {
           contentContainerStyle={styles.listContentContainer}
         />
       )}
-      <SearchBar getInputValueFn={getInputValue} />
+      <SearchBar
+        getInputValueFn={getInputValue}
+        codeOfSectionType={codeOfSectionType}
+        setCodeOfSectionType={setCodeOfSectionType}
+      />
       <StatusBar style="auto" />
     </View>
   );
@@ -76,7 +85,7 @@ const styles = StyleSheet.create({
   listContentContainer: {
     paddingBottom: 100, // Space for the search bar
     paddingHorizontal: 15,
-    paddingTop: 15
+    paddingTop: 15,
   },
   ListEmptyComponentStyle: {
     fontSize: 20,
@@ -85,7 +94,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: 100,
     paddingVertical: 10,
-    borderRadius: 5
+    borderRadius: 5,
   },
   errorContainer: {
     flex: 1,

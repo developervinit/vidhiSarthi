@@ -23,9 +23,14 @@ export default function NagrikSuraksha() {
     );
   };
 
-  const { nyayaSanhitaData, invalidSection, getInputValue } = useFilteredData(
-    data || []
-  );
+  //using hook to get filtered data and to setCodeOfSectionType
+  const {
+    nyayaSanhitaData,
+    invalidSection,
+    getInputValue,
+    codeOfSectionType,
+    setCodeOfSectionType,
+  } = useFilteredData(data || []);
 
   return (
     <View style={styles.container}>
@@ -50,6 +55,7 @@ export default function NagrikSuraksha() {
               newCodeInfo={item.newCodeInfo}
               sectionChapter={item.chapter}
               colorIndex={index % lightColorArr.length} // Cycle through the colors
+              codeOfSectionType={codeOfSectionType}
             />
           )}
           keyExtractor={(item) => item.id.toString()} // Ensure the keyExtractor returns a string
@@ -61,7 +67,11 @@ export default function NagrikSuraksha() {
           contentContainerStyle={styles.listContentContainer}
         />
       )}
-      <SearchBar getInputValueFn={getInputValue} />
+      <SearchBar
+        getInputValueFn={getInputValue}
+        codeOfSectionType={codeOfSectionType}
+        setCodeOfSectionType={setCodeOfSectionType}
+      />
       <StatusBar style="auto" />
     </View>
   );

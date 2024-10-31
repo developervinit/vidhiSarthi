@@ -9,10 +9,17 @@ import {
 } from "react-native";
 import { useState } from "react";
 import HindiKeyBoard from "./HindiKeyBoard";
+import AntDesign from "@expo/vector-icons/AntDesign";
+import SearchByCodeOfSectionType from "./SearchByCodeOfSectionType.js";
 
-export default function SearchBar({ getInputValueFn }) {
+export default function SearchBar({
+  getInputValueFn,
+  codeOfSectionType,
+  setCodeOfSectionType,
+}) {
   const [hindiKeyboard, setHindiKeyboard] = useState(false);
   const [inputText, setInputText] = useState(""); // Manage the full input text
+  const [isOptionsBoxVisible, setOptionsBoxVisible] = useState(false);
 
   // Function to append Hindi character to the input and trigger search
   const addHindiCharacter = (character) => {
@@ -25,34 +32,68 @@ export default function SearchBar({ getInputValueFn }) {
 
   return (
     <KeyboardAvoidingView
-      style={styles.searchBarContainer}
+      style={styles.inputControlsBarContainer}
       behavior={Platform.OS === "ios" ? "padding" : "height"}
       keyboardVerticalOffset={10} //don't let hide search bar behind the keyboard
     >
+      {/*  hide and show on button click */}
       <HindiKeyBoard
         hindiKeyboard={hindiKeyboard}
         addHindiCharacter={addHindiCharacter}
       />
 
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.input}
-          placeholder="यहाँ पूर्व कानून दर्ज करें"
-          onChangeText={(text) => {
-            setInputText(text); // Update input text as the user types
-            getInputValueFn(text); // Trigger search function with text from built-in keyboard
-          }}
-          value={inputText} // Use the full input text
-          clearButtonMode="always" // Ensures the clear button is available on iOS
-        />
+      {/*  box gets hide/show on button click to choose option */}
+      <SearchByCodeOfSectionType
+        isOptionsBoxVisible={isOptionsBoxVisible}
+        setOptionsBoxVisible={setOptionsBoxVisible}
+        setCodeOfSectionType={setCodeOfSectionType}
+      />
+
+      <View style={styles.textInputBtnFilterWrapper}>
+        <View style={styles.textInputAndBtnWrapper}>
+          <TextInput
+            style={styles.input}
+            placeholder={
+              codeOfSectionType === "prevCode"
+                ? "यहाँ पूर्व धारा कोड दर्ज करें|"
+                : "यहाँ नई धारा कोड दर्ज करें|"
+            }
+            onChangeText={(text) => {
+              setInputText(text); // Update input text as the user types
+              getInputValueFn(text); // Trigger search function with text from built-in keyboard
+            }}
+            value={inputText} // Use the full input text
+            clearButtonMode="always" // Ensures the clear button is available on iOS
+          />
+
+          {/* btn to show/hide HindiKeyBoard */}
+          <TouchableOpacity
+            style={[
+              styles.button,
+              { backgroundColor: hindiButtonBackgroundColor },
+            ]}
+            onPress={() => {
+              setHindiKeyboard((hK) => !hK);
+              setOptionsBoxVisible(false);
+            }}
+          >
+            <Text style={styles.buttonText}>क,ख...</Text>
+          </TouchableOpacity>
+        </View>
+
+        {/* btn to show/hide SearchBy codeOfSectionType box */}
         <TouchableOpacity
-          style={[
-            styles.button,
-            { backgroundColor: hindiButtonBackgroundColor },
-          ]}
-          onPress={() => setHindiKeyboard((hK) => !hK)}
+          style={styles.filterBtn}
+          onPress={() => {
+            setOptionsBoxVisible((isVisible) => !isVisible);
+            setHindiKeyboard(false);
+          }}
         >
-          <Text style={styles.buttonText}>क,ख...</Text>
+          {isOptionsBoxVisible ? (
+            <AntDesign name="downcircleo" size={32} color="#616060" />
+          ) : (
+            <AntDesign name="upcircleo" size={32} color="#616060" />
+          )}
         </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>
@@ -60,7 +101,8 @@ export default function SearchBar({ getInputValueFn }) {
 }
 
 const styles = StyleSheet.create({
-  searchBarContainer: {
+  inputControlsBarContainer: {
+    width: "100%",
     position: "absolute",
     bottom: 5,
     right: 0,
@@ -72,7 +114,12 @@ const styles = StyleSheet.create({
     paddingBottom: 8,
     backgroundColor: "white",
   },
-  inputContainer: {
+  textInputBtnFilterWrapper: {
+    flexDirection: "row",
+    gap: 5,
+  },
+  textInputAndBtnWrapper: {
+    width: "85%",
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#e7e7e7",
@@ -101,5 +148,14 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 20,
     fontWeight: "bold",
+  },
+  filterBtn: {
+    width: "15%",
+    borderRadius: 15,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#e7e7e7",
+    borderWidth: 2,
+    borderColor: "#616060",
   },
 });

@@ -12,7 +12,6 @@ import HowToUse from "../../../components/HowToUse.js";
 import data from "../../../data/sakshyaAdiniyam/sakshyaAdiniyam.js";
 import { howToUseSakshyaAdhiniyam } from "../../../data/sakshyaAdiniyam/howToUseData.js";
 
-
 export default function SakshyaAdhiniyam() {
   const headerRight = () => {
     return (
@@ -25,9 +24,14 @@ export default function SakshyaAdhiniyam() {
     );
   };
 
-  const { nyayaSanhitaData, invalidSection, getInputValue } = useFilteredData(
-    data || []
-  );
+  //using hook to get filtered data and to setCodeOfSectionType
+  const {
+    nyayaSanhitaData,
+    invalidSection,
+    getInputValue,
+    codeOfSectionType,
+    setCodeOfSectionType,
+  } = useFilteredData(data || []);
 
   return (
     <View style={styles.container}>
@@ -51,6 +55,7 @@ export default function SakshyaAdhiniyam() {
               newCode={item.newCode}
               newCodeInfo={item.newCodeInfo}
               colorIndex={index % lightColorArr.length} // Cycle through the colors
+              codeOfSectionType={codeOfSectionType}
             />
           )}
           keyExtractor={(item) => item.id.toString()} // Ensure the keyExtractor returns a string
@@ -62,7 +67,11 @@ export default function SakshyaAdhiniyam() {
           contentContainerStyle={styles.listContentContainer}
         />
       )}
-      <SearchBar getInputValueFn={getInputValue} />
+      <SearchBar
+        getInputValueFn={getInputValue}
+        codeOfSectionType={codeOfSectionType}
+        setCodeOfSectionType={setCodeOfSectionType}
+      />
       <StatusBar style="auto" />
     </View>
   );
@@ -76,7 +85,7 @@ const styles = StyleSheet.create({
   listContentContainer: {
     paddingBottom: 100, // Space for the search bar
     paddingHorizontal: 15,
-    paddingTop: 15
+    paddingTop: 15,
   },
   ListEmptyComponentStyle: {
     fontSize: 20,
