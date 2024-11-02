@@ -28,7 +28,7 @@ export default function SearchBar({
     getInputValueFn(newText); // Trigger the search function with updated text
   };
 
-  let hindiButtonBackgroundColor = hindiKeyboard ? "#8a8787" : "#616060";
+  let hindiButtonBackgroundColor = hindiKeyboard ? "#616060" : "#8a8787";
 
   return (
     <KeyboardAvoidingView
@@ -83,14 +83,17 @@ export default function SearchBar({
 
         {/* btn to show/hide SearchBy codeOfSectionType box */}
         <TouchableOpacity
-          style={styles.filterBtn}
+          style={[
+            styles.optionBtn,
+            { backgroundColor: isOptionsBoxVisible ? "#8a8787" : "#e7e7e7" },
+          ]}
           onPress={() => {
             setOptionsBoxVisible((isVisible) => !isVisible);
             setHindiKeyboard(false);
           }}
         >
           {isOptionsBoxVisible ? (
-            <AntDesign name="downcircleo" size={32} color="#616060" />
+            <AntDesign name="downcircleo" size={32} color="white" />
           ) : (
             <AntDesign name="upcircleo" size={32} color="#616060" />
           )}
@@ -149,12 +152,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
   },
-  filterBtn: {
+  optionBtn: {
     width: "15%",
     borderRadius: 15,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#e7e7e7",
     borderWidth: 2,
     borderColor: "#616060",
   },
