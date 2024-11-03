@@ -15,8 +15,8 @@ import HowToUse from "../../../components/HowToUse.js";
 export default function BhartiyaNyayaSanhita() {
   //using hook to get filtered data and to setCodeOfSectionType
   const {
-    nyayaSanhitaData,
-    invalidSection,
+    dataOfLaw,
+    isCodeOfInvalidSection,
     getInputValue,
     codeOfSectionType,
     setCodeOfSectionType,
@@ -39,13 +39,13 @@ export default function BhartiyaNyayaSanhita() {
         screenTitle="भारतीय न्याय संहिता, 2023"
         headerRight={headerRight}
       />
-      {invalidSection ? (
+      {isCodeOfInvalidSection ? (
         <View style={styles.errorContainer}>
-          <ErrorDisplay inputValue={invalidSection} law="nyayaSanhita" />
+          <ErrorDisplay inputValue={isCodeOfInvalidSection} law="nyayaSanhita" />
         </View>
       ) : (
         <FlatList
-          data={nyayaSanhitaData}
+          data={dataOfLaw}
           renderItem={({ item, index }) => (
             <InfoCardGroup
               upperSectionHeading="भारतीय दण्ड संहिता, 1860"

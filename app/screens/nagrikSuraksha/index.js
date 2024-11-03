@@ -25,8 +25,8 @@ export default function NagrikSuraksha() {
 
   //using hook to get filtered data and to setCodeOfSectionType
   const {
-    nyayaSanhitaData,
-    invalidSection,
+    dataOfLaw,
+    isCodeOfInvalidSection,
     getInputValue,
     codeOfSectionType,
     setCodeOfSectionType,
@@ -38,13 +38,13 @@ export default function NagrikSuraksha() {
         screenTitle="भारतीय नागरिक सुरक्षा संहिता, 2023"
         headerRight={headerRight}
       />
-      {invalidSection ? (
+      {isCodeOfInvalidSection ? (
         <View style={styles.errorContainer}>
-          <ErrorDisplay inputValue={invalidSection} law="nagrikSuraksha" />
+          <ErrorDisplay inputValue={isCodeOfInvalidSection} law="nagrikSuraksha" />
         </View>
       ) : (
         <FlatList
-          data={nyayaSanhitaData}
+          data={dataOfLaw}
           renderItem={({ item, index }) => (
             <InfoCardGroup
               upperSectionHeading="दण्ड प्रक्रिया संहिता 1873"

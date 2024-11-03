@@ -26,8 +26,8 @@ export default function SakshyaAdhiniyam() {
 
   //using hook to get filtered data and to setCodeOfSectionType
   const {
-    nyayaSanhitaData,
-    invalidSection,
+    dataOfLaw,
+    isCodeOfInvalidSection,
     getInputValue,
     codeOfSectionType,
     setCodeOfSectionType,
@@ -39,13 +39,13 @@ export default function SakshyaAdhiniyam() {
         screenTitle="भारतीय साक्ष्य अधिनियम, 2023"
         headerRight={headerRight}
       />
-      {invalidSection ? (
+      {isCodeOfInvalidSection ? (
         <View style={styles.errorContainer}>
-          <ErrorDisplay inputValue={invalidSection} law="sakshyaAdhiniyam" />
+          <ErrorDisplay inputValue={isCodeOfInvalidSection} law="sakshyaAdhiniyam" />
         </View>
       ) : (
         <FlatList
-          data={nyayaSanhitaData}
+          data={dataOfLaw}
           renderItem={({ item, index }) => (
             <InfoCardGroup
               upperSectionHeading="इंडियन एवीडेंस एक्ट 1872"

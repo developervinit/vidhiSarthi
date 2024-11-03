@@ -2,8 +2,8 @@ import { useState } from "react";
 import { sanitizedAndValidInput } from "../helper/sanitizedAndValidInput.js";
 
 export const useFilteredData = (data) => {
-  const [nyayaSanhitaData, setNyayaSanhitaData] = useState(data);
-  const [invalidSection, setInvalidSection] = useState(null);
+  const [dataOfLaw, setDataOfLaws] = useState(data);
+  const [isCodeOfInvalidSection, setCodeOfInvalidSection] = useState(null);
   const [codeOfSectionType, setCodeOfSectionType] = useState("prevCode");
 
   // Convert Hindi numbers to English numbers
@@ -30,15 +30,15 @@ export const useFilteredData = (data) => {
     const processedText = convertHindiToEnglishNumber(text).trim();
 
     if (!processedText) {
-      setNyayaSanhitaData(data); // Show all data when input is cleared
-      setInvalidSection(null);
+      setDataOfLaws(data); // Show all data when input is cleared
+      setCodeOfInvalidSection(null);
       return;
     }
 
     // Relaxed validation for partial input
     if (!sanitizedAndValidInput(processedText)) {
-      setNyayaSanhitaData([]);
-      setInvalidSection(processedText);
+      setDataOfLaws([]);
+      setCodeOfInvalidSection(processedText);
       return;
     }
 
@@ -51,17 +51,17 @@ export const useFilteredData = (data) => {
     });
 
     if (result.length === 0) {
-      setNyayaSanhitaData([]);
-      setInvalidSection(processedText);
+      setDataOfLaws([]);
+      setCodeOfInvalidSection(processedText);
     } else {
-      setNyayaSanhitaData(result);
-      setInvalidSection(null);
+      setDataOfLaws(result);
+      setCodeOfInvalidSection(null);
     }
   }
 
   return {
-    nyayaSanhitaData,
-    invalidSection,
+    dataOfLaw,
+    isCodeOfInvalidSection,
     getInputValue,
     codeOfSectionType,
     setCodeOfSectionType,
