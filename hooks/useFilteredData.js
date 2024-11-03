@@ -1,5 +1,3 @@
-//managing invalid input from the user and filtering data according user input value.
-
 import { useState } from "react";
 import { sanitizedAndValidInput } from "../helper/sanitizedAndValidInput.js";
 
@@ -8,9 +6,8 @@ export const useFilteredData = (data) => {
   const [invalidSection, setInvalidSection] = useState(null);
   const [codeOfSectionType, setCodeOfSectionType] = useState("prevCode");
 
-  //this function is converting english-number into hindi-number.
+  // Convert Hindi numbers to English numbers
   function convertHindiToEnglishNumber(text) {
-    // Replace Hindi numerals with corresponding English numerals
     const hindiToEnglishMapping = {
       "०": "0",
       "१": "1",
@@ -23,8 +20,6 @@ export const useFilteredData = (data) => {
       "८": "8",
       "९": "9",
     };
-
-    //regexp "[०१२३४५६७८९]/g" checks for hindi_number only then converts them into english_number other wise  original input will be returned.
     return text.replace(
       /[०१२३४५६७८९]/g,
       (match) => hindiToEnglishMapping[match]
@@ -32,8 +27,7 @@ export const useFilteredData = (data) => {
   }
 
   function getInputValue(text) {
-    //testing and converting hindi-number into english-number.
-    processedText = convertHindiToEnglishNumber(text);
+    const processedText = convertHindiToEnglishNumber(text).trim();
 
     if (!processedText) {
       setNyayaSanhitaData(data); // Show all data when input is cleared
@@ -41,26 +35,23 @@ export const useFilteredData = (data) => {
       return;
     }
 
-    //when input is not sanitized then set empty array.
+    // Relaxed validation for partial input
     if (!sanitizedAndValidInput(processedText)) {
       setNyayaSanhitaData([]);
       setInvalidSection(processedText);
       return;
     }
 
-    //when law section is invalid set empty array.
-    if (processedText < 1 || processedText > 511) {
-      setNyayaSanhitaData([]);
-      setInvalidSection(processedText);
-      return;
-    }
+    // Filter data based on codeOfSectionType and partial matching
+    const result = data.filter((item) => {
+      const itemCode = item[codeOfSectionType];
 
-    //otherwise set filtered data.
-    const result = data.filter(
-      (item) => item[codeOfSectionType] === processedText
-    );
+      //filtering data using startWith() method.
+      return itemCode.startsWith(processedText);
+    });
+
     if (result.length === 0) {
-      setNyayaSanhitaData(result);
+      setNyayaSanhitaData([]);
       setInvalidSection(processedText);
     } else {
       setNyayaSanhitaData(result);
