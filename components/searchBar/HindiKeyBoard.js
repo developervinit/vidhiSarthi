@@ -6,7 +6,7 @@ import {
   ScrollView,
 } from "react-native";
 
-export default function HindiKeyBoard({ hindiKeyboard, addHindiCharacter }) {
+export default function HindiKeyBoard({ addHindiCharacter }) {
   const hindiChar = [
     "क",
     "ख",
@@ -52,50 +52,47 @@ export default function HindiKeyBoard({ hindiKeyboard, addHindiCharacter }) {
   ];
 
   return (
-    <View>
-      {hindiKeyboard ? (
-        // Set a fixed height for the scrollable area
-        <View style={styles.keyboardContainer}>
-          <ScrollView
-            contentContainerStyle={styles.scrollContainer}
-            keyboardShouldPersistTaps="handled"
-          >
-            <View style={styles.hindiKeyboard}>
-              {hindiChar.map((char) => {
-                return (
-                  <TouchableOpacity
-                    onPress={() => addHindiCharacter(char)}
-                    key={char}
-                    style={styles.hindiCharacterWrapper}
-                  >
-                    <Text style={styles.hindiCharacter}>{char}</Text>
-                  </TouchableOpacity>
-                );
-              })}
-            </View>
-          </ScrollView>
+    <View style={styles.keyboardContainer}>
+      <ScrollView
+        contentContainerStyle={styles.scrollContainer}
+        keyboardShouldPersistTaps="handled"
+      >
+        <View style={styles.hindiKeyboard}>
+          {hindiChar.map((char) => {
+            return (
+              <TouchableOpacity
+                onPress={() => addHindiCharacter(char)}
+                key={char}
+                style={styles.hindiCharacterWrapper}
+              >
+                <Text style={styles.hindiCharacter}>{char}</Text>
+              </TouchableOpacity>
+            );
+          })}
         </View>
-      ) : null}
+      </ScrollView>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   keyboardContainer: {
-    height: 100, // Set fixed height for the keyboard container
+    height: 182,
     backgroundColor: "white",
+    position: "absolute",
   },
   scrollContainer: {
     flexGrow: 1,
     justifyContent: "center",
+    padding: 5,
   },
   hindiCharacterWrapper: {
     backgroundColor: "#e7e7e7",
-    padding: 10,
-    paddingVertical: 5,
+    paddingVertical: 2,
+    paddingHorizontal: 8,
     borderRadius: 8,
-    marginHorizontal: 4,
-    marginVertical: 4,
+    marginHorizontal: 5,
+    marginVertical: 2,
   },
   hindiCharacter: {
     fontSize: 20,

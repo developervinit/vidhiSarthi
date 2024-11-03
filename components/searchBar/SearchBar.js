@@ -22,8 +22,9 @@ export default function SearchBar({
   const [inputText, setInputText] = useState("");
   const [isOptionsBoxVisible, setOptionsBoxVisible] = useState(false);
 
-  // Initialize the animated value for translateY
-  const translateY = useRef(new Animated.Value(400)).current; // Start hidden
+  // Separate animated values for each component
+  const translateY = useRef(new Animated.Value(400)).current; // For SearchByCodeOfSectionType
+  const translateYHindi = useRef(new Animated.Value(400)).current; // For HindiKeyBoard
 
   // Function to append Hindi character to the input and trigger search
   const addHindiCharacter = (character) => {
@@ -32,12 +33,44 @@ export default function SearchBar({
     getInputValueFn(newText);
   };
 
+  //to hide/show option box
   const toggleOptionsBox = () => {
-    // Toggle visibility and trigger the animation
+    //first hide hindiKyeBoard if it is visible.
+    if (hindiKeyboard) {
+      // Hide Hindi keyboard if it's visible
+      setHindiKeyboard(false);
+      Animated.timing(translateYHindi, {
+        toValue: 200,
+        duration: 200,
+        useNativeDriver: true,
+      }).start();
+    }
+
     setOptionsBoxVisible((prev) => !prev);
     Animated.timing(translateY, {
-      toValue: isOptionsBoxVisible ? 400 : -260, // Slide up or down based on position 400 for invisible, -260 for visible.
-      duration: 400,
+      toValue: isOptionsBoxVisible ? 400 : -260,
+      duration: 200,
+      useNativeDriver: true,
+    }).start();
+  };
+
+  //to hide/show hindiKeyBoard
+  const toggleHindiKeyBoard = () => {
+    //hide optionBox if it is visible.
+    if (isOptionsBoxVisible) {
+      // Hide Options Box if it's visible
+      setOptionsBoxVisible(false);
+      Animated.timing(translateY, {
+        toValue: 400,
+        duration: 200,
+        useNativeDriver: true,
+      }).start();
+    }
+
+    setHindiKeyboard((hk) => !hk);
+    Animated.timing(translateYHindi, {
+      toValue: hindiKeyboard ? 200 : -185,
+      duration: 200,
       useNativeDriver: true,
     }).start();
   };
@@ -50,16 +83,25 @@ export default function SearchBar({
       behavior={Platform.OS === "ios" ? "padding" : "height"}
       keyboardVerticalOffset={10}
     >
-      <HindiKeyBoard
-        hindiKeyboard={hindiKeyboard}
-        addHindiCharacter={addHindiCharacter}
-      />
-
-      {/* Animated component */}
+      {/* Hindi Keyboard with its own animation */}
       <Animated.View
         style={[
           {
-            transform: [{ translateY }],
+            transform: [{ translateY: translateYHindi }],
+          },
+        ]}
+      >
+        <HindiKeyBoard
+          hindiKeyboard={hindiKeyboard}
+          addHindiCharacter={addHindiCharacter}
+        />
+      </Animated.View>
+
+      {/* Options box with separate animation */}
+      <Animated.View
+        style={[
+          {
+            transform: [{ translateY: translateY }],
           },
         ]}
       >
@@ -92,8 +134,7 @@ export default function SearchBar({
               { backgroundColor: hindiButtonBackgroundColor },
             ]}
             onPress={() => {
-              setHindiKeyboard((hK) => !hK);
-              setOptionsBoxVisible(false);
+              toggleHindiKeyBoard();
             }}
           >
             <Text style={styles.buttonText}>क,ख...</Text>
@@ -121,7 +162,6 @@ export default function SearchBar({
 const styles = StyleSheet.create({
   inputControlsBarContainer: {
     width: "100%",
-    position: "absolute",
     bottom: 5,
     right: 0,
     left: 0,
