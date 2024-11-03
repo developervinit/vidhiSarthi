@@ -6,8 +6,9 @@ import {
   View,
   TouchableOpacity,
   Text,
+  Animated,
 } from "react-native";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import HindiKeyBoard from "./HindiKeyBoard";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import SearchByCodeOfSectionType from "./SearchByCodeOfSectionType.js";
@@ -18,14 +19,27 @@ export default function SearchBar({
   setCodeOfSectionType,
 }) {
   const [hindiKeyboard, setHindiKeyboard] = useState(false);
-  const [inputText, setInputText] = useState(""); // Manage the full input text
+  const [inputText, setInputText] = useState("");
   const [isOptionsBoxVisible, setOptionsBoxVisible] = useState(false);
+
+  // Initialize the animated value for translateY
+  const translateY = useRef(new Animated.Value(400)).current; // Start hidden
 
   // Function to append Hindi character to the input and trigger search
   const addHindiCharacter = (character) => {
     const newText = inputText + character;
     setInputText(newText);
-    getInputValueFn(newText); // Trigger the search function with updated text
+    getInputValueFn(newText);
+  };
+
+  const toggleOptionsBox = () => {
+    // Toggle visibility and trigger the animation
+    setOptionsBoxVisible((prev) => !prev);
+    Animated.timing(translateY, {
+      toValue: isOptionsBoxVisible ? 400 : -260, // Slide up or down based on position 400 for invisible, -260 for visible.
+      duration: 400,
+      useNativeDriver: true,
+    }).start();
   };
 
   let hindiButtonBackgroundColor = hindiKeyboard ? "#616060" : "#8a8787";
@@ -34,20 +48,26 @@ export default function SearchBar({
     <KeyboardAvoidingView
       style={styles.inputControlsBarContainer}
       behavior={Platform.OS === "ios" ? "padding" : "height"}
-      keyboardVerticalOffset={10} //don't let hide search bar behind the keyboard
+      keyboardVerticalOffset={10}
     >
-      {/*  hide and show on button click */}
       <HindiKeyBoard
         hindiKeyboard={hindiKeyboard}
         addHindiCharacter={addHindiCharacter}
       />
 
-      {/*  box gets hide/show on button click to choose option */}
-      <SearchByCodeOfSectionType
-        isOptionsBoxVisible={isOptionsBoxVisible}
-        setOptionsBoxVisible={setOptionsBoxVisible}
-        setCodeOfSectionType={setCodeOfSectionType}
-      />
+      {/* Animated component */}
+      <Animated.View
+        style={[
+          {
+            transform: [{ translateY }],
+          },
+        ]}
+      >
+        <SearchByCodeOfSectionType
+          toggleOptionsBoxFn={toggleOptionsBox}
+          setCodeOfSectionType={setCodeOfSectionType}
+        />
+      </Animated.View>
 
       <View style={styles.textInputBtnFilterWrapper}>
         <View style={styles.textInputAndBtnWrapper}>
@@ -59,14 +79,13 @@ export default function SearchBar({
                 : "यहाँ नई धारा कोड दर्ज करें|"
             }
             onChangeText={(text) => {
-              setInputText(text); // Update input text as the user types
-              getInputValueFn(text); // Trigger search function with text from built-in keyboard
+              setInputText(text);
+              getInputValueFn(text);
             }}
-            value={inputText} // Use the full input text
-            clearButtonMode="always" // Ensures the clear button is available on iOS
+            value={inputText}
+            clearButtonMode="always"
           />
 
-          {/* btn to show/hide HindiKeyBoard */}
           <TouchableOpacity
             style={[
               styles.button,
@@ -81,16 +100,12 @@ export default function SearchBar({
           </TouchableOpacity>
         </View>
 
-        {/* btn to show/hide SearchBy codeOfSectionType box */}
         <TouchableOpacity
           style={[
             styles.optionBtn,
             { backgroundColor: isOptionsBoxVisible ? "#8a8787" : "#e7e7e7" },
           ]}
-          onPress={() => {
-            setOptionsBoxVisible((isVisible) => !isVisible);
-            setHindiKeyboard(false);
-          }}
+          onPress={toggleOptionsBox}
         >
           {isOptionsBoxVisible ? (
             <AntDesign name="downcircleo" size={32} color="white" />
@@ -139,7 +154,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
   },
   button: {
-    backgroundColor: "#616060", // Customize the button color
+    backgroundColor: "#616060",
     paddingVertical: 8,
     paddingHorizontal: 10,
     borderRadius: 10,
