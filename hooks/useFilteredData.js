@@ -1,30 +1,11 @@
 import { useState } from "react";
 import { sanitizedAndValidInput } from "../helper/sanitizedAndValidInput.js";
+import convertHindiToEnglishNumber from "../helper/convertHindiToEnglishNumber.js";
 
 export const useFilteredData = (data) => {
   const [dataOfLaw, setDataOfLaws] = useState(data);
   const [isCodeOfInvalidSection, setCodeOfInvalidSection] = useState(null);
   const [codeOfSectionType, setCodeOfSectionType] = useState("prevCode");
-
-  // Convert Hindi numbers to English numbers
-  function convertHindiToEnglishNumber(text) {
-    const hindiToEnglishMapping = {
-      "०": "0",
-      "१": "1",
-      "२": "2",
-      "३": "3",
-      "४": "4",
-      "५": "5",
-      "६": "6",
-      "७": "7",
-      "८": "8",
-      "९": "9",
-    };
-    return text.replace(
-      /[०१२३४५६७८९]/g,
-      (match) => hindiToEnglishMapping[match]
-    );
-  }
 
   function getInputValue(text) {
     const processedText = convertHindiToEnglishNumber(text).trim();
