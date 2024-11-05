@@ -3,10 +3,10 @@ import { View, Text, StyleSheet, ScrollView, Pressable } from "react-native";
 import Button from "./Button";
 import ImageViewer from "./ImageViewer";
 import {
-  cardDescriptionFontColor,
-  cardTitleFontColor,
-  cardButtonColor,
-  cardButtonTextColor,
+  lawCardDescriptionFontColor,
+  lawCardTitleFontColor,
+  lawCardButtonColor,
+  lawCardButtonFontColor,
 } from "../constants/colors";
 
 export default function ActionableCard({
@@ -44,8 +44,8 @@ export default function ActionableCard({
           textWeight={800}
           buttonPadding={[10, 10]}
           buttonMargin={[10]}
-          buttonColor={cardButtonColor}
-          textColor={cardButtonTextColor}
+          buttonColor={lawCardButtonColor}
+          textColor={lawCardButtonFontColor}
           buttonRadius={5}
         />
         </Pressable>
@@ -83,13 +83,13 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
   },
   titleText: {
-    color: cardTitleFontColor,
+    color: lawCardTitleFontColor,
     fontSize: 20,
     fontWeight: "700",
   },
   descripText: {
     paddingTop: 8,
     fontSize: 18,
-    color: cardDescriptionFontColor,
+    color: lawCardDescriptionFontColor,
   },
 });

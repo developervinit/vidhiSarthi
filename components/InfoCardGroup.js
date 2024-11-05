@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet } from "react-native";
 import DataCard from "./DataCard";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import { darkColorArr, lightColorArr } from "../constants/colors.js";
+import { darkBackGroundColorArr, lightBackGroundColorArr } from "../constants/colors.js";
 
 export default function InfoCardGroup({
   prevCode,
@@ -16,13 +16,13 @@ export default function InfoCardGroup({
 }) {
   return (
     <View
-      style={[styles.container, { backgroundColor: lightColorArr[colorIndex] }]}
+      style={[styles.container, { backgroundColor: lightBackGroundColorArr[colorIndex] }]}
     >
       {sectionChapter ? (
         <View
           style={[
             styles.sectionChapterWrapper,
-            { backgroundColor: darkColorArr[colorIndex] },
+            { backgroundColor: darkBackGroundColorArr[colorIndex] },
           ]}
         >
           <Text style={[styles.sectionChapterStyle, { color: "white" }]}>
@@ -44,7 +44,7 @@ export default function InfoCardGroup({
             <AntDesign
               name="arrowdown"
               size={28}
-              color={darkColorArr[colorIndex]}
+              color={darkBackGroundColorArr[colorIndex]}
             />
           </View>
         </>

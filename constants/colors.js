@@ -1,33 +1,19 @@
 //Here we are keeping colors used throughout the app.
 
-// /screens/BhartiyaNyayaSanhita
-// /components/InfoCardGroup
-export const lightColorArr = ["#bde1fd", "#e3d9ee", "#ebeed9"];
+export const lightBackGroundColorArr = ["#bde1fd", "#e3d9ee", "#ebeed9"];
+export const darkBackGroundColorArr = ["#227abe", "#6521af", "#7e9014"];
 
-// /components/InfoCardGroup
-export const darkColorArr = ["#227abe", "#6521af", "#7e9014"];
+export const lawCardTitleFontColor = "#314542";
+export const lawCardDescriptionFontColor = "#144367";
+export const lawCardButtonColor = "#0b5884";
+export const lawCardButtonFontColor = "#e6e6e6";
 
-// /components/ActionableCard
-export const cardTitleFontColor = "#314542";
+export const dataCardLabelColor = "#0e314c";
 
-// /components/dataCard
-export const cardLabelColor = "#0e314c";
-
-// /components/dataCard
-// /components/ActionableCard
-export const cardDescriptionFontColor = "#144367";
-
-// /components/GradientHeader.js
+//components/GradientHeader.js
 export const headerBackgroundColorArr = ["#eedaac", "#eed497"];
-
-// /components/Header.js
+//components/Header.js
 export const headerHeadingColor = "#5b4502";
 
-// /Home
-// /components/ActionableCard
-export const cardButtonColor = "#0b5884";
-export const cardButtonTextColor = "#e6e6e6";
-
-
-export const titleColor = "#3d3d3d";
-export const contentColor = "#636262"
+export const howToTitleColor = "#3d3d3d";
+export const howToContentColor = "#636262";

@@ -1,9 +1,9 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import {
-  darkColorArr,
-  cardLabelColor,
-  cardDescriptionFontColor,
+  darkBackGroundColorArr,
+  dataCardLabelColor,
+  lawCardDescriptionFontColor,
 } from "../constants/colors.js";
 import renderHighlightedText from "../helper/highlightText.js";
 import renderArrayDataIntoTable from "../helper/renderArrayDataIntoTable.js";
@@ -11,12 +11,12 @@ import renderArrayDataIntoTable from "../helper/renderArrayDataIntoTable.js";
 export default function DataCard({ heading, code, info, colorIndex }) {
   return (
     <View
-      style={[styles.codeContainer, { borderColor: darkColorArr[colorIndex] }]}
+      style={[styles.codeContainer, { borderColor: darkBackGroundColorArr[colorIndex] }]}
     >
       <View
         style={[
           styles.dataCardHeadingContainer,
-          { backgroundColor: darkColorArr[colorIndex] },
+          { backgroundColor: darkBackGroundColorArr[colorIndex] },
         ]}
       >
         <Text style={styles.dataCardHeading}>{heading}</Text>
@@ -69,14 +69,14 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 22,
     fontWeight: "bold",
-    color: cardLabelColor,
+    color: dataCardLabelColor,
   },
   descWrapper: {
     textAlign: "justify",
   },
   description: {
     fontSize: 22,
-    color: cardDescriptionFontColor,
+    color: lawCardDescriptionFontColor,
   },
   sectionWrapper: {
     marginBottom: 5,

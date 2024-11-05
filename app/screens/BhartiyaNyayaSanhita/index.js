@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, FlatList } from "react-native";
 import InfoCardGroup from "../../../components/InfoCardGroup.js";
 import CustomHeader from "../../../components/CustomHeader.js";
 import SearchBar from "../../../components/searchBar/SearchBar.js";
-import { lightColorArr } from "../../../constants/colors.js";
+import { lightBackGroundColorArr } from "../../../constants/colors.js";
 import ErrorDisplay from "../../../components/ErrorDisplay.js";
 import { useFilteredData } from "../../../hooks/useFilteredData.js";
 import CustomScreenModal from "../../../components/modals/CustomScreenModal.js";
@@ -54,7 +54,7 @@ export default function BhartiyaNyayaSanhita() {
               prevCodeInfo={item.prevCodeInfo}
               newCode={item.newCode}
               newCodeInfo={item.newCodeInfo}
-              colorIndex={index % lightColorArr.length} // Cycle through the colors
+              colorIndex={index % lightBackGroundColorArr.length} // Cycle through the colors
               codeOfSectionType={codeOfSectionType}
             />
           )}
