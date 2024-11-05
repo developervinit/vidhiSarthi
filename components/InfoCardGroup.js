@@ -19,13 +19,18 @@ export default function InfoCardGroup({
       style={[styles.container, { backgroundColor: lightColorArr[colorIndex] }]}
     >
       {sectionChapter ? (
-        <Text
-          style={[styles.chapterStyle, { color: darkColorArr[colorIndex] }]}
+        <View
+          style={[
+            styles.sectionChapterWrapper,
+            { backgroundColor: darkColorArr[colorIndex] },
+          ]}
         >
-          {sectionChapter}
-        </Text>
+          <Text style={[styles.sectionChapterStyle, { color: "white" }]}>
+            {sectionChapter}
+          </Text>
+        </View>
       ) : null}
-      
+
       {/* hide first dataCard according the code of section type */}
       {codeOfSectionType !== "newCode" ? (
         <>
@@ -65,10 +70,18 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     elevation: 4,
   },
-  chapterStyle: {
+  sectionChapterWrapper: {
+    border: 1,
+    borderColor: "black",
+    width: "100%",
+    marginBottom: 8,
+    borderRadius: 5,
+    paddingVertical: 8,
+    paddingHorizontal: 8,
+  },
+  sectionChapterStyle: {
     fontSize: 22,
     fontWeight: "bold",
-    marginBottom: 8,
     textAlign: "center",
   },
 });
