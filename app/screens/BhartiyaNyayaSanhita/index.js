@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { StyleSheet, Text, View, FlatList } from "react-native";
 import InfoCardGroup from "../../../components/InfoCardGroup.js";
 import CustomHeader from "../../../components/CustomHeader.js";
@@ -13,7 +13,8 @@ import { howToUseNyayaSanhitaData } from "../../../data/nyayaSanhita/howToUse.js
 import HowToUse from "../../../components/HowToUse.js";
 
 export default function BhartiyaNyayaSanhita() {
-  //using hook to get filtered data and to setCodeOfSectionType
+  const flatListRef = useRef(null); //to get reference of FlatList
+
   const {
     dataOfLaw,
     isCodeOfInvalidSection,
@@ -21,6 +22,13 @@ export default function BhartiyaNyayaSanhita() {
     codeOfSectionType,
     setCodeOfSectionType,
   } = useFilteredData(data || []);
+
+  // Scroll to top whenever dataOfLaw changes (indicating a new filtered result)
+  useEffect(() => {
+    if (flatListRef.current) {
+      flatListRef.current.scrollToOffset({ offset: 0, animated: true });
+    }
+  }, [dataOfLaw]);
 
   const headerRight = () => {
     return (
@@ -41,10 +49,14 @@ export default function BhartiyaNyayaSanhita() {
       />
       {isCodeOfInvalidSection ? (
         <View style={styles.errorContainer}>
-          <ErrorDisplay inputValue={isCodeOfInvalidSection} law="nyayaSanhita" />
+          <ErrorDisplay
+            inputValue={isCodeOfInvalidSection}
+            law="nyayaSanhita"
+          />
         </View>
       ) : (
         <FlatList
+          ref={flatListRef}
           data={dataOfLaw}
           renderItem={({ item, index }) => (
             <InfoCardGroup
@@ -83,7 +95,7 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
   },
   listContentContainer: {
-    paddingBottom: 100, // Space for the search bar
+    paddingBottom: 100,
     paddingHorizontal: 15,
     paddingTop: 15,
   },

@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { StyleSheet, Text, View, FlatList } from "react-native";
 import InfoCardGroup from "../../../components/InfoCardGroup.js";
 import CustomHeader from "../../../components/CustomHeader.js";
@@ -12,6 +12,8 @@ import HowToUse from "../../../components/HowToUse.js";
 import data from "../../../data/nagrikSuraksha/nagrikSurkshaData.js";
 
 export default function NagrikSuraksha() {
+  const flatListRef = useRef(null); //to get reference of FlatList
+
   const headerRight = () => {
     return (
       <View>
@@ -32,6 +34,13 @@ export default function NagrikSuraksha() {
     setCodeOfSectionType,
   } = useFilteredData(data || []);
 
+  // Scroll to top whenever dataOfLaw changes (indicating a new filtered result)
+  useEffect(() => {
+    if (flatListRef.current) {
+      flatListRef.current.scrollToOffset({ offset: 0, animated: true });
+    }
+  }, [dataOfLaw]);
+
   return (
     <View style={styles.container}>
       <CustomHeader
@@ -40,10 +49,14 @@ export default function NagrikSuraksha() {
       />
       {isCodeOfInvalidSection ? (
         <View style={styles.errorContainer}>
-          <ErrorDisplay inputValue={isCodeOfInvalidSection} law="nagrikSuraksha" />
+          <ErrorDisplay
+            inputValue={isCodeOfInvalidSection}
+            law="nagrikSuraksha"
+          />
         </View>
       ) : (
         <FlatList
+          ref={flatListRef}
           data={dataOfLaw}
           renderItem={({ item, index }) => (
             <InfoCardGroup
