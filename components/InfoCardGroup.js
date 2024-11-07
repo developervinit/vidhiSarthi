@@ -1,7 +1,10 @@
 import { View, Text, StyleSheet } from "react-native";
 import DataCard from "./DataCard";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import { darkBackGroundColorArr, lightBackGroundColorArr } from "../constants/colors.js";
+import {
+  darkBackGroundColorArr,
+  lightBackGroundColorArr,
+} from "../constants/colors.js";
 
 export default function InfoCardGroup({
   prevCode,
@@ -16,7 +19,10 @@ export default function InfoCardGroup({
 }) {
   return (
     <View
-      style={[styles.container, { backgroundColor: lightBackGroundColorArr[colorIndex] }]}
+      style={[
+        styles.container,
+        { backgroundColor: lightBackGroundColorArr[colorIndex] },
+      ]}
     >
       {sectionChapter ? (
         <View
@@ -49,7 +55,11 @@ export default function InfoCardGroup({
           </View>
         </>
       ) : null}
-
+      {prevCode === "कोई पूर्व धारा नहीं" ? (
+        <Text style={styles.newAddedSectionContainer}>
+          यह एक नई जोड़ी गई धारा है।
+        </Text>
+      ) : null}
       <DataCard
         heading={downSectionHeading}
         code={newCode}
@@ -83,5 +93,16 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: "bold",
     textAlign: "center",
+  },
+  newAddedSectionContainer: {
+    fontSize: 20,
+    color: "white",
+    backgroundColor: "#10bd10",
+    padding: 5,
+    width: "100%",
+    marginBottom: 5,
+    borderRadius: 5,
+    textAlign: "center",
+    fontWeight: "bold",
   },
 });
