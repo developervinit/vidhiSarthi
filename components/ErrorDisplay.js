@@ -5,7 +5,7 @@ export default function ErrorDisplay({ inputValue, law }) {
   const lawInformation = [
     {
       lawN: "इंडियन एवीडेंस एक्ट 1872",
-      range: "1 से 187"
+      range: "1 से 167"
     },
     {
       lawN: "भारतीय दण्ड संहिता, 1860",
