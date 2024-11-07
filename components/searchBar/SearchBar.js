@@ -114,6 +114,7 @@ export default function SearchBar({
       <View style={styles.textInputBtnFilterWrapper}>
         <View style={styles.textInputAndBtnWrapper}>
           <TextInput
+            keyboardType="numeric"
             style={styles.input}
             placeholder={
               codeOfSectionType === "prevCode"
