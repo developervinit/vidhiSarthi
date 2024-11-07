@@ -66,6 +66,7 @@ export default function SakshyaAdhiniyam() {
               prevCode={item.prevCode}
               prevCodeInfo={item.prevCodeInfo}
               newCode={item.newCode}
+              sectionChapter={item.chapter}
               newCodeInfo={item.newCodeInfo}
               colorIndex={index % lightBackGroundColorArr.length} // Cycle through the colors
               codeOfSectionType={codeOfSectionType}

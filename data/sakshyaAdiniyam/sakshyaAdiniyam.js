@@ -1,5 +1,34 @@
 //This file to have sakshaya adhiniyam data.
 
+let chapter = {
+  1: "भाग 1 - प्रारम्भिक",
+  2: {
+    a: "भाग 2 - तथ्यों की सुसंगति",
+    b: "भाग 2 - निकटता से संसक्त तथ्य",
+    c: "भाग 2 - संस्वीकृतियां",
+    d: "भाग 2 - उन व्यक्तियों के कथन जिन्हे साक्ष्य में बुलाया नही जा सकता",
+    e: "भाग 2 - विशेष परिस्थितियों में किये गये कथन",
+    f: "भाग 2 - किसी कथन में से कितना साबित किया जाये",
+    g: "भाग 2 - न्यायालयों के निर्णय कब सुसंगत है",
+    h: "भाग 2 - अन्य व्यक्त्यिों की राय कब सुसंगत है",
+    i: "भाग 2 - शील कब सुसंगत है",
+  },
+  3: {
+    a: "भाग 3 - सबूत के विषय में, तथ्य जिनका साबित किया जाना आवश्यक नही",
+    b: "भाग 3 - मौखिक साक्ष्य के विषय में",
+    c: "भाग 3 - दस्तावेजी साक्ष्य के विषय में",
+    d: "भाग 3 - लोक दस्तावेज",
+    e: "भाग 3 - दस्तावेजों के बारे में उपधारणाएं",
+    f: "भाग 3 - दस्तावेजी साक्ष्य द्वारा मौखिक साक्ष्य के अपवर्जन के विषय में",
+  },
+  4: {
+    a: "भाग 4 - साक्ष्य का पेश किया जाना और प्रभाव, सबूत के भार के विषय में",
+    b: "भाग 4 - विबन्ध",
+    c: "भाग 4 - साक्षियों के विषय में",
+    d: "भाग 4 - साक्षियों की परीक्षा के विषय में",
+    e: "भाग 4 - साक्ष्य के अनुचित ग्रहण और अग्रहण के विषय में",
+  },
+};
 
 export default data = [
   {
@@ -8,6 +37,7 @@ export default data = [
     prevCode: "1",
     newCode: "1",
     newCodeInfo: "संक्षिप्त नाम, लागू होना और प्रारंभ",
+    chapter: chapter["1"],
   },
   {
     id: "2",
@@ -15,6 +45,7 @@ export default data = [
     prevCode: "2",
     newCode: "170",
     newCodeInfo: "निरसन और व्यावृत्ति",
+    chapter: chapter["1"],
   },
   {
     id: "3",
@@ -22,6 +53,7 @@ export default data = [
     prevCode: "3",
     newCode: "2",
     newCodeInfo: "परिभाषाएँ",
+    chapter: chapter["1"],
   },
   {
     id: "4",
@@ -29,6 +61,7 @@ export default data = [
     prevCode: "4",
     newCode: "2",
     newCodeInfo: "परिभाषाएँ",
+    chapter: chapter["1"],
   },
   {
     id: "5",
@@ -36,6 +69,7 @@ export default data = [
     prevCode: "5",
     newCode: "3",
     newCodeInfo: "विवाद्यक तथ्यों और सुसंगत तथ्यों का साक्ष्य दिया जा सकेगा",
+    chapter: chapter["2"].a,
   },
   {
     id: "6",
@@ -43,6 +77,7 @@ export default data = [
     prevCode: "6",
     newCode: "4",
     newCodeInfo: "एक ही संव्यवहार के भाग होने वाले तथ्यों की सुसंगति",
+    chapter: chapter["2"].b,
   },
   {
     id: "7",
@@ -50,6 +85,7 @@ export default data = [
     prevCode: "7",
     newCode: "5",
     newCodeInfo: "वे तथ्य जो विवाद्यक तथ्यों के प्रसंग हेतुक या परिणाम है",
+    chapter: chapter["2"].b,
   },
   {
     id: "8",
@@ -57,6 +93,7 @@ export default data = [
     prevCode: "8",
     newCode: "6",
     newCodeInfo: "हेतु, तैयारी और पूर्व का या पश्चात का आचरण",
+    chapter: chapter["2"].b,
   },
   {
     id: "9",
@@ -66,6 +103,7 @@ export default data = [
     newCode: "7",
     newCodeInfo:
       "विवाद्यक तथ्या या सुसंगत तथ्यों के स्पष्टीकरण या पुनःस्थापन के लिये आवश्यक तथ्य",
+    chapter: chapter["2"].b,
   },
   {
     id: "10",
@@ -75,6 +113,7 @@ export default data = [
     newCode: "8",
     newCodeInfo:
       "सामान्य परिकल्पना के बारे में षडयंत्रकारी द्वारा कही या की गई बातें",
+    chapter: chapter["2"].b,
   },
   {
     id: "11",
@@ -82,6 +121,7 @@ export default data = [
     prevCode: "11",
     newCode: "9",
     newCodeInfo: "वे तथ्य जो अन्यथा सुसंगत नही है कब सुसंगत है",
+    chapter: chapter["2"].b,
   },
 
   {
@@ -92,6 +132,7 @@ export default data = [
     newCode: "10",
     newCodeInfo:
       "रकम अवधारित करने के लिए न्यायालय को समर्थ करने की प्रवृत्ति रखने वाले तथ्य नुकसानी के लिये वादों सुसंगत हैं",
+    chapter: chapter["2"].b,
   },
 
   {
@@ -100,6 +141,7 @@ export default data = [
     prevCode: "13",
     newCode: "11",
     newCodeInfo: "जबकि अधिकार या रूढि प्रश्नगत है तब सुसंगत तथ्य",
+    chapter: chapter["2"].b,
   },
 
   {
@@ -110,6 +152,7 @@ export default data = [
     newCode: "12",
     newCodeInfo:
       "मन या शरीर की दशा या शारीरिक संवेदना का अस्तित्व दर्शित करने वाले तथ्य",
+    chapter: chapter["2"].b,
   },
 
   {
@@ -119,6 +162,7 @@ export default data = [
     prevCode: "15",
     newCode: "13",
     newCodeInfo: "कार्य आकस्मिक या साशय था इस प्रश्न पर प्रकाश डालने वाले तथ्य",
+    chapter: chapter["2"].b,
   },
 
   {
@@ -127,6 +171,7 @@ export default data = [
     prevCode: "16",
     newCode: "14",
     newCodeInfo: "कारबार के अनुक्रम का अस्तित्व कब सुसंगत है",
+    chapter: chapter["2"].b,
   },
 
   {
@@ -135,6 +180,7 @@ export default data = [
     prevCode: "17",
     newCode: "15",
     newCodeInfo: "स्वीकृति की परिभाषा",
+    chapter: chapter["2"].c,
   },
 
   {
@@ -143,6 +189,7 @@ export default data = [
     prevCode: "18",
     newCode: "16",
     newCodeInfo: "कार्यवाही के पक्षकार या उसके अभिकर्ता द्वारा",
+    chapter: chapter["2"].c,
   },
   {
     id: "19",
@@ -152,6 +199,7 @@ export default data = [
     newCode: "17",
     newCodeInfo:
       "उन व्यक्तियों द्वारा स्वीकृतियाँ जिनकी स्थिति वाद के पक्षकारों के विरुद्ध साबित की जानी चाहिए",
+    chapter: chapter["2"].c,
   },
   {
     id: "20",
@@ -161,6 +209,7 @@ export default data = [
     newCode: "18",
     newCodeInfo:
       "वाद के पक्षकार द्वारा अभिव्यक्त रूप से निर्दिष्ट व्यक्तियों द्वारा स्वीकृतियाँ",
+    chapter: chapter["2"].c,
   },
   {
     id: "21",
@@ -170,6 +219,7 @@ export default data = [
     newCode: "19",
     newCodeInfo:
       "स्वीकृतियों का उन्हें करने वाले व्यक्तियों के विरुद्ध और उनके द्वारा या ओर से साबित किया जाना",
+    chapter: chapter["2"].c,
   },
 
   {
@@ -180,6 +230,7 @@ export default data = [
     newCode: "20",
     newCodeInfo:
       "दस्तावेजों की अन्तर्वस्तु के बारे में मौखिक स्वीकृतियां कब सुसंगत होती हैं",
+    chapter: chapter["2"].c,
   },
 
   {
@@ -189,6 +240,7 @@ export default data = [
     prevCode: "22ए",
     newCode: "----",
     newCodeInfo: "----",
+    chapter: chapter["2"].c,
   },
 
   {
@@ -197,6 +249,7 @@ export default data = [
     prevCode: "23",
     newCode: "21",
     newCodeInfo: "सिविल मामलों में स्वीकृतियां कब सुसंगत होती है।",
+    chapter: chapter["2"].c,
   },
 
   {
@@ -207,6 +260,7 @@ export default data = [
     newCode: "22",
     newCodeInfo:
       "उत्प्रेरणा, धमकी या वचन द्वारा कराई गई संस्वीकृति दाण्डिक कार्यवाही में कब विसंगत होती है।",
+    chapter: chapter["2"].c,
   },
 
   {
@@ -215,6 +269,7 @@ export default data = [
     prevCode: "25",
     newCode: "23(1)",
     newCodeInfo: "पुलिस अधिकारी से की गई संस्वीकृति",
+    chapter: chapter["2"].c,
   },
 
   {
@@ -224,6 +279,7 @@ export default data = [
     prevCode: "26",
     newCode: "23(2)",
     newCodeInfo: "पुलिस अधिकारी से की गई संस्वीकृति",
+    chapter: chapter["2"].c,
   },
 
   {
@@ -232,6 +288,7 @@ export default data = [
     prevCode: "27",
     newCode: "23(3)",
     newCodeInfo: "पुलिस अधिकारी से की गई संस्वीकृति",
+    chapter: chapter["2"].c,
   },
 
   {
@@ -242,6 +299,7 @@ export default data = [
     newCode: "22",
     newCodeInfo:
       "उत्प्रेरणा, धमकी, प्रपीड़न या वचन द्वारा कराई गई संस्वीकृति दाण्डिक कार्यवाही में कब विसंगत होती है",
+    chapter: chapter["2"].c,
   },
 
   {
@@ -252,6 +310,7 @@ export default data = [
     newCode: "22",
     newCodeInfo:
       "उत्प्रेरणा, धमकी, प्रपीड़न या वचन द्वारा कराई गई संस्वीकृति दाण्डिक कार्यवाही में कब विसंगत होती है।",
+    chapter: chapter["2"].c,
   },
 
   {
@@ -262,6 +321,7 @@ export default data = [
     newCode: "24",
     newCodeInfo:
       "साबित संस्वीकृति को, जो उसे करने वाले व्यक्ति और एक ही अपराध के लिए संयुक्त रूप से विचारित अन्य को प्रभावित करती है विचार में लेना",
+    chapter: chapter["2"].c,
   },
 
   {
@@ -270,6 +330,7 @@ export default data = [
     prevCode: "31",
     newCode: "25",
     newCodeInfo: "स्वीकृतियां निश्चायक सबूत नहीं हैं किंतु विबंध कर सकती हैं",
+    chapter: chapter["2"].c,
   },
 
   {
@@ -280,6 +341,7 @@ export default data = [
     newCode: "26",
     newCodeInfo:
       "वे दशाएं जिनमें उस व्यक्ति द्वारा सुसंगत तथ्य का किया गया कथन सुसंगत है, जो मर गया है या मिल नहीं सकता, इत्यादि",
+    chapter: chapter["2"].d,
   },
 
   {
@@ -290,6 +352,7 @@ export default data = [
     newCode: "27",
     newCodeInfo:
       "किसी साक्ष्य में कथित तथ्यों की सत्यता को पश्चात्वर्ती कार्यवाही में साबित करने के लिए उस साक्ष्य की सुसंगति",
+    chapter: chapter["2"].d,
   },
 
   {
@@ -300,6 +363,7 @@ export default data = [
     newCode: "28",
     newCodeInfo:
       "लेखा पुस्तकों की प्रविष्टियां, जिनके अंतर्गत वे भी हैं, जो इलेक्ट्रानिक रूप में रखी गई हों, कब सुसंगत हैं",
+    chapter: chapter["2"].e,
   },
 
   {
@@ -310,14 +374,15 @@ export default data = [
     newCode: "29",
     newCodeInfo:
       "कर्त्तव्य पालन में की गई लोक अभिलेख या इलेक्ट्रानिक अभिलेख की प्रविष्टियों की सुसंगति",
+    chapter: chapter["2"].e,
   },
-
   {
     id: "37",
     prevCodeInfo: "मानचित्रों, चार्टो और रेखांकों के कथनों की सुसंगति",
     prevCode: "36",
     newCode: "30",
     newCodeInfo: "मानचित्रों, चार्टो और रेखांकों के कथनों की सुसंगति",
+    chapter: chapter["2"].e,
   },
 
   {
@@ -328,6 +393,7 @@ export default data = [
     newCode: "31",
     newCodeInfo:
       "किन्हीं अधिनियमों या अधिसूचनाओं में अंतर्विष्ट लोक प्रकृति के तथ्य के बारे में कथन की सुसंगति",
+    chapter: chapter["2"].e,
   },
   {
     id: "39",
@@ -337,6 +403,7 @@ export default data = [
     newCode: "32",
     newCodeInfo:
       "विधि की पुस्तकों में अन्तर्विष्ट किसी विधि के कथनों की सुसंगति, जिसके अंतर्गत इलैक्ट्रॉनिक या डिजिटल प्ररूप भी हैं",
+    chapter: chapter["2"].e,
   },
   {
     id: "40",
@@ -346,14 +413,15 @@ export default data = [
     newCode: "33",
     newCodeInfo:
       "कथन किसी बातचीत, दस्तावेज, इलैक्ट्रानिक अभिलेख, पुस्तक या पत्रों या कागज-पत्रों की आवली का भाग हो, तब क्या साक्ष्य दिया जाए",
+    chapter: chapter["2"].f,
   },
-
   {
     id: "41",
     prevCodeInfo: "द्वितीय वाद या विचारण के वारणार्थ पूर्व निर्णय सुसंगत हैं",
     prevCode: "40",
     newCode: "34",
     newCodeInfo: "द्वितीय वाद या विचारण के वारणार्थ पूर्व निर्णय सुसंगत हैं",
+    chapter: chapter["2"].g,
   },
 
   {
@@ -364,6 +432,7 @@ export default data = [
     newCode: "35",
     newCodeInfo:
       "प्रोबेट इत्यादि विषयक अधिकारिता के किन्हीं निर्णयों की सुसंगति",
+    chapter: chapter["2"].g,
   },
 
   {
@@ -374,6 +443,7 @@ export default data = [
     newCode: "36",
     newCodeInfo:
       "धारा 35 में वर्णित से भिन्न निर्णयों, आदेशों या डिक्रियों की सुसंगति और प्रभाव",
+    chapter: chapter["2"].g,
   },
 
   {
@@ -384,6 +454,7 @@ export default data = [
     newCode: "37",
     newCodeInfo:
       "धारा 34, धारा 35 और धारा 36 में वर्णित से भिन्न निर्णय आदि कब सुसंगत हैं",
+    chapter: chapter["2"].g,
   },
 
   {
@@ -394,14 +465,15 @@ export default data = [
     newCode: "38",
     newCodeInfo:
       "निर्णय अभिप्राप्त करने में कपट या दुस्संधि अथवा न्यायालय की अक्षमता साबित की जा सकेगी",
+    chapter: chapter["2"].g,
   },
-
   {
     id: "46",
     prevCodeInfo: "विशेषज्ञों की राय",
     prevCode: "45",
     newCode: "39(1)",
     newCodeInfo: "विशेषज्ञों की रायें",
+    chapter: chapter["2"].h,
   },
 
   {
@@ -410,6 +482,7 @@ export default data = [
     prevCode: "45क",
     newCode: "39(2)",
     newCodeInfo: "विशेषज्ञो की रायें",
+    chapter: chapter["2"].h,
   },
 
   {
@@ -418,6 +491,7 @@ export default data = [
     prevCode: "46",
     newCode: "40",
     newCodeInfo: "विशेषज्ञों की रायों से संबंधित तथ्य",
+    chapter: chapter["2"].h,
   },
 
   {
@@ -426,6 +500,7 @@ export default data = [
     prevCode: "47",
     newCode: "41(1)",
     newCodeInfo: "हस्तलेख और हस्ताक्षर के बारे में राय कब सुसंगत है",
+    chapter: chapter["2"].h,
   },
 
   {
@@ -434,6 +509,7 @@ export default data = [
     prevCode: "47क",
     newCode: "41(2)",
     newCodeInfo: "हस्तलेख और हस्ताक्षर के बारे में राय कब सुसंगत है",
+    chapter: chapter["2"].h,
   },
   {
     id: "51",
@@ -442,6 +518,7 @@ export default data = [
     newCode: "42",
     newCodeInfo:
       "साधारण रूढि या अधिकार के अस्तित्व के बारे में रायें कब सुसंगत हैं",
+    chapter: chapter["2"].h,
   },
   {
     id: "52",
@@ -449,6 +526,7 @@ export default data = [
     prevCode: "49",
     newCode: "43",
     newCodeInfo: "प्रथाओं, सिद्धांतों आदि के बारे में वाण रायें कब सुसंगत हैं",
+    chapter: chapter["2"].h,
   },
   {
     id: "53",
@@ -456,6 +534,7 @@ export default data = [
     prevCode: "50",
     newCode: "44",
     newCodeInfo: "नातेदारी के बारे में रायें कब सुसंगत है",
+    chapter: chapter["2"].h,
   },
   {
     id: "54",
@@ -463,6 +542,7 @@ export default data = [
     prevCode: "51",
     newCode: "45",
     newCodeInfo: "राय के आधार कब सुसंगत है",
+    chapter: chapter["2"].h,
   },
   {
     id: "55",
@@ -472,6 +552,7 @@ export default data = [
     newCode: "46",
     newCodeInfo:
       "सिविल मामलों में अध्यारोपित आचरण साबित करने के लिए शील विसंगत है",
+    chapter: chapter["2"].i,
   },
   {
     id: "56",
@@ -479,6 +560,7 @@ export default data = [
     prevCode: "53",
     newCode: "47",
     newCodeInfo: "दाण्डिक मामलों में पूर्वतन अच्छा शील सुसंगत है",
+    chapter: chapter["2"].i,
   },
   {
     id: "57",
@@ -488,6 +570,7 @@ export default data = [
     newCode: "48",
     newCodeInfo:
       "कतिपय मामलों में शील या पूर्व लैंगिक अनुभव के साक्ष्य का सुसंगत न होना",
+    chapter: chapter["2"].i,
   },
   {
     id: "58",
@@ -495,6 +578,7 @@ export default data = [
     prevCode: "54",
     newCode: "49",
     newCodeInfo: "उत्तर में होने के सिवाय पूर्वतन बुरा शील सुसंगत नहीं है",
+    chapter: chapter["2"].i,
   },
   {
     id: "59",
@@ -502,6 +586,7 @@ export default data = [
     prevCode: "55",
     newCode: "50",
     newCodeInfo: "नुकसानी पर प्रभाव डालने वाला शील",
+    chapter: chapter["2"].i,
   },
   {
     id: "60",
@@ -509,6 +594,7 @@ export default data = [
     prevCode: "56",
     newCode: "51",
     newCodeInfo: "न्यायिक रूप से अवेक्षणीय तथ्य साबित करना आवश्यक नहीं है",
+    chapter: chapter["3"].a,
   },
   {
     id: "61",
@@ -516,6 +602,7 @@ export default data = [
     prevCode: "57",
     newCode: "52",
     newCodeInfo: "वे तथ्य, जिनकी न्यायिक अवेक्षा न्यायालय को करनी होगी",
+    chapter: chapter["3"].a,
   },
   {
     id: "62",
@@ -523,6 +610,7 @@ export default data = [
     prevCode: "58",
     newCode: "53",
     newCodeInfo: "स्वीकृत तथ्यों को साबित करना आवश्यक नही",
+    chapter: chapter["3"].a,
   },
   {
     id: "63",
@@ -530,6 +618,7 @@ export default data = [
     prevCode: "59",
     newCode: "54",
     newCodeInfo: "मौखिक साक्ष्य द्वारा तथ्यों का साबित किया जाना",
+    chapter: chapter["3"].b,
   },
   {
     id: "64",
@@ -537,6 +626,7 @@ export default data = [
     prevCode: "60",
     newCode: "55",
     newCodeInfo: "मौखिक साक्ष्य प्रत्यक्ष होना चाहिए",
+    chapter: chapter["3"].b,
   },
   {
     id: "65",
@@ -544,6 +634,7 @@ export default data = [
     prevCode: "61",
     newCode: "56",
     newCodeInfo: "दस्तावेजों की अंतवस्तु का सबूत",
+    chapter: chapter["3"].c,
   },
   {
     id: "66",
@@ -551,6 +642,7 @@ export default data = [
     prevCode: "62",
     newCode: "57",
     newCodeInfo: "प्राथमिक साक्ष्य",
+    chapter: chapter["3"].c,
   },
   {
     id: "67",
@@ -558,6 +650,7 @@ export default data = [
     prevCode: "63",
     newCode: "58",
     newCodeInfo: "द्वितीयक साक्ष्य",
+    chapter: chapter["3"].c,
   },
   {
     id: "68",
@@ -565,6 +658,7 @@ export default data = [
     prevCode: "64",
     newCode: "59",
     newCodeInfo: "दस्तावेजो का प्राथमिक साक्ष्य द्वारा साबित किया जाना",
+    chapter: chapter["3"].c,
   },
   {
     id: "69",
@@ -574,6 +668,7 @@ export default data = [
     newCode: "60",
     newCodeInfo:
       "अवस्थाएं जिनमें दस्तावेजों के संबंध में द्वितीयक साक्ष्य दिया जा सकेगा",
+    chapter: chapter["3"].c,
   },
   {
     id: "70",
@@ -582,6 +677,7 @@ export default data = [
     prevCode: "65क",
     newCode: "62",
     newCodeInfo: "इलेक्टानिक अभिलेख से संबंधित साक्ष्य के बारे में विशेष उपबंध",
+    chapter: chapter["3"].c,
   },
   {
     id: "71",
@@ -589,6 +685,7 @@ export default data = [
     prevCode: "65ख",
     newCode: "63",
     newCodeInfo: "इलेक्टॉनिक अभिलेखों की ग्राहता",
+    chapter: chapter["3"].c,
   },
   {
     id: "72",
@@ -596,6 +693,7 @@ export default data = [
     prevCode: "66",
     newCode: "64",
     newCodeInfo: "पेश करने की सूचना के बारे में नियम",
+    chapter: chapter["3"].c,
   },
   {
     id: "73",
@@ -605,6 +703,7 @@ export default data = [
     newCode: "65",
     newCodeInfo:
       "जिस व्यक्ति के बारे में अभिकथित है कि उसने पेश की गई दस्तावेज को हस्ताक्षरित किया था या लिखा था उस व्यक्ति के हस्ताक्षर और हस्तलेख का साबित किया जाना",
+    chapter: chapter["3"].c,
   },
   {
     id: "74",
@@ -612,6 +711,7 @@ export default data = [
     prevCode: "67क",
     newCode: "66",
     newCodeInfo: "इलेक्ट्रानिक चिन्हक के बारे में सबूत",
+    chapter: chapter["3"].c,
   },
   {
     id: "75",
@@ -621,6 +721,7 @@ export default data = [
     newCode: "67",
     newCodeInfo:
       "ऐसी दस्तावेज के निष्पादन का साबित किया जाना जिसका अनुप्रमाणित होना विधि द्वारा अपेक्षित है",
+    chapter: chapter["3"].c,
   },
   {
     id: "76",
@@ -628,6 +729,7 @@ export default data = [
     prevCode: "69",
     newCode: "68",
     newCodeInfo: "जब किसी भी अनुप्रमाणक साक्षी का पता न चले, तब सबूत",
+    chapter: chapter["3"].c,
   },
   {
     id: "77",
@@ -635,6 +737,7 @@ export default data = [
     prevCode: "70",
     newCode: "69",
     newCodeInfo: "अनुप्रमाणित दस्तावेज के पक्षकार द्वारा निष्पादन की स्वीकृति",
+    chapter: chapter["3"].c,
   },
   {
     id: "78",
@@ -644,6 +747,7 @@ export default data = [
     newCode: "70",
     newCodeInfo:
       "जबकि अनुप्रमाणिक साक्षी निष्पादन का प्रत्याख्यान करता है, तब सबूत",
+    chapter: chapter["3"].c,
   },
   {
     id: "79",
@@ -653,6 +757,7 @@ export default data = [
     newCode: "71",
     newCodeInfo:
       "उस दस्तावेज का साबित किया जाना जिसका अनुप्रमाणित होना विधि द्वारा अपेक्षित नहीं है",
+    chapter: chapter["3"].c,
   },
   {
     id: "80",
@@ -662,6 +767,7 @@ export default data = [
     newCode: "72",
     newCodeInfo:
       "हस्ताक्षर, लेख या मुद्रा की तुलना अन्यों से स्वीकृत या साबित है",
+    chapter: chapter["3"].c,
   },
   {
     id: "81",
@@ -669,6 +775,7 @@ export default data = [
     prevCode: "73क",
     newCode: "73",
     newCodeInfo: "डिजिटल हस्ताक्षर के सत्यापन के बारे में सबूत",
+    chapter: chapter["3"].c,
   },
   {
     id: "82",
@@ -676,6 +783,7 @@ export default data = [
     prevCode: "74",
     newCode: "74",
     newCodeInfo: "लोक और प्राइवेट दस्तावेज",
+    chapter: chapter["3"].d,
   },
   {
     id: "83",
@@ -683,6 +791,7 @@ export default data = [
     prevCode: "75",
     newCode: "74",
     newCodeInfo: "लोक और प्राइवेट दस्तावेज",
+    chapter: chapter["3"].d,
   },
   {
     id: "84",
@@ -690,6 +799,7 @@ export default data = [
     prevCode: "76",
     newCode: "75",
     newCodeInfo: "लोक दस्तावेजों की प्रमाणित प्रतियां",
+    chapter: chapter["3"].d,
   },
   {
     id: "85",
@@ -697,6 +807,7 @@ export default data = [
     prevCode: "77",
     newCode: "76",
     newCodeInfo: "प्रमाणित प्रतियों के पेश करने द्वारा दस्तावेजों का सबूत",
+    chapter: chapter["3"].d,
   },
   {
     id: "86",
@@ -704,6 +815,7 @@ export default data = [
     prevCode: "78",
     newCode: "77",
     newCodeInfo: "अन्य शासकीय दस्तावेजों का सबूत",
+    chapter: chapter["3"].d,
   },
   {
     id: "87",
@@ -711,6 +823,7 @@ export default data = [
     prevCode: "79",
     newCode: "78",
     newCodeInfo: "प्रमाणित प्रतियों के असली होने के बारे में उपधारणा",
+    chapter: chapter["3"].e,
   },
   {
     id: "88",
@@ -720,6 +833,7 @@ export default data = [
     newCode: "79",
     newCodeInfo:
       "साक्ष्य, आदि के अभिलेख के तौर पर पेश की दस्तावेंजो के बारे में उपधारण",
+    chapter: chapter["3"].e,
   },
   {
     id: "89",
@@ -728,6 +842,7 @@ export default data = [
     prevCode: "81",
     newCode: "80",
     newCodeInfo: "राजपत्रों समाचारपत्रों और अन्य दस्तावेजों के बारे में उपधारण",
+    chapter: chapter["3"].e,
   },
   {
     id: "90",
@@ -736,6 +851,7 @@ export default data = [
     newCode: "81",
     newCodeInfo:
       "इलेक्ट्रानिक या डिजिटल अभिलेख में राजपत्र के बारे में उपधारणा",
+    chapter: chapter["3"].e,
   },
   {
     id: "91",
@@ -744,6 +860,7 @@ export default data = [
     prevCode: "82",
     newCode: "----",
     newCodeInfo: "----",
+    chapter: chapter["3"].e,
   },
   {
     id: "92",
@@ -753,6 +870,7 @@ export default data = [
     newCode: "82",
     newCodeInfo:
       "सरकार के प्राधिकार द्वारा बनाए गए मानचित्रों या रेखांकों के बारे में उपधारणा",
+    chapter: chapter["3"].e,
   },
   {
     id: "93",
@@ -762,6 +880,7 @@ export default data = [
     newCode: "83",
     newCodeInfo:
       "विधियों के संग्रह और विनिश्चयों की रिपोर्टों के बारे में उपधारणा",
+    chapter: chapter["3"].e,
   },
   {
     id: "94",
@@ -769,6 +888,7 @@ export default data = [
     prevCode: "85",
     newCode: "84",
     newCodeInfo: "मुख्तारनामों के बारे में उपधारणा",
+    chapter: chapter["3"].e,
   },
   {
     id: "95",
@@ -776,6 +896,7 @@ export default data = [
     prevCode: "85क",
     newCode: "85",
     newCodeInfo: "इलेक्ट्रानिक करारों के बारे में उपधारणा",
+    chapter: chapter["3"].e,
   },
   {
     id: "96",
@@ -785,6 +906,7 @@ export default data = [
     newCode: "86",
     newCodeInfo:
       "इलेक्ट्रानिक अभिलेखों और इलेक्ट्रनिक हस्ताक्षरों के बारे में उपधारणा",
+    chapter: chapter["3"].e,
   },
   {
     id: "97",
@@ -792,6 +914,7 @@ export default data = [
     prevCode: "85ग",
     newCode: "87",
     newCodeInfo: "इलेक्ट्रानिक हस्ताक्षर प्रमाण पत्र के बारे में उपधारणा",
+    chapter: chapter["3"].e,
   },
   {
     id: "98",
@@ -801,6 +924,7 @@ export default data = [
     newCode: "88",
     newCodeInfo:
       "विदेशी न्यायिक अभिलेखों की प्रमाणित प्रतियों के बारे में उपधारणा",
+    chapter: chapter["3"].e,
   },
   {
     id: "99",
@@ -808,6 +932,7 @@ export default data = [
     prevCode: "87",
     newCode: "89",
     newCodeInfo: "पुस्तकों मानचित्रों और चार्टो के बारे में उपधारणा",
+    chapter: chapter["3"].e,
   },
   {
     id: "100",
@@ -815,6 +940,7 @@ export default data = [
     prevCode: "88",
     newCode: "----",
     newCodeInfo: "----",
+    chapter: chapter["3"].e,
   },
   {
     id: "101",
@@ -822,6 +948,7 @@ export default data = [
     prevCode: "88क",
     newCode: "90",
     newCodeInfo: "इलेक्ट्रानिक संदेशों के बारे में मियाज उपधारणा",
+    chapter: chapter["3"].e,
   },
   {
     id: "102",
@@ -831,6 +958,7 @@ export default data = [
     newCode: "91",
     newCodeInfo:
       "पेश न की गई दस्तावेजों के सम्यक निष्पादन आदि के बारे में उपधारणा",
+    chapter: chapter["3"].e,
   },
   {
     id: "103",
@@ -838,6 +966,7 @@ export default data = [
     prevCode: "90",
     newCode: "92",
     newCodeInfo: "तीस वर्ष पुरानी दस्तावेज के बारे में उपधारणा",
+    chapter: chapter["3"].e,
   },
   {
     id: "104",
@@ -846,6 +975,7 @@ export default data = [
     newCode: "93",
     newCodeInfo:
       "पांच वर्षीय पुराने इलेक्ट्रानिक अभिलेखों के बारे में उपधारणा अभिलेखों के बारे में उपधारणा",
+    chapter: chapter["3"].e,
   },
   {
     id: "105",
@@ -855,6 +985,7 @@ export default data = [
     newCode: "94",
     newCodeInfo:
       "दस्तावेजो के रूप में लेखबद्ध संविदाओ अनुदानों तथा संपत्ति के अन्य व्ययनों के निबंधनों का साक्ष्या",
+    chapter: chapter["3"].f,
   },
   {
     id: "106",
@@ -862,6 +993,7 @@ export default data = [
     prevCode: "92",
     newCode: "95",
     newCodeInfo: "मौखिक करार के साक्ष्य का अपवर्जन",
+    chapter: chapter["3"].f,
   },
   {
     id: "107",
@@ -871,6 +1003,7 @@ export default data = [
     newCode: "96",
     newCodeInfo:
       "संदिग्धार्थ दस्तावेज को स्पष्ट करने या उसका संशोधन करने के साक्ष्य का अपवर्जन",
+    chapter: chapter["3"].f,
   },
   {
     id: "108",
@@ -880,6 +1013,7 @@ export default data = [
     newCode: "97",
     newCodeInfo:
       "विद्यमान तथ्यों को दस्तावेज के लागू होने के विरूद्ध साक्ष्य का अपवर्जन",
+    chapter: chapter["3"].f,
   },
   {
     id: "109",
@@ -889,6 +1023,7 @@ export default data = [
     newCode: "98",
     newCodeInfo:
       "विद्यमान तथ्यों के संदर्भ में अर्थहीन दस्तावेज के बारे में साक्ष्य",
+    chapter: chapter["3"].f,
   },
   {
     id: "110",
@@ -898,6 +1033,7 @@ export default data = [
     newCode: "99",
     newCodeInfo:
       "उस भाषा के लागू होने के बारे में साक्ष्य जो कई व्यक्तियों में से केवल एक को लागू हो सकती है",
+    chapter: chapter["3"].f,
   },
   {
     id: "111",
@@ -907,6 +1043,7 @@ export default data = [
     newCode: "100",
     newCodeInfo:
       "तथ्यों के दो संवर्गों में से जिनमें से किसी एक को भी वह भाषा पूरी की पूरी ठीक-ठीक लागू नही होती, उसमें से एक को भाषा के लागू होने के बारे में साक्ष्य",
+    chapter: chapter["3"].f,
   },
   {
     id: "112",
@@ -914,6 +1051,7 @@ export default data = [
     prevCode: "98",
     newCode: "101",
     newCodeInfo: "न पढी जा सकने वाली लिपि आदि के अर्थ के बारे में साक्ष्य",
+    chapter: chapter["3"].f,
   },
   {
     id: "113",
@@ -923,6 +1061,7 @@ export default data = [
     newCode: "102",
     newCodeInfo:
       "दस्तावेज के निबंधनों में फेरफार करने वाले करार का साक्ष्य कौन दे सकेगा",
+    chapter: chapter["3"].f,
   },
   {
     id: "114",
@@ -930,6 +1069,7 @@ export default data = [
     prevCode: "100",
     newCode: "103",
     newCodeInfo: "भारतीय उत्राधिकार अधि० के विल संबंधी उपबंधो की व्यावृत्ति",
+    chapter: chapter["3"].f,
   },
   {
     id: "115",
@@ -937,6 +1077,7 @@ export default data = [
     prevCode: "101",
     newCode: "104",
     newCodeInfo: "सबूत का भार",
+    chapter: chapter["4"].a,
   },
   {
     id: "116",
@@ -944,6 +1085,7 @@ export default data = [
     prevCode: "102",
     newCode: "105",
     newCodeInfo: "सबूत का भार किस पर होता है",
+    chapter: chapter["4"].a,
   },
   {
     id: "117",
@@ -951,6 +1093,7 @@ export default data = [
     prevCode: "103",
     newCode: "106",
     newCodeInfo: "विशिष्ट तथ्य के बारे में सबूत का भार",
+    chapter: chapter["4"].a,
   },
   {
     id: "118",
@@ -960,6 +1103,7 @@ export default data = [
     newCode: "107",
     newCodeInfo:
       "साक्ष्य को ग्राह बनाने के लिये जो तथ्य साबित किया जाना हो, उसे साबित करने का भार",
+    chapter: chapter["4"].a,
   },
   {
     id: "119",
@@ -969,6 +1113,7 @@ export default data = [
     newCode: "108",
     newCodeInfo:
       "यह साबित करने का भार कि अभियुक्त का मामला अपवादों के अंतर्गत आता है",
+    chapter: chapter["4"].a,
   },
 
   {
@@ -977,6 +1122,7 @@ export default data = [
     prevCode: "106",
     newCode: "109",
     newCodeInfo: "विशेषतः ज्ञात तथ्य को साबित करने का भार",
+    chapter: chapter["4"].a,
   },
 
   {
@@ -987,6 +1133,7 @@ export default data = [
     newCode: "110",
     newCodeInfo:
       "उस व्यक्ति की मृत्यु साबित करने का भार जिसका तीस वर्ष के भीतर जीवित होना ज्ञात है",
+    chapter: chapter["4"].a,
   },
   {
     id: "122",
@@ -996,6 +1143,7 @@ export default data = [
     newCode: "111",
     newCodeInfo:
       "यह साबित करने का भार कि वह व्यक्ति, जिसके बारे में 7 वर्ष से कुछ सुना नही गया है, जीवित है",
+    chapter: chapter["4"].a,
   },
   {
     id: "123",
@@ -1005,6 +1153,7 @@ export default data = [
     newCode: "112",
     newCodeInfo:
       "भागीदारो, भूस्वामी और अभिधारी, मालिक और अभिकर्ता के मामलों में सबूत का भार",
+    chapter: chapter["4"].a,
   },
 
   {
@@ -1013,6 +1162,7 @@ export default data = [
     prevCode: "110",
     newCode: "113",
     newCodeInfo: "स्वामित्व के बारे में सबूत का भार",
+    chapter: chapter["4"].a,
   },
   {
     id: "125",
@@ -1022,6 +1172,7 @@ export default data = [
     newCode: "114",
     newCodeInfo:
       "उन संव्यहारो में सद्भाव का साबित किया जाना जिनमें एक पक्षकार का संबंध सक्रिय विश्वास का है",
+    chapter: chapter["4"].a,
   },
   {
     id: "126",
@@ -1029,15 +1180,17 @@ export default data = [
     prevCode: "111क",
     newCode: "115",
     newCodeInfo: "कुछ अपराधों के बारे में उपधारणा",
+    chapter: chapter["4"].a,
   },
   {
     id: "127",
     prevCodeInfo:
       "वैवाहिक स्थिति के दौरान जन्म होना धर्मजत्व का निश्चायक सबूत है",
-    prevCode: "116",
-    newCode: "112",
+    prevCode: "112",
+    newCode: "116",
     newCodeInfo:
       "वैवाहिक स्थिति के दौरान जन्म होना धर्मजत्व का निश्चायक सबूत है",
+    chapter: chapter["4"].a,
   },
   {
     id: "128",
@@ -1045,6 +1198,7 @@ export default data = [
     prevCode: "113",
     newCode: "----",
     newCodeInfo: "----",
+    chapter: chapter["4"].a,
   },
   {
     id: "129",
@@ -1054,6 +1208,7 @@ export default data = [
     newCode: "117",
     newCodeInfo:
       "किसी विवाहित स्त्री द्वारा आत्महत्या के दुष्प्रेरण के बारे में उपधारणा",
+    chapter: chapter["4"].a,
   },
   {
     id: "130",
@@ -1061,6 +1216,7 @@ export default data = [
     prevCode: "113ख",
     newCode: "118",
     newCodeInfo: "दहेज मृत्यु के बारे में उपधारणा",
+    chapter: chapter["4"].a,
   },
   {
     id: "131",
@@ -1068,6 +1224,7 @@ export default data = [
     prevCode: "114",
     newCode: "119",
     newCodeInfo: "न्यायालय किन्ही तथ्यों का अस्तित्व उपधारित कर सकेगा",
+    chapter: chapter["4"].a,
   },
   {
     id: "132",
@@ -1077,6 +1234,7 @@ export default data = [
     newCode: "120",
     newCodeInfo:
       "बलात्संग के लिये कतिपय अभियोजन में संम्मति के न होने के बारे में उपधारणा",
+    chapter: chapter["4"].a,
   },
   {
     id: "133",
@@ -1084,6 +1242,7 @@ export default data = [
     prevCode: "115",
     newCode: "121",
     newCodeInfo: "विबन्ध",
+    chapter: chapter["4"].b,
   },
   {
     id: "134",
@@ -1093,6 +1252,7 @@ export default data = [
     newCode: "122",
     newCodeInfo:
       "अभिधारी का और कब्जाधारी व्यक्ति के अनुज्ञप्तिधारी का का विबंध",
+    chapter: chapter["4"].b,
   },
   {
     id: "135",
@@ -1102,6 +1262,7 @@ export default data = [
     newCode: "123",
     newCodeInfo:
       "विनिमय पत्र के प्रतिगृहीता का, उपनिहिती का या अनुज्ञप्तिधारी का विबंध",
+    chapter: chapter["4"].b,
   },
   {
     id: "136",
@@ -1109,6 +1270,7 @@ export default data = [
     prevCode: "118",
     newCode: "124",
     newCodeInfo: "कौन साक्ष्य दे सकेगा",
+    chapter: chapter["4"].c,
   },
   {
     id: "137",
@@ -1116,6 +1278,7 @@ export default data = [
     prevCode: "119",
     newCode: "125",
     newCodeInfo: "साक्षी का मौखिक रूप से संसूचित करने में असमर्थ होना",
+    chapter: chapter["4"].c,
   },
   {
     id: "138",
@@ -1125,6 +1288,7 @@ export default data = [
     newCode: "126",
     newCodeInfo:
       "कतिपय मामलों में पति और पत्नी की साक्षियों के रूप में सक्षमता",
+    chapter: chapter["4"].c,
   },
   {
     id: "139",
@@ -1132,6 +1296,7 @@ export default data = [
     prevCode: "121",
     newCode: "127",
     newCodeInfo: "न्यायाधीश और मजिस्ट्रेट",
+    chapter: chapter["4"].c,
   },
   {
     id: "140",
@@ -1139,6 +1304,7 @@ export default data = [
     prevCode: "122",
     newCode: "128",
     newCodeInfo: "विवाहित स्थिति के दौरान में की गई संसूचनाएं",
+    chapter: chapter["4"].c,
   },
   {
     id: "141",
@@ -1146,6 +1312,7 @@ export default data = [
     prevCode: "123",
     newCode: "129",
     newCodeInfo: "राज्य के कार्यकलापों के बारे में साक्ष्य",
+    chapter: chapter["4"].c,
   },
   {
     id: "142",
@@ -1153,6 +1320,7 @@ export default data = [
     prevCode: "124",
     newCode: "130",
     newCodeInfo: "शासकीय संसूचनाएं",
+    chapter: chapter["4"].c,
   },
   {
     id: "143",
@@ -1160,6 +1328,7 @@ export default data = [
     prevCode: "125",
     newCode: "131",
     newCodeInfo: "अपराधों के करने के बारे में जानकारी",
+    chapter: chapter["4"].c,
   },
   {
     id: "144",
@@ -1167,6 +1336,7 @@ export default data = [
     prevCode: "126",
     newCode: "132",
     newCodeInfo: "वृत्तिक संसूचना",
+    chapter: chapter["4"].c,
   },
   {
     id: "145",
@@ -1174,6 +1344,7 @@ export default data = [
     prevCode: "127",
     newCode: "132(3)",
     newCodeInfo: "वृत्तिक संसूचना",
+    chapter: chapter["4"].c,
   },
   {
     id: "146",
@@ -1183,6 +1354,7 @@ export default data = [
     newCode: "133",
     newCodeInfo:
       "साक्ष्य देने के लिए स्वमेव उद्यत होने से विशेषाधिकार अधित्यक्त नहीं हो जाता",
+    chapter: chapter["4"].c,
   },
   {
     id: "147",
@@ -1190,6 +1362,7 @@ export default data = [
     prevCode: "129",
     newCode: "134",
     newCodeInfo: "विधि सलाहकारों से गोपनीय संसूचनाएं",
+    chapter: chapter["4"].c,
   },
   {
     id: "148",
@@ -1197,6 +1370,7 @@ export default data = [
     prevCode: "130",
     newCode: "135",
     newCodeInfo: "जो साक्षी पक्षकार नहीं है उसके हक विलेखों का पेश किया जाना",
+    chapter: chapter["4"].c,
   },
   {
     id: "149",
@@ -1206,6 +1380,7 @@ export default data = [
     newCode: "136",
     newCodeInfo:
       "ऐसे दस्तावेजों या इलेक्ट्रोनिक अभिलेखों का पेश किया जाना जिन्हें कोई दूसरा व्यक्ति, जिसका उन पर कब्जा है पेश करने से इंकार कर सकता था",
+    chapter: chapter["4"].c,
   },
   {
     id: "150",
@@ -1215,6 +1390,7 @@ export default data = [
     newCode: "137",
     newCodeInfo:
       "इस आधार पर कि उत्तर उसे अपराध में फसायेगा, साक्षी उत्तर देने से क्षम्य न होगा",
+    chapter: chapter["4"].c,
   },
   {
     id: "151",
@@ -1222,6 +1398,7 @@ export default data = [
     prevCode: "133",
     newCode: "138",
     newCodeInfo: "सहअपराधी",
+    chapter: chapter["4"].c,
   },
   {
     id: "152",
@@ -1229,6 +1406,7 @@ export default data = [
     prevCode: "134",
     newCode: "139",
     newCodeInfo: "साक्षियों की संख्या",
+    chapter: chapter["4"].c,
   },
   {
     id: "153",
@@ -1236,6 +1414,7 @@ export default data = [
     prevCode: " 135",
     newCode: "140",
     newCodeInfo: "साक्षियों के पेशकरण और उनकी परीक्षा का क्रम",
+    chapter: chapter["4"].d,
   },
   {
     id: "154",
@@ -1243,6 +1422,7 @@ export default data = [
     prevCode: "136",
     newCode: "141",
     newCodeInfo: "न्यायाधीश साक्षी ग्राह्यता के बारे में निश्चय करेगा",
+    chapter: chapter["4"].d,
   },
   {
     id: "155",
@@ -1250,6 +1430,7 @@ export default data = [
     prevCode: "137",
     newCode: "142",
     newCodeInfo: "साक्षियों की परीक्षा",
+    chapter: chapter["4"].d,
   },
   {
     id: "156",
@@ -1257,6 +1438,7 @@ export default data = [
     prevCode: "138",
     newCode: "143",
     newCodeInfo: "परीक्षाओं का क्रम",
+    chapter: chapter["4"].d,
   },
   {
     id: "157",
@@ -1266,6 +1448,7 @@ export default data = [
     newCode: "144",
     newCodeInfo:
       "किसी दस्तावेज को पेश करने के लिए समनित व्यक्ति की प्रतिपरीक्षा",
+    chapter: chapter["4"].d,
   },
   {
     id: "158",
@@ -1273,6 +1456,7 @@ export default data = [
     prevCode: "140",
     newCode: "145",
     newCodeInfo: "शील का साक्ष्य देने वाले साक्षी",
+    chapter: chapter["4"].d,
   },
   {
     id: "159",
@@ -1280,6 +1464,7 @@ export default data = [
     prevCode: "141",
     newCode: "146",
     newCodeInfo: "सूचक प्रशन",
+    chapter: chapter["4"].d,
   },
   {
     id: "160",
@@ -1287,6 +1472,7 @@ export default data = [
     prevCode: "142",
     newCode: "146",
     newCodeInfo: "सूचक प्रशन",
+    chapter: chapter["4"].d,
   },
   {
     id: "161",
@@ -1294,6 +1480,7 @@ export default data = [
     prevCode: "143",
     newCode: "146",
     newCodeInfo: "सूचक प्रशन",
+    chapter: chapter["4"].d,
   },
   {
     id: "162",
@@ -1301,6 +1488,7 @@ export default data = [
     prevCode: "144",
     newCode: "147",
     newCodeInfo: "लेखबद्ध विषयों के बारे में साक्ष्य",
+    chapter: chapter["4"].d,
   },
   {
     id: "163",
@@ -1308,6 +1496,7 @@ export default data = [
     prevCode: "145",
     newCode: "148",
     newCodeInfo: "पूर्वतन लेखबद्ध कथनों के बारे में प्रतिपरीक्षा",
+    chapter: chapter["4"].d,
   },
   {
     id: "164",
@@ -1315,6 +1504,7 @@ export default data = [
     prevCode: "146",
     newCode: "149",
     newCodeInfo: "प्रतिपरीक्षा में विधिपूर्ण प्रशन",
+    chapter: chapter["4"].d,
   },
   {
     id: "165",
@@ -1322,6 +1512,7 @@ export default data = [
     prevCode: "147",
     newCode: "150",
     newCodeInfo: "साक्षी को उत्तर देने के लिए कब विवश किया जायेगा",
+    chapter: chapter["4"].d,
   },
   {
     id: "166",
@@ -1331,6 +1522,7 @@ export default data = [
     newCode: "151",
     newCodeInfo:
       "न्यायालय विनिश्चित करेगा कि कब प्रशन पूछा जायेगा और साक्षी का उत्तर देने के लिए कब विवश किया जायेगा",
+    chapter: chapter["4"].d,
   },
   {
     id: "167",
@@ -1338,6 +1530,7 @@ export default data = [
     prevCode: "149",
     newCode: "152",
     newCodeInfo: "युक्तियुक्त आधारों के बिना प्रशन न पूछा जायेगा",
+    chapter: chapter["4"].d,
   },
   {
     id: "168",
@@ -1347,6 +1540,7 @@ export default data = [
     newCode: "153",
     newCodeInfo:
       "युक्तियुक्त आधारों के बिना प्रशन पूछे जाने की अवस्था में न्यायालय की प्रक्रिया",
+    chapter: chapter["4"].d,
   },
   {
     id: "169",
@@ -1354,6 +1548,7 @@ export default data = [
     prevCode: "151",
     newCode: "154",
     newCodeInfo: "अशिष्ट और कलंकात्मक प्रशन",
+    chapter: chapter["4"].d,
   },
   {
     id: "170",
@@ -1361,15 +1556,19 @@ export default data = [
     prevCode: "152",
     newCode: "155",
     newCodeInfo: "अपमानित या क्षुब्ध करने के लिए आशयित प्रशन",
+    chapter: chapter["4"].d,
   },
   {
     id: "171",
-    prevCodeInfo: "सत्यवाादिता परखने के प्रशनो के उत्तरों का खण्डन करने के लिए",
-    prevCode: "साक्ष्य का अपवर्जन",
-    newCode: "153",
-    newCodeInfo: "156",
+    prevCodeInfo:
+      "सत्यवाादिता परखने के प्रशनो के उत्तरों का खण्डन करने के लिए साक्ष्य का अपवर्जन",
+    prevCode: "153",
+    newCode: "156",
+    newCodeInfo:
+      "सत्यवाादिता परखने के प्रशनो के उत्तरों का खण्डन करने के लिए साक्ष्य का अपवर्जन",
     undefined:
       "सत्यवादिता परखने के प्रशनो के उत्तरों का खण्डन करने के लिए साक्ष्य का अपवर्जन",
+    chapter: chapter["4"].d,
   },
   {
     id: "172",
@@ -1377,6 +1576,7 @@ export default data = [
     prevCode: "154",
     newCode: "157",
     newCodeInfo: "पक्षकार द्वारा अपने ही साक्षी से प्रशन",
+    chapter: chapter["4"].d,
   },
   {
     id: "173",
@@ -1384,6 +1584,7 @@ export default data = [
     prevCode: "155",
     newCode: "158",
     newCodeInfo: "साक्षी की विश्वसनीयता पर अभिक्षेप",
+    chapter: chapter["4"].d,
   },
   {
     id: "174",
@@ -1393,6 +1594,7 @@ export default data = [
     newCode: "159",
     newCodeInfo:
       "सुसंगत तथ्य के साक्ष्य की संपुष्टि करने की प्रवृत्ति रखने वाले प्रश्न ग्राह्य होगें",
+    chapter: chapter["4"].d,
   },
   {
     id: "175",
@@ -1402,6 +1604,7 @@ export default data = [
     newCode: "160",
     newCodeInfo:
       "उस तथ्य के बारे में पश्चातवर्ती अभिसाक्ष्य की सम्पुष्टि करने के लिए साक्षी के पूर्वतन कथन साबित किए जा सकेंगे",
+    chapter: chapter["4"].d,
   },
   {
     id: "176",
@@ -1411,6 +1614,7 @@ export default data = [
     newCode: "161",
     newCodeInfo:
       "साबित कथन के बारे में, जो कथन धारा 32 या 33 के अधीन सुसंगत है, कौन-सी बातें साबित की जा सकेंगी",
+    chapter: chapter["4"].d,
   },
   {
     id: "177",
@@ -1418,6 +1622,7 @@ export default data = [
     prevCode: "159",
     newCode: "162",
     newCodeInfo: "स्मृति ताजी करना",
+    chapter: chapter["4"].d,
   },
   {
     id: "178",
@@ -1427,6 +1632,7 @@ export default data = [
     newCode: "163",
     newCodeInfo:
       "धारा 162 में वर्णित दस्तावेज में कथित तथ्यों के लिए परिसाक्ष्य",
+    chapter: chapter["4"].d,
   },
   {
     id: "179",
@@ -1436,6 +1642,7 @@ export default data = [
     newCode: "164",
     newCodeInfo:
       "स्मृति ताजी करने के लिए प्रयुक्त लेख के बारे में प्रतिपक्षी का अधिकार",
+    chapter: chapter["4"].d,
   },
   {
     id: "180",
@@ -1443,6 +1650,7 @@ export default data = [
     prevCode: "162",
     newCode: "165",
     newCodeInfo: "दस्तावेज का पेश किया जाना",
+    chapter: chapter["4"].d,
   },
   {
     id: "181",
@@ -1452,6 +1660,7 @@ export default data = [
     newCode: "166",
     newCodeInfo:
       "मंगाई गयी और सूचना पर पेश की गई दस्तावेज का साक्ष्य के रूप में दिया जाना",
+    chapter: chapter["4"].d,
   },
   {
     id: "183",
@@ -1461,6 +1670,7 @@ export default data = [
     newCode: "167",
     newCodeInfo:
       "सूचना पाने पर जिस दस्तावेज के पेश करने से इंकार कर दिया गया है उसको साक्ष्य के रूप में उपयोग में लाना",
+    chapter: chapter["4"].d,
   },
   {
     id: "184",
@@ -1468,6 +1678,7 @@ export default data = [
     prevCode: "165",
     newCode: "168",
     newCodeInfo: "प्रशन करने या पेश करने का देने की न्यायाधीश की शक्ति",
+    chapter: chapter["4"].d,
   },
   {
     id: "185",
@@ -1475,6 +1686,7 @@ export default data = [
     prevCode: "166",
     newCode: "----",
     newCodeInfo: "----",
+    chapter: chapter["4"].e,
   },
   {
     id: "186",
@@ -1484,6 +1696,7 @@ export default data = [
     newCode: "169",
     newCodeInfo:
       "साक्ष्य के अनुचित ग्रहण या अग्रण या अग्रहण के लिए नवीन विचारण नहीं होगा",
+    chapter: chapter["4"].e,
   },
   {
     id: "187",
@@ -1491,5 +1704,6 @@ export default data = [
     prevCode: "----",
     newCode: "170",
     newCodeInfo: "निरसन एवं व्यावृत्तिया",
+    chapter: chapter["4"].e,
   },
 ];
