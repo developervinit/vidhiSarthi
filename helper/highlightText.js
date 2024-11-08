@@ -20,7 +20,7 @@ export default function renderHighlightedText(text) {
     // Apply red color if inside "$" block
     if (isRed) {
       return (
-        <Text key={index} style={{ color: "red", fontWeight: "bold" }}>
+        <Text key={index} style={{ color: "#e15757", fontWeight: "bold" }}>
           {part}
         </Text>
       );
