@@ -4,13 +4,17 @@ import { StyleSheet, Text, View, FlatList } from "react-native";
 import InfoCardGroup from "../../../components/InfoCardGroup.js";
 import CustomHeader from "../../../components/CustomHeader.js";
 import SearchBar from "../../../components/searchBar/SearchBar.js";
-import { lightBackGroundColorArr } from "../../../constants/colors.js";
+import {
+  lightBackGroundColorArr,
+  headerHeadingColor,
+} from "../../../constants/colors.js";
 import ErrorDisplay from "../../../components/ErrorDisplay.js";
 import { useFilteredData } from "../../../hooks/useFilteredData.js";
 import CustomScreenModal from "../../../components/modals/CustomScreenModal.js";
 import HowToUse from "../../../components/HowToUse.js";
 import data from "../../../data/sakshyaAdiniyam/sakshyaAdiniyam.js";
 import { howToUseSakshyaAdhiniyam } from "../../../data/sakshyaAdiniyam/howToUseData.js";
+import AntDesign from "@expo/vector-icons/AntDesign";
 
 export default function SakshyaAdhiniyam() {
   const flatListRef = useRef(null); //to get reference of FlatList
@@ -21,6 +25,13 @@ export default function SakshyaAdhiniyam() {
         <CustomScreenModal
           modalTitle="इस पृष्ठ में इंडियन एविडेंस एक्ट 1872 की धाराओं से भारतीय साक्ष्य अधिनियम 2023 की नई धाराओं को खोजने की प्रक्रिया को सरल रूप में समझाया गया है।"
           modalContent={<HowToUse content={howToUseSakshyaAdhiniyam} />}
+          launchIcon={
+            <AntDesign
+              name="questioncircleo"
+              size={28}
+              color={headerHeadingColor}
+            />
+          }
         />
       </View>
     );

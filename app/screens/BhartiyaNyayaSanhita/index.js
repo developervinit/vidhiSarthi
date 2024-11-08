@@ -4,13 +4,17 @@ import { StyleSheet, Text, View, FlatList } from "react-native";
 import InfoCardGroup from "../../../components/InfoCardGroup.js";
 import CustomHeader from "../../../components/CustomHeader.js";
 import SearchBar from "../../../components/searchBar/SearchBar.js";
-import { lightBackGroundColorArr } from "../../../constants/colors.js";
+import {
+  lightBackGroundColorArr,
+  headerHeadingColor,
+} from "../../../constants/colors.js";
 import ErrorDisplay from "../../../components/ErrorDisplay.js";
 import { useFilteredData } from "../../../hooks/useFilteredData.js";
 import CustomScreenModal from "../../../components/modals/CustomScreenModal.js";
 import data from "../../../data/nyayaSanhita/NyayaSanhita.js";
 import { howToUseNyayaSanhitaData } from "../../../data/nyayaSanhita/howToUse.js";
 import HowToUse from "../../../components/HowToUse.js";
+import AntDesign from "@expo/vector-icons/AntDesign";
 
 export default function BhartiyaNyayaSanhita() {
   const flatListRef = useRef(null); //to get reference of FlatList
@@ -36,6 +40,13 @@ export default function BhartiyaNyayaSanhita() {
         <CustomScreenModal
           modalTitle="इस पृष्ठ में भारतीय दण्ड संहिता, 1860 की धाराओं से भारतीय न्याय संहिता 2023 की नई धाराओं को खोजने की प्रक्रिया को सरल रूप में समझाया गया है।"
           modalContent={<HowToUse content={howToUseNyayaSanhitaData} />}
+          launchIcon={
+            <AntDesign
+              name="questioncircleo"
+              size={28}
+              color={headerHeadingColor}
+            />
+          }
         />
       </View>
     );

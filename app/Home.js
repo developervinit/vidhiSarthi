@@ -1,7 +1,10 @@
 import { View, Image, StyleSheet, ScrollView } from "react-native";
 import { Link } from "expo-router";
 import ActionableCard from "../components/ActionableCard";
-import { lightBackGroundColorArr, headerHeadingColor } from "../constants/colors";
+import {
+  lightBackGroundColorArr,
+  headerHeadingColor,
+} from "../constants/colors";
 import CustomScreenModal from "../components/modals/CustomScreenModal.js";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import CustomHeader from "../components/CustomHeader.js";
@@ -11,7 +14,7 @@ import { howToUseHomeScreenData } from "../data/homeScreen/howToUse.js";
 const Home = () => {
   const headerLeft = () => {
     return (
-      <View style={{ flexDirection: "row", alignItems: "center"  }}>
+      <View style={{ flexDirection: "row", alignItems: "center" }}>
         <Image
           source={require("../assets/images/header_logo.png")}
           style={{
@@ -30,15 +33,23 @@ const Home = () => {
           flex: 1,
           flexDirection: "row",
           justifyContent: "flex-end",
+          gap: 10,
         }}
       >
         <Link href="/screens/about">
           <AntDesign name="infocirlceo" size={28} color={headerHeadingColor} />
         </Link>
-        <View style={{ marginLeft: 15 }}>
+        <View>
           <CustomScreenModal
             modalTitle="होम स्क्रीन का उपयोग कैसे करें?"
             modalContent={<HowToUse content={howToUseHomeScreenData} />}
+            launchIcon={
+              <AntDesign
+                name="questioncircleo"
+                size={28}
+                color={headerHeadingColor}
+              />
+            }
           />
         </View>
       </View>

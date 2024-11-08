@@ -4,22 +4,52 @@ import { StyleSheet, Text, View, FlatList } from "react-native";
 import InfoCardGroup from "../../../components/InfoCardGroup.js";
 import CustomHeader from "../../../components/CustomHeader.js";
 import SearchBar from "../../../components/searchBar/SearchBar.js";
-import { lightBackGroundColorArr } from "../../../constants/colors.js";
+import {
+  lightBackGroundColorArr,
+  headerHeadingColor,
+} from "../../../constants/colors.js";
 import ErrorDisplay from "../../../components/ErrorDisplay.js";
 import { useFilteredData } from "../../../hooks/useFilteredData.js";
 import CustomScreenModal from "../../../components/modals/CustomScreenModal.js";
 import HowToUse from "../../../components/HowToUse.js";
 import data from "../../../data/nagrikSuraksha/nagrikSurkshaData.js";
+import LawInfo from "../../../components/LawInfo.js";
+import bnssInfoData from "../../../data/nagrikSuraksha/bnssInfoData.js";
+import AntDesign from "@expo/vector-icons/AntDesign";
 
 export default function NagrikSuraksha() {
   const flatListRef = useRef(null); //to get reference of FlatList
 
   const headerRight = () => {
     return (
-      <View>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "flex-end",
+          gap: 10,
+        }}
+      >
+        <CustomScreenModal
+          modalTitle="भारतीय नागरिक सुरक्षा संहिता 2023 के अंतर्गत नए प्रावधान और संशोधन का सारांश."
+          modalContent={<LawInfo content={bnssInfoData} />}
+          launchIcon={
+            <AntDesign
+              name="infocirlceo"
+              size={28}
+              color={headerHeadingColor}
+            />
+          }
+        />
         <CustomScreenModal
           modalTitle="भारतीय नागरिक सुरक्षा संहिता, 2023 में नई धारा कैसे खोजें?"
           modalContent={<HowToUse content={null} />}
+          launchIcon={
+            <AntDesign
+              name="questioncircleo"
+              size={28}
+              color={headerHeadingColor}
+            />
+          }
         />
       </View>
     );

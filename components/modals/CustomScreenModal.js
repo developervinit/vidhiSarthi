@@ -1,12 +1,14 @@
 import CustomModal from "./CustomModal.js";
 import { View, Text, StyleSheet } from "react-native";
+import { howToTitleColor } from "../../constants/colors.js";
 
-import AntDesign from "@expo/vector-icons/AntDesign";
-import { headerHeadingColor } from "../../constants/colors.js";
-
-export default function CustomScreenModal({ modalTitle, modalContent }) {
+export default function CustomScreenModal({
+  modalTitle,
+  modalContent,
+  launchIcon,
+}) {
   // onStartShouldSetResponder={() => true} is used to stop event propagation/bubbling to parent element which is also having some event handler.
-  const homeScreen = (
+  const contentLayout = (
     <View
       style={styles.homeScreenContentContainer}
       onStartShouldSetResponder={() => true}
@@ -17,17 +19,9 @@ export default function CustomScreenModal({ modalTitle, modalContent }) {
     </View>
   );
 
-  return (
-    <CustomModal content={homeScreen}>
-      <View>
-        <AntDesign
-          name="questioncircleo"
-          size={28}
-          color={headerHeadingColor}
-        />
-      </View>
-    </CustomModal>
-  );
+  // ;
+
+  return <CustomModal content={contentLayout}>{launchIcon}</CustomModal>;
 }
 
 const styles = StyleSheet.create({
@@ -38,6 +32,7 @@ const styles = StyleSheet.create({
   homeScreenModalTitle: {
     fontSize: 22,
     fontWeight: "bold",
+    color: howToTitleColor,
   },
   homeScreenContent: {
     flexWrap: "wrap",
@@ -47,6 +42,6 @@ const styles = StyleSheet.create({
     width: 200,
     height: 1,
     backgroundColor: "black",
-    marginVertical: 10
-  }
+    marginVertical: 10,
+  },
 });
