@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet } from "react-native";
 import highlightText from "../helper/highlightText.js";
 import { howToContentColor } from "../constants/colors.js";
+import uuid from "react-native-uuid";
 
 export default LawInfo = ({ content }) => {
   return (
@@ -15,7 +16,7 @@ export default LawInfo = ({ content }) => {
       </View>
       {content.map((item, index) => {
         return (
-          <View style={styles.lawInfoContainer} key={index}>
+          <View style={styles.lawInfoContainer} key={uuid.v4()}>
             <Text style={styles.lawInfoContentWrapper}>
               <Text style={styles.newLineBulletsStyle}>{index + 1}. </Text>
               {highlightText(item)}
