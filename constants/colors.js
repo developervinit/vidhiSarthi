@@ -1,7 +1,7 @@
 //Here we are keeping colors used throughout the app.
 
-export const lightBackGroundColorArr = ["#bde1fd", "#e3d9ee", "#ebeed9"];
-export const darkBackGroundColorArr = ["#227abe", "#6521af", "#7e9014"];
+export const lightBackGroundColorArr = ["#cedfec", "#eadad9", "#edeee3"];
+export const darkBackGroundColorArr = ["#6a95b9", "#c59690", "#abb46b"];
 
 export const lawCardTitleFontColor = "#314542";
 export const lawCardDescriptionFontColor = "#144367";
