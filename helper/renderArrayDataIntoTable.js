@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, Dimensions } from "react-native";
 import { DataTable } from "react-native-paper";
 import { cardDescriptionFontColor } from "../constants/colors";
+import renderHighlightedText from "./highlightText";
 
 //rendering array data into table and raw text.
 export default function renderArrayDataIntoTable(arrayData) {
