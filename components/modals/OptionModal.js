@@ -24,8 +24,7 @@ const OptionModal = ({ visible, setVisible, content }) => {
           <TouchableWithoutFeedback>
             <View style={styles.tooltip}>
               <View style={styles.modalHeadingWrapper}>
-                <AntDesign name="warning" size={28} color="orange" />
-                <Text style={styles.modalHeading}>सूचना</Text>
+                <AntDesign name="warning" size={40} color="orange" />
               </View>
 
               <ScrollView contentContainerStyle={styles.scrollViewContent}>
@@ -72,7 +71,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   buttonStyle: {
-    backgroundColor: "#03448b",
+    backgroundColor: "#0b5884",
     padding: 10,
     paddingRight: 20,
     paddingLeft: 20,
@@ -87,12 +86,12 @@ const styles = StyleSheet.create({
   modalHeading: {
     fontSize: 22,
     fontWeight: "bold",
-    color: titleColor,
+    color: "#3d3d3d",
   },
   modalContent: {
     fontSize: 20,
     textAlign: "justify",
-    color: contentColor,
+    color: "#636262",
   },
 });
 
