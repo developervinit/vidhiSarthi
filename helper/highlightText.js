@@ -1,5 +1,6 @@
 //this is function to highlight text of the data.
 import { Text } from "react-native";
+import { highlightGreen, highlightRed } from "../constants/colors.js";
 
 export default function renderHighlightedText(text) {
   // Split text by both `$` and `%` markers
@@ -20,7 +21,7 @@ export default function renderHighlightedText(text) {
     // Apply red color if inside "$" block
     if (isRed) {
       return (
-        <Text key={index} style={{ color: "#e15757" }}>
+        <Text key={index} style={{ color: highlightRed }}>
           {part}
         </Text>
       );
@@ -29,7 +30,7 @@ export default function renderHighlightedText(text) {
     // Apply green color if inside "%" block
     if (isGreen) {
       return (
-        <Text key={index} style={{ color: "#10bd10" }}>
+        <Text key={index} style={{ color: highlightGreen }}>
           {part}
         </Text>
       );

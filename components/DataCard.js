@@ -4,6 +4,7 @@ import {
   darkBackGroundColorArr,
   dataCardLabelColor,
   lawCardDescriptionFontColor,
+  highlightRed,
 } from "../constants/colors.js";
 import renderHighlightedText from "../helper/highlightText.js";
 import renderArrayDataIntoTable from "../helper/renderArrayDataIntoTable.js";
@@ -11,7 +12,10 @@ import renderArrayDataIntoTable from "../helper/renderArrayDataIntoTable.js";
 export default function DataCard({ heading, code, info, colorIndex }) {
   return (
     <View
-      style={[styles.codeContainer, { borderColor: darkBackGroundColorArr[colorIndex] }]}
+      style={[
+        styles.codeContainer,
+        { borderColor: darkBackGroundColorArr[colorIndex] },
+      ]}
     >
       <View
         style={[
@@ -33,7 +37,7 @@ export default function DataCard({ heading, code, info, colorIndex }) {
           ) : (
             <Text style={styles.description}>
               {info === "निरसित" ? (
-                <Text style={{ color: "red", fontWeight: "bold" }}>{info}</Text>
+                <Text style={{ color: highlightRed }}>{info}</Text>
               ) : (
                 renderHighlightedText(info)
               )}

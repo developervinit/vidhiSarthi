@@ -17,3 +17,6 @@ export const headerHeadingColor = "#5b4502";
 
 export const howToTitleColor = "#3d3d3d";
 export const howToContentColor = "#636262";
+
+export const highlightGreen = "#0cad0c";
+export const highlightRed = "#ce4c4c";
