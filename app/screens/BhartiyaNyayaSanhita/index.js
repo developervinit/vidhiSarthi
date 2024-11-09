@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
   },
   listContentContainer: {
     paddingBottom: 100,
-    paddingHorizontal: 15,
+    paddingHorizontal: 10,
     paddingTop: 15,
   },
   ListEmptyComponentStyle: {
