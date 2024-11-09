@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from "react-native";
 import DataCard from "./DataCard";
-import AntDesign from "@expo/vector-icons/AntDesign";
+import Foundation from "@expo/vector-icons/Foundation";
 import {
   darkBackGroundColorArr,
   lightBackGroundColorArr,
@@ -47,9 +47,9 @@ export default function InfoCardGroup({
             colorIndex={colorIndex}
           />
           <View>
-            <AntDesign
-              name="arrowdown"
-              size={28}
+            <Foundation
+              name="arrow-down"
+              size={44}
               color={darkBackGroundColorArr[colorIndex]}
             />
           </View>
