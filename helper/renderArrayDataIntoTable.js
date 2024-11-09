@@ -56,7 +56,7 @@ const screenWidth = Dimensions.get("window").width;
 
 const styles = StyleSheet.create({
   textAndTableContainer: {
-    width: screenWidth - 80,
+    width: screenWidth - 65,
     marginHorizontal: 20,
   },
   tableContainer: {
