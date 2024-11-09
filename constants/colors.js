@@ -11,7 +11,7 @@ export const lawCardButtonFontColor = "#e6e6e6";
 export const dataCardLabelColor = "#0e314c";
 
 //components/GradientHeader.js
-export const headerBackgroundColorArr = ["#eedaac", "#eed497"];
+export const headerBackgroundColorArr = ["#f1e1bb", "#f2dcab"];
 //components/Header.js
 export const headerHeadingColor = "#5b4502";
 
