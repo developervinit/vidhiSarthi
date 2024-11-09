@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     padding: 8,
     marginBottom: 20,
     borderRadius: 5,
-    elevation: 4,
+    elevation: 5,
   },
   sectionChapterWrapper: {
     border: 1,
