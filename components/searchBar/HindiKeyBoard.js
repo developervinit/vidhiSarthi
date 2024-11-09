@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
     height: 182,
     backgroundColor: "white",
     position: "absolute",
+    borderRadius: 8,
   },
   scrollContainer: {
     flexGrow: 1,
