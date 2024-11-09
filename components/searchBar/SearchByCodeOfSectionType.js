@@ -83,6 +83,6 @@ const styles = StyleSheet.create({
   },
   SearchByOptionContent: {
     fontSize: 20,
-    color: contentColor,
+    color: "#636262",
   },
 });
