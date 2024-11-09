@@ -8,6 +8,7 @@ import {
   TouchableWithoutFeedback,
   ScrollView,
 } from "react-native";
+import { lawCardButtonColor } from "../../constants/colors.js";
 
 const CustomModal = ({ content, children }) => {
   const [visible, setVisible] = useState(false);
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   buttonStyle: {
-    backgroundColor: "#03448b", // Example: blue button
+    backgroundColor: lawCardButtonColor,
     padding: 10,
     paddingRight: 20,
     paddingLeft: 20,
