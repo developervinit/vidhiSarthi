@@ -82,6 +82,7 @@ export default function NagrikSuraksha() {
           <ErrorDisplay
             inputValue={isCodeOfInvalidSection}
             law="nagrikSuraksha"
+            codeOfSectionType={codeOfSectionType}
           />
         </View>
       ) : (

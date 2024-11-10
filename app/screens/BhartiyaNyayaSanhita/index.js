@@ -63,6 +63,7 @@ export default function BhartiyaNyayaSanhita() {
           <ErrorDisplay
             inputValue={isCodeOfInvalidSection}
             law="nyayaSanhita"
+            codeOfSectionType={codeOfSectionType}
           />
         </View>
       ) : (

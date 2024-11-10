@@ -64,6 +64,7 @@ export default function SakshyaAdhiniyam() {
           <ErrorDisplay
             inputValue={isCodeOfInvalidSection}
             law="sakshyaAdhiniyam"
+            codeOfSectionType={codeOfSectionType}
           />
         </View>
       ) : (
