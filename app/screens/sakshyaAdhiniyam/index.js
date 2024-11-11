@@ -14,6 +14,7 @@ import CustomScreenModal from "../../../components/modals/CustomScreenModal.js";
 import HowToUse from "../../../components/HowToUse.js";
 import data from "../../../data/sakshyaAdiniyam/sakshyaAdiniyam.js";
 import { howToUseSakshyaAdhiniyam } from "../../../data/sakshyaAdiniyam/howToUseData.js";
+import bsaInfoData from "../../../data/sakshyaAdiniyam/bsaInfoData.js";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
 export default function SakshyaAdhiniyam() {
@@ -21,7 +22,24 @@ export default function SakshyaAdhiniyam() {
 
   const headerRight = () => {
     return (
-      <View>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "flex-end",
+          gap: 10,
+        }}
+      >
+        <CustomScreenModal
+          modalTitle="भारतीय साक्ष्य अधिनियम, 2023 के अंतर्गत नए प्रावधान और संशोधन का सारांश।"
+          modalContent={<LawInfo content={bsaInfoData} />}
+          launchIcon={
+            <AntDesign
+              name="infocirlceo"
+              size={28}
+              color={headerHeadingColor}
+            />
+          }
+        />
         <CustomScreenModal
           modalTitle="इस पृष्ठ में इंडियन एविडेंस एक्ट 1872 की धाराओं से भारतीय साक्ष्य अधिनियम 2023 की नई धाराओं को खोजने की प्रक्रिया को सरल रूप में समझाया गया है।"
           modalContent={<HowToUse content={howToUseSakshyaAdhiniyam} />}
