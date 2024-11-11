@@ -15,6 +15,7 @@ import data from "../../../data/nyayaSanhita/NyayaSanhita.js";
 import { howToUseNyayaSanhitaData } from "../../../data/nyayaSanhita/howToUse.js";
 import HowToUse from "../../../components/HowToUse.js";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import bnsInfoData from "../../../data/nyayaSanhita/bnsInfoData.js";
 
 export default function BhartiyaNyayaSanhita() {
   const flatListRef = useRef(null); //to get reference of FlatList
@@ -36,7 +37,24 @@ export default function BhartiyaNyayaSanhita() {
 
   const headerRight = () => {
     return (
-      <View>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "flex-end",
+          gap: 10,
+        }}
+      >
+        <CustomScreenModal
+          modalTitle="भारतीय न्याय संहिता, 2023 के अंतर्गत नए प्रावधान और संशोधन का सारांश."
+          modalContent={<LawInfo content={bnsInfoData} />}
+          launchIcon={
+            <AntDesign
+              name="infocirlceo"
+              size={28}
+              color={headerHeadingColor}
+            />
+          }
+        />
         <CustomScreenModal
           modalTitle="इस पृष्ठ में भारतीय दण्ड संहिता, 1860 की धाराओं से भारतीय न्याय संहिता 2023 की नई धाराओं को खोजने की प्रक्रिया को सरल रूप में समझाया गया है।"
           modalContent={<HowToUse content={howToUseNyayaSanhitaData} />}
