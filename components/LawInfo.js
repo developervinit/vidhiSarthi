@@ -6,19 +6,18 @@ import uuid from "react-native-uuid";
 export default LawInfo = ({ content }) => {
   return (
     <>
-      <View>
-        <Text style={styles.noticeTextWrapper}>
-          <Text style={styles.noticeTextHead}>सूचना: </Text>
-          {highlightText(
-            "%जोडी% गयी धाराऐं एवं उपधाराऐं %हरे रंग% में दर्शायी गई है और $हटायी$ गयी धाराऐं एवं उपधाराऐं $लाल रंग$ में दर्शायी गई है।"
-          )}
-        </Text>
-      </View>
       {content.map((item, index) => {
-        return (
+        return index === 0 && item !== "" ? (
+          <View key={uuid.v4()}>
+            <Text style={styles.noticeTextWrapper}>
+              <Text style={styles.noticeTextHead}>सूचना: </Text>
+              {highlightText(item)}
+            </Text>
+          </View>
+        ) : index === 0 ? null : (
           <View style={styles.lawInfoContainer} key={uuid.v4()}>
             <Text style={styles.lawInfoContentWrapper}>
-              <Text style={styles.newLineBulletsStyle}>{index + 1}. </Text>
+              <Text style={styles.newLineBulletsStyle}>{index}. </Text>
               {highlightText(item)}
             </Text>
           </View>
@@ -41,6 +40,7 @@ const styles = StyleSheet.create({
   newLineBulletsStyle: {
     fontWeight: "bold",
     fontSize: 18,
+    color: "#4c4b4b"
   },
   noticeTextWrapper: {
     fontSize: 20,
@@ -50,5 +50,6 @@ const styles = StyleSheet.create({
   },
   noticeTextHead: {
     fontWeight: "bold",
+    color: "#4c4b4b"
   },
 });
