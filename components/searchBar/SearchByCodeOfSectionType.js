@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import OptionModal from "../modals/OptionModal";
-import { contentColor } from "../../constants/colors.js";
 
 export default SearchByCodeOfSectionType = ({
   setCodeOfSectionType,
   toggleOptionsBoxFn,
+  codeOfSectionType,
 }) => {
   // State to control the modal visibility
   const [modalVisible, setModalVisible] = useState(false);
@@ -23,7 +23,13 @@ export default SearchByCodeOfSectionType = ({
     <>
       <View style={styles.SearchByOptionsContainer}>
         <TouchableOpacity
-          style={styles.SearchByOptionBtn}
+          style={[
+            styles.SearchByOptionBtn,
+            {
+              backgroundColor:
+                codeOfSectionType === "prevCode" ? "#a4a3a3" : "#ffffff",
+            },
+          ]}
           onPress={() =>
             handleOptionSelect(
               "prevCode",
@@ -31,14 +37,28 @@ export default SearchByCodeOfSectionType = ({
             )
           }
         >
-          <Text style={styles.SearchByOptionContent}>
+          <Text
+            style={[
+              styles.SearchByOptionContent,
+              {
+                color: codeOfSectionType === "prevCode" ? "#ffffff" : "#636262",
+              },
+            ]}
+          >
             इस विकल्प को चुनने पर, आप पुराने धारा कोड को सर्च बॉक्स में दर्ज कर,
             उसके स्थान पर अधिसूचित नई धारा कोड एवं उसकी विस्तृत व्याख्या प्राप्त
             कर सकते हैं।
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={[styles.SearchByOptionBtn, { marginBottom: 8 }]}
+          style={[
+            styles.SearchByOptionBtn,
+            {
+              backgroundColor:
+                codeOfSectionType === "newCode" ? "#a4a3a3" : "#ffffff",
+              marginBottom: 8,
+            },
+          ]}
           onPress={() =>
             handleOptionSelect(
               "newCode",
@@ -46,7 +66,14 @@ export default SearchByCodeOfSectionType = ({
             )
           }
         >
-          <Text style={styles.SearchByOptionContent}>
+          <Text
+            style={[
+              styles.SearchByOptionContent,
+              {
+                color: codeOfSectionType === "newCode" ? "#ffffff" : "#636262",
+              },
+            ]}
+          >
             इस विकल्प को चुनने पर, आप सीधे नई धारा कोड को सर्च बॉक्स में दर्ज कर
             उसकी विस्तृत व्याख्या प्राप्त कर सकते हैं।
           </Text>
@@ -76,13 +103,11 @@ const styles = StyleSheet.create({
   SearchByOptionBtn: {
     width: "100%",
     padding: 10,
-    backgroundColor: "#e7e7e7",
     borderRadius: 15,
     borderWidth: 1,
     borderColor: "#616060",
   },
   SearchByOptionContent: {
     fontSize: 20,
-    color: "#636262",
   },
 });

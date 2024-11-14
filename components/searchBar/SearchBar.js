@@ -108,6 +108,7 @@ export default function SearchBar({
         <SearchByCodeOfSectionType
           toggleOptionsBoxFn={toggleOptionsBox}
           setCodeOfSectionType={setCodeOfSectionType}
+          codeOfSectionType={codeOfSectionType}
         />
       </Animated.View>
 
