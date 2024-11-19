@@ -1,4 +1,5 @@
 import { View, Image, StyleSheet, ScrollView } from "react-native";
+import { StatusBar } from "expo-status-bar";
 import { Link } from "expo-router";
 import ActionableCard from "../components/ActionableCard";
 import {
@@ -30,7 +31,6 @@ const Home = () => {
     return (
       <View
         style={{
-          flex: 1,
           flexDirection: "row",
           justifyContent: "flex-end",
           gap: 10,
@@ -91,6 +91,7 @@ const Home = () => {
           </View>
         </View>
       </ScrollView>
+      <StatusBar style="auto" />
     </>
   );
 };
