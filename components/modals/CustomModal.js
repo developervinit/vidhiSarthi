@@ -15,7 +15,7 @@ const CustomModal = ({ content, children }) => {
 
   return (
     <View>
-      <TouchableOpacity onPress={() => setVisible(true)}>
+      <TouchableOpacity onPressIn={() => setVisible(true)}>
         {children}
       </TouchableOpacity>
 
