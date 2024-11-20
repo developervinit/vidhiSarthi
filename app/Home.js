@@ -1,6 +1,12 @@
-import { View, Image, StyleSheet, ScrollView } from "react-native";
+import {
+  View,
+  Image,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 import { StatusBar } from "expo-status-bar";
-import { Link } from "expo-router";
+import { useRouter } from "expo-router";
 import ActionableCard from "../components/ActionableCard";
 import {
   lightBackGroundColorArr,
@@ -13,6 +19,8 @@ import HowToUse from "../components/HowToUse.js";
 import { howToUseHomeScreenData } from "../data/homeScreen/howToUse.js";
 
 const Home = () => {
+  const router = useRouter();
+
   const headerLeft = () => {
     return (
       <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -36,9 +44,9 @@ const Home = () => {
           gap: 10,
         }}
       >
-        <Link href="/screens/about">
+        <TouchableOpacity onPressIn={() => router.push("/screens/about")}>
           <AntDesign name="infocirlceo" size={28} color={headerHeadingColor} />
-        </Link>
+        </TouchableOpacity>
         <View>
           <CustomScreenModal
             modalTitle="होम स्क्रीन का उपयोग कैसे करें?"
