@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
   tableHeader: {
     backgroundColor: "#e0e0e0",
     paddingHorizontal: 0, // Remove default padding
+    height: 180
   },
   headerCellContainer: {
     flex: 1,
@@ -89,6 +90,7 @@ const styles = StyleSheet.create({
   tableRow: {
     paddingHorizontal: 0,
     backgroundColor: "#f1f0f0",
+    height: 480,
   },
   rowCellContainer: {
     flex: 1,
