@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, Dimensions } from "react-native";
 import { DataTable } from "react-native-paper";
-import { cardDescriptionFontColor } from "../constants/colors";
+import { lawCardDescriptionFontColor } from "../constants/colors";
 import renderHighlightedText from "./highlightText";
 
 //rendering array data into table and raw text.
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   tableLabel: {
     fontSize: 22,
     marginBottom: 10,
-    color: cardDescriptionFontColor,
+    color: lawCardDescriptionFontColor,
   },
   tableHeaderText: {
     fontSize: 18,
@@ -102,13 +102,13 @@ const styles = StyleSheet.create({
   },
   tableCellText: {
     fontSize: 18,
-    color: cardDescriptionFontColor,
+    color: lawCardDescriptionFontColor,
     textAlign: "justify",
   },
   rawText: {
     fontSize: 22,
     textAlign: "justify",
     marginBottom: 15,
-    color: cardDescriptionFontColor,
+    color: lawCardDescriptionFontColor,
   },
 });
