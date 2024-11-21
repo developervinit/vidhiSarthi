@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { aboutScreenContent } from "../../../data/aboutScreen/aboutScreenContent.js";
 import CustomHeader from "../../../components/CustomHeader.js";
-import { titleColor, contentColor } from "../../../constants/colors.js";
+import { lawCardTitleFontColor, lawCardDescriptionFontColor } from "../../../constants/colors.js";
 
 export default function About() {
   return (
@@ -29,11 +29,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "justify",
     marginBottom: 15,
-    color: titleColor
+    color: lawCardTitleFontColor
   },
   aboutContent: {
     fontSize: 18,
     textAlign: "justify",
-    color: contentColor
+    color: lawCardDescriptionFontColor
   },
 });
