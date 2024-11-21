@@ -1,7 +1,11 @@
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { aboutScreenContent } from "../../../data/aboutScreen/aboutScreenContent.js";
 import CustomHeader from "../../../components/CustomHeader.js";
-import { lawCardTitleFontColor, lawCardDescriptionFontColor } from "../../../constants/colors.js";
+import {
+  lawCardTitleFontColor,
+  lawCardDescriptionFontColor,
+} from "../../../constants/colors.js";
+import highlightText from "../../../helper/highlightText.js";
 
 export default function About() {
   return (
@@ -12,7 +16,9 @@ export default function About() {
           <Text style={styles.aboutHeading}>
             विधि सारथी ऐप का उद्देश्य और इसका उपयोग कैसे करें?
           </Text>
-          <Text style={styles.aboutContent}>{aboutScreenContent}</Text>
+          <Text style={styles.aboutContent}>
+            {highlightText(aboutScreenContent)}
+          </Text>
         </View>
       </ScrollView>
     </>
@@ -29,11 +35,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "justify",
     marginBottom: 15,
-    color: lawCardTitleFontColor
+    color: lawCardTitleFontColor,
   },
   aboutContent: {
     fontSize: 18,
     textAlign: "justify",
-    color: lawCardDescriptionFontColor
+    color: lawCardDescriptionFontColor,
   },
 });
