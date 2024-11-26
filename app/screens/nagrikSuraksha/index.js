@@ -15,6 +15,7 @@ import HowToUse from "../../../components/HowToUse.js";
 import data from "../../../data/nagrikSuraksha/nagrikSurkshaData.js";
 import LawInfo from "../../../components/LawInfo.js";
 import bnssInfoData from "../../../data/nagrikSuraksha/bnssInfoData.js";
+import { howToUseNagrikSuraksha } from "../../../data/nagrikSuraksha/howToUseData.js";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
 export default function NagrikSuraksha() {
@@ -41,8 +42,8 @@ export default function NagrikSuraksha() {
           }
         />
         <CustomScreenModal
-          modalTitle="भारतीय नागरिक सुरक्षा संहिता, 2023 में नई धारा कैसे खोजें?"
-          modalContent={<HowToUse content={null} />}
+          modalTitle="इस पृष्ठ में भारतीय दण्ड प्रक्रिया संहिता, 1873 की धाराओं से भारतीय नागरिक सुरक्षा संहिता 2023 की नई धाराओं को खोजने की प्रक्रिया को सरल रूप में समझाया गया है।"
+          modalContent={<HowToUse content={howToUseNagrikSuraksha} />}
           launchIcon={
             <AntDesign
               name="questioncircleo"
