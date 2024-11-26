@@ -27,11 +27,13 @@
 ├── /components    
 │   ├── /modals
 │   │   ├── CustomModal.js
-│   │   └── CustomScreenModal.js
+│   │   ├── CustomScreenModal.js
+│   │   └── OptionModal.js
 │   │
 |   ├── /searchBar 
 │   │   ├── HindiKeyBoard.js
-│   │   └── SearchBar.js
+│   │   ├── SearchBar.
+│   │   └── SearchByCodeOfSectionType.js
 |   │ 
 |   ├── ActionableCard.js 
 |   ├── Button.js
@@ -42,24 +44,50 @@
 |   ├── HowToUse.js
 |   ├── ImageViewer.js
 |   └── InfoCardGroup.js
+|   └── LawInfo.js
 |           
 ├── /constants
 │   └── color.js
 |   
 ├── /data
-|   ├── NyayaSanhita.js
-|   └── screenContent.js
+|   ├── /aboutScreen
+|   |   └──aboutScreenContent.js
+|   |
+|   ├── /errorData
+|   |   └──wrongSectionErrorData.js
+|   |
+|   ├── /homeScreen.js
+|   |   └──howToUse
+|   | 
+|   ├── /nagrikSuraksha
+|   |   ├──bnssInfoData.js
+|   |   ├──howToUseData.js
+|   |   └──nagrikSurkshaData.js
+|   |
+|   ├── /nyayaSanhita.js
+|   |   ├──bnssInfoData.js
+|   |   ├──howToUse.js
+|   |   └──NyayaSanhita.js
+|   |
+|   └── /sakshyaAdiniyam.js
+|       ├──bnssInfoData.js
+|       ├──howToUseData.js
+|       └──sakshyaAdiniyam.js
+|    
 |
 ├── /helper
+|   ├── convertHindiToEnglishNumber.js
+|   ├── errorDataSelection.js
+|   ├── highlightText.js
+|   ├── renderArrayDataIntoTable.js
 |   └── sanitizedAndValidInput.js
 |
 ├── /hooks
 |   └── useFilteredData.js
 |
-├── package.json
 ├── app.json
 ├── babel.config.js
 ├── eas.json
-├── .expo
+├── package-lock.json
+├── package.json
 └── structure.txt
-
