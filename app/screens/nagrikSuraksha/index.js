@@ -31,7 +31,7 @@ export default function NagrikSuraksha() {
         }}
       >
         <CustomScreenModal
-          modalTitle="भारतीय नागरिक सुरक्षा संहिता 2023 के अंतर्गत नए प्रावधान और संशोधन का सारांश."
+          modalTitle="भारतीय नागरिक सुरक्षा संहिता 2023 के अंतर्गत नए प्रावधान और संशोधन का सारांश।"
           modalContent={<LawInfo content={bnssInfoData} />}
           launchIcon={
             <AntDesign
