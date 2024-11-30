@@ -189,7 +189,7 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
-    height: 50,
+    height: 51,
     padding: 10,
     fontSize: 21,
     backgroundColor: "#e7e7e7",
