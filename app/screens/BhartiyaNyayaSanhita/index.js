@@ -46,7 +46,7 @@ export default function BhartiyaNyayaSanhita() {
         }}
       >
         <CustomScreenModal
-          modalTitle="भारतीय न्याय संहिता, 2023 के अंतर्गत नए प्रावधान और संशोधन का सारांश."
+          modalTitle="भारतीय न्याय संहिता, 2023 के अंतर्गत नए प्रावधान और संशोधन का सारांश।"
           modalContent={<LawInfo content={bnsInfoData} />}
           launchIcon={
             <AntDesign
