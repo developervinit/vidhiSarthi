@@ -16,6 +16,7 @@ import { howToUseNyayaSanhitaData } from "../../../data/nyayaSanhita/howToUse.js
 import HowToUse from "../../../components/HowToUse.js";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import bnsInfoData from "../../../data/nyayaSanhita/bnsInfoData.js";
+import LawInfo from "../../../components/LawInfo.js";
 
 export default function BhartiyaNyayaSanhita() {
   const flatListRef = useRef(null); //to get reference of FlatList

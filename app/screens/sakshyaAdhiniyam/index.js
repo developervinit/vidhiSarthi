@@ -16,6 +16,7 @@ import data from "../../../data/sakshyaAdiniyam/sakshyaAdiniyam.js";
 import { howToUseSakshyaAdhiniyam } from "../../../data/sakshyaAdiniyam/howToUseData.js";
 import bsaInfoData from "../../../data/sakshyaAdiniyam/bsaInfoData.js";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import LawInfo from "../../../components/LawInfo.js";
 
 export default function SakshyaAdhiniyam() {
   const flatListRef = useRef(null); //to get reference of FlatList
