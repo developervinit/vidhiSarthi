@@ -139,7 +139,7 @@ export default function SearchBar({
               toggleHindiKeyBoard();
             }}
           >
-            <Text style={styles.buttonText}>क,ख...</Text>
+            <Text style={styles.buttonText}>क,ख..</Text>
           </TouchableOpacity>
         </View>
 
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 50,
     padding: 10,
-    fontSize: 22,
+    fontSize: 21,
     backgroundColor: "#e7e7e7",
     borderRadius: 15,
   },
