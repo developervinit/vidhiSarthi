@@ -21,6 +21,7 @@ export default function SearchBar({
   const [hindiKeyboard, setHindiKeyboard] = useState(false);
   const [inputText, setInputText] = useState("");
   const [isOptionsBoxVisible, setOptionsBoxVisible] = useState(false);
+  const [boxHeight, setBoxHeight] = useState(0); // Add state to track box height
 
   // Separate animated values for each component
   const translateY = useRef(new Animated.Value(400)).current; // For SearchByCodeOfSectionType
@@ -48,7 +49,7 @@ export default function SearchBar({
 
     setOptionsBoxVisible((prev) => !prev);
     Animated.timing(translateY, {
-      toValue: isOptionsBoxVisible ? 400 : -260,
+      toValue: isOptionsBoxVisible ? 400 : -boxHeight,
       duration: 200,
       useNativeDriver: true,
     }).start();
@@ -109,6 +110,7 @@ export default function SearchBar({
           toggleOptionsBoxFn={toggleOptionsBox}
           setCodeOfSectionType={setCodeOfSectionType}
           codeOfSectionType={codeOfSectionType}
+          setBoxHeight={setBoxHeight} // Pass the callback
         />
       </Animated.View>
 

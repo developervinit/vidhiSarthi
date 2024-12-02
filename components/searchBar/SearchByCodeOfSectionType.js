@@ -6,6 +6,7 @@ export default SearchByCodeOfSectionType = ({
   setCodeOfSectionType,
   toggleOptionsBoxFn,
   codeOfSectionType,
+  setBoxHeight,
 }) => {
   // State to control the modal visibility
   const [modalVisible, setModalVisible] = useState(false);
@@ -21,7 +22,13 @@ export default SearchByCodeOfSectionType = ({
 
   return (
     <>
-      <View style={styles.SearchByOptionsContainer}>
+      <View
+        style={styles.SearchByOptionsContainer}
+        onLayout={(event) => {
+          const { height } = event.nativeEvent.layout;
+          setBoxHeight(height); // Update height dynamically
+        }}
+      >
         <TouchableOpacity
           style={[
             styles.SearchByOptionBtn,
@@ -94,7 +101,7 @@ const styles = StyleSheet.create({
     flex: 1,
     position: "absolute",
     width: "100%",
-    height: "auto",
+    minHeight: 180,
     backgroundColor: "white",
     gap: 8,
     padding: 10,
