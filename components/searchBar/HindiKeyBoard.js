@@ -6,7 +6,7 @@ import {
   ScrollView,
 } from "react-native";
 
-export default function HindiKeyBoard({ addHindiCharacter }) {
+export default function HindiKeyBoard({ addHindiCharacter, setHindiKeyboardHeight }) {
   const hindiChar = [
     "क",
     "ख",
@@ -52,7 +52,12 @@ export default function HindiKeyBoard({ addHindiCharacter }) {
   ];
 
   return (
-    <View style={styles.keyboardContainer}>
+    <View style={styles.keyboardContainer}
+    onLayout={(event) => {
+      const { height } = event.nativeEvent.layout;
+      setHindiKeyboardHeight(height); // Update height dynamically
+    }}
+    >
       <ScrollView
         contentContainerStyle={styles.scrollContainer}
         keyboardShouldPersistTaps="handled"
@@ -77,7 +82,7 @@ export default function HindiKeyBoard({ addHindiCharacter }) {
 
 const styles = StyleSheet.create({
   keyboardContainer: {
-    height: 182,
+    minHeight: 182,
     backgroundColor: "white",
     position: "absolute",
     borderRadius: 8,

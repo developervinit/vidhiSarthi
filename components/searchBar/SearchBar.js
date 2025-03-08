@@ -22,6 +22,7 @@ export default function SearchBar({
   const [inputText, setInputText] = useState("");
   const [isOptionsBoxVisible, setOptionsBoxVisible] = useState(false);
   const [boxHeight, setBoxHeight] = useState(0); // Add state to track box height
+  const [hindiKeyboardHeight, setHindiKeyboardHeight] = useState(200); // Add state to track hindi keyboard height.
 
   // Separate animated values for each component
   const translateY = useRef(new Animated.Value(400)).current; // For SearchByCodeOfSectionType
@@ -49,7 +50,7 @@ export default function SearchBar({
 
     setOptionsBoxVisible((prev) => !prev);
     Animated.timing(translateY, {
-      toValue: isOptionsBoxVisible ? 400 : -boxHeight,
+      toValue: isOptionsBoxVisible ? boxHeight : -boxHeight,
       duration: 200,
       useNativeDriver: true,
     }).start();
@@ -70,7 +71,7 @@ export default function SearchBar({
 
     setHindiKeyboard((hk) => !hk);
     Animated.timing(translateYHindi, {
-      toValue: hindiKeyboard ? 200 : -185,
+      toValue: hindiKeyboard ? hindiKeyboardHeight : -hindiKeyboardHeight,
       duration: 200,
       useNativeDriver: true,
     }).start();
@@ -93,8 +94,8 @@ export default function SearchBar({
         ]}
       >
         <HindiKeyBoard
-          hindiKeyboard={hindiKeyboard}
           addHindiCharacter={addHindiCharacter}
+          setHindiKeyboardHeight={setHindiKeyboardHeight}
         />
       </Animated.View>
 
