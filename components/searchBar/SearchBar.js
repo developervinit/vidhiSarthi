@@ -131,6 +131,7 @@ export default function SearchBar({
             }}
             value={inputText}
             clearButtonMode="always"
+            allowFontScaling={false}
           />
 
           <TouchableOpacity
@@ -142,7 +143,7 @@ export default function SearchBar({
               toggleHindiKeyBoard();
             }}
           >
-            <Text style={styles.buttonText}>क,ख..</Text>
+            <Text style={styles.buttonText} allowFontScaling={false}>क,ख..</Text>
           </TouchableOpacity>
         </View>
 
