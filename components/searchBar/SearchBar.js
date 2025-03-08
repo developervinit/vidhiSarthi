@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 51,
     padding: 10,
-    fontSize: 21,
+    fontSize: 22,
     backgroundColor: "#e7e7e7",
     borderRadius: 15,
   },
@@ -210,7 +210,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: "white",
-    fontSize: 20,
+    fontSize: 21,
     fontWeight: "bold",
   },
   optionBtn: {
