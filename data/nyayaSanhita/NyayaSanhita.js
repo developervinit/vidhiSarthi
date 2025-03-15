@@ -421,7 +421,7 @@ export default data = [
   },
   {
     id: 60,
-    prevCode: "55A",
+    prevCode: "55क",
     prevCodeInfo: '"समुचित सरकार" की परिभाषा',
     newCode: "धारा 5 का स्पष्टीकरण",
     newCodeInfo: " दण्डादेश का लघुकरण",
