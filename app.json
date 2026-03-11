@@ -21,7 +21,8 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.vinit91dev.vidhi_sarthi"
+      "package": "com.vinit91dev.vidhi_sarthi",
+      "targetSdkVersion": 35
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
